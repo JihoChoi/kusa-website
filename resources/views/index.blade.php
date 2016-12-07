@@ -1,29 +1,4 @@
 @extends('layouts.index-layout')
-@section('nav-content')
-<li class = "active"><a href = "#">Home</a></li>
-<li class = "dropdown">
-  <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">About<span class = "caret"></span></a>
-  <ul class = "dropdown-menu">
-    <li><a href = "#">Kusa</a></li>
-    <li><a href = "#">Members</a></li>
-  </ul>
-</li>
-<li class = "dropdown">
-  <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">Updates<span class = "caret"></span></a>
-  <ul class = "dropdown-menu">
-    <li><a href = "#">News</a></li>
-    <li><a href = "#">D-Korea</a></li>
-    <li><a href = "#">Calendar</a></li>
-  </ul>
-</li>
-<li class = "dropdown">
-  <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">Resources<span class = "caret"></span></a>
-  <ul class = "dropdown-menu">
-    <li><a href = "#">link</a></li>
-    <li><a href = "#">link2</a></li>
-  </ul>
-</li>
-@stop
 @section('main-content')
 <div class = "container-fluid background-A3CFEA">
     <div class = "container main-title">
@@ -34,9 +9,7 @@
     </div>
     <div class = "container sub-video">
       <div class = "outer">
-        <video controls width="560" height="315" frameborder="0" src="/videos/kusa-video.mp4" type = "video/mp4" allowfullscreen>
-          <!--<source src="/videos/kusa-video.mp4" type = "video/mp4"/>-->
-        </video>
+        <video controls width="560" height="315" frameborder="0" src='/videos/kusa-video.mp4' type = 'video/mp4' allowfullscreen></video>
       </div>
     </div>
     <div class = "container">

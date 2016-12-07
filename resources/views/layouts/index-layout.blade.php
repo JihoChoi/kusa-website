@@ -27,19 +27,41 @@
               <span class = "icon-bar"></span>
               <span class = "icon-bar"></span>
             </button>
-            <a class = "navbar-brand" href = "#">
+            <a class = "navbar-brand" href = "/">
               <img alt = "Brand" src = "images/KUSA_Logo.png">
             </a>
           </div>
           <div class = "collapse navbar-collapse" id = "kusanavbar">
             <ul class = "nav navbar-nav">
-              @yield('nav-content')
+              <li class = "active"><a href = "/">Home</a></li>
+              <li class = "dropdown">
+                <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">About<span class = "caret"></span></a>
+                <ul class = "dropdown-menu">
+                  <li><a href = "kusa">Kusa</a></li>
+                  <li><a href = "members">Members</a></li>
+                </ul>
+              </li>
+              <li class = "dropdown">
+                <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">Updates<span class = "caret"></span></a>
+                <ul class = "dropdown-menu">
+                  <li><a href = "news">News</a></li>
+                  <li><a href = "d-korea">D-Korea</a></li>
+                  <li><a href = "calendar">Calendar</a></li>
+                </ul>
+              </li>
+              <li class = "dropdown">
+                <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">Resources<span class = "caret"></span></a>
+                <ul class = "dropdown-menu">
+                  <li><a href = "#">link</a></li>
+                  <li><a href = "#">link2</a></li>
+                </ul>
+              </li>
             </ul>
             <ul class = "nav navbar-nav navbar-right">
               <li><a href = "https://www.facebook.com/purduekusa" target = "_blank"><i class = "fa fa-facebook"></i></a></li>
               <li><a href = "#"><i class = "fa fa-envelope-o"></i></a></li>
               <li><a href = "#"><span class = "glyphicon glyphicon-user"></span> Sign Up </a></li>
-              <li><a href = "#"><span class = "glyphicon glyphicon-log-in"></span> Login </a></li>
+              <li><a href = "login"><span class = "glyphicon glyphicon-log-in"></span> Login </a></li>
             </ul>
           </div>
         </div>
