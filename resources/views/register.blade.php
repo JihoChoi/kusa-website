@@ -51,9 +51,14 @@
               <option>Alumni</option>
             </select>
         </div>
+        <script type = "text/javascript">
+        $('document').ready(function($) {
+            $('#phone').mask('(000) 000-0000');
+        });
+        </script>
         <div class = "input-group" style = "margin-bottom: 25px">
           <span class = "input-group-addon"><i class = "glyphicon glyphicon-phone"></i></span>
-          <input id = "phone" type = "text" class = "form-control" name = "phone" placeholder = "Phone Number" required = "false">
+          <input id="phone" type = "text" class = "form-control" name = "phone" placeholder = "US Phone Number">
         </div>
         <div class = "form-group" style = "margin-top: 10px">
           <div class = "col-sm-12 controls">
