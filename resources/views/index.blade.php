@@ -34,8 +34,8 @@
     </div>
     <div class = "container sub-video">
       <div class = "outer">
-        <video controls width="560" height="315" frameborder="0" allowfullscreen>
-          <source src="/kusa-video.mp4" type = "video/mp4"/>
+        <video controls width="560" height="315" frameborder="0" src="/videos/kusa-video.mp4" type = "video/mp4" allowfullscreen>
+          <!--<source src="/videos/kusa-video.mp4" type = "video/mp4"/>-->
         </video>
       </div>
     </div>
