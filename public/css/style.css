@@ -1,0 +1,105 @@
+hr.style5 {
+	background-color: #fff;
+	border-top: 2px dashed #8c8b8b;
+}
+/*
+|----------------------------------------------------
+| navbar style
+|----------------------------------------------------
+|
+| tweaked some navbar styling
+|
+*/
+.dropdown-menu li a {
+	font-size: 20px;
+}
+
+.navbar {
+  background-color: #FFFEFE;
+  height: 80px;
+}
+#kusanavbar {
+  background-color: white;
+}
+.navbar-brand img {
+  width: 180px;
+  height: 50px;
+  margin-left: 50px;
+}
+.nav.navbar-nav {
+  font-size: 17px;
+  font-family: 'Ubuntu', sans-serif;
+  margin: 15px;
+  margin-left: 30px;
+}
+.nav.navbar-nav.navbar-right {
+  font-size: 15px;
+}
+
+.active a {
+  background-color: #FFFEFE !important;
+  color: #A3CFEA !important;
+}
+
+.navbar-toggle {
+  margin-top: 25px;
+}
+
+/*
+|----------------------------------------------------
+| background color collections
+|----------------------------------------------------
+|
+| various background color collections
+|
+*/
+
+.background-A3CFEA {
+  margin-top: 50px;
+  background-color: #A3CFEA;
+  height: 700px;
+}
+
+/*
+|----------------------------------------------------
+| main elements
+|----------------------------------------------------
+|
+| elements used in main section in index file
+|
+*/
+
+.main-title {
+  margin-top: 85px;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.sub-video {
+  text-align: center;
+}
+
+div.outer {
+  margin-top: -45px;
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 67.5%;
+  height: 0;
+}
+
+div video {
+  box-sizing: border-box;
+  background: url(/images/macbook-pro.png) center center no-repeat;
+  background-size: contain;
+  padding: 8.9% 15.5% 14.8%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.panel-body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+}
