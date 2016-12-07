@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('login', 'MembersController@directLogin');
+Route::get('register', 'MembersController@directRegister');

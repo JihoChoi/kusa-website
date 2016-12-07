@@ -11,12 +11,23 @@ class MembersController extends Controller
       return view('login');
     }
 
-    public function doLogin() {
+    public function doLogin(Request $request) {
+      $credential = array(
+        'username' => $request->input('username'),
+        'password' => $request->input('password')
+      );
+
+      if (Auth::attempt(credential, false)) {
+        return view('/');
+      } else {
+        return view('login');
+      }
+
 
     }
 
     public function directRegister() {
-
+      return view('register');
     }
 
     public function doRegister() {
