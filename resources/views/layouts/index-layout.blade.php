@@ -60,8 +60,22 @@
             <ul class = "nav navbar-nav navbar-right">
               <li><a href = "https://www.facebook.com/purduekusa" target = "_blank"><i class = "fa fa-facebook"></i></a></li>
               <li><a href = "#"><i class = "fa fa-envelope-o"></i></a></li>
+              @if (Auth::check())
+              <?php $userinfo = Auth::user();?>
+              <li class = "dropdown">
+                <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">Hello! <?php echo $userinfo->username?> <span class = "caret"></span></a>
+                <ul class = "dropdown-menu">
+                  @if ($userinfo->admin == 1)
+                  <li><a href = "#">Dashboard</a></li>
+                  @endif
+                  <li><a href = "#">Your profile</a></li>
+                  <li><a href = "#">Logout</a></li>
+                </ul>
+              </li>
+              @else
               <li><a href = "#"><span class = "glyphicon glyphicon-user"></span> Sign Up </a></li>
               <li><a href = "login"><span class = "glyphicon glyphicon-log-in"></span> Login </a></li>
+              @endif
             </ul>
           </div>
         </div>
