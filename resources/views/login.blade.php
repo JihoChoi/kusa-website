@@ -9,7 +9,7 @@
 <div class = "login-container container">
   <div class = "panel panel-primary">
     <div class = "panel-heading">
-      <div class = "panel-title">KUSA Login</div>
+      <div class = "panel-title">Login</div>
     </div>
     <div class = "panel-body" style = "padding-top:30px;">
       <div style = "display:none" id = "login-alert" class = "alert alert-danger col-sm-12"></div>
@@ -18,7 +18,7 @@
         {{ csrf_field() }}
         <div class = "input-group" style = "margin-bottom: 25px">
           <span class = "input-group-addon"><i class = "glyphicon glyphicon-user"></i></span>
-          <input id = "login-username" tyle = "text" class = "form-control" name = "username" placeholder = "Username" required = "true">
+          <input id = "login-username" type = "text" class = "form-control" name = "username" placeholder = "Username" required = "true">
         </div>
         <div class = "input-group" style = "margin-bottom: 25px">
           <span class = "input-group-addon"><i class = "glyphicon glyphicon-lock"></i></span>
@@ -28,6 +28,7 @@
           <div class = "col-sm-12 controls">
             <button type = "submit" id = "btn-login" class = "btn btn-success">Login</button>
             <a class = "btn btn-primary">Forgot my password</a>
+            <a class = "btn btn-danger" href = "/">Cancel</a>
           </div>
         </div>
       </form>

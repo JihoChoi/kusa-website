@@ -10,7 +10,7 @@
 <div class = "register-container container">
   <div class = "panel panel-primary">
     <div class = "panel-heading">
-      <div class = "panel-title">Join KUSA</div>
+      <div class = "panel-title">Join Purdue KUSA</div>
     </div>
     <div class = "panel-body" style = "padding-top:30px;">
       <div style = "display:none" id = "register-alert" class = "alert alert-danger col-sm-12"></div>
@@ -19,15 +19,15 @@
         {{ csrf_field() }}
         <div class = "input-group" style = "margin-bottom: 25px">
           <span class = "input-group-addon"><i class = "glyphicon glyphicon-user"></i></span>
-          <input id = "firstname" tyle = "text" class = "form-control" name = "firstname" placeholder = "First name*" required = "true">
+          <input id = "firstname" type = "text" class = "form-control" name = "firstname" placeholder = "First name*" required = "true">
         </div>
         <div class = "input-group" style = "margin-bottom: 25px">
           <span class = "input-group-addon"><i class = "glyphicon glyphicon-user"></i></span>
-          <input id = "lastname" tyle = "text" class = "form-control" name = "lastname" placeholder = "Last name*" required = "true">
+          <input id = "lastname" type = "text" class = "form-control" name = "lastname" placeholder = "Last name*" required = "true">
         </div>
         <div class = "input-group" style = "margin-bottom: 25px">
           <span class = "input-group-addon"><i class = "fa fa-at"></i></span>
-          <input id = "email" tyle = "email" class = "form-control" name = "email" placeholder = "Email address*" required = "true">
+          <input id = "email" type = "email" class = "form-control" name = "email" placeholder = "Email address*" required = "true">
         </div>
         <div class = "input-group" style = "margin-bottom: 25px">
           <span class = "input-group-addon"><i class = "glyphicon glyphicon-user"></i></span>
