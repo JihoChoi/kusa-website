@@ -54,6 +54,7 @@ class MembersController extends Controller
       $phonenumber = $request->input('phone');
       $kusa_team = 'none';
       $kusa_role = 'none';
+      $reset_token = '';
 
       $member = new Users();
       $member->profile_img_path = $profileimg;
@@ -66,6 +67,7 @@ class MembersController extends Controller
       $member->phone_number = $phonenumber;
       $member->kusa_team = $kusa_team;
       $member->kusa_role = $kusa_role;
+      $member->reset_token = $reset_token;
       $member->remember_token = $rememberToken;
 
       if (Users::where('email', $username)->first()) {

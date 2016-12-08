@@ -42,6 +42,7 @@ class CreateUsersTables extends Migration
           $table->string('kusa_team');
           $table->string('kusa_role');
           $table->rememberToken();
+          $table->string('reset_token')->index();
           $table->timestamps();
         });
     }
