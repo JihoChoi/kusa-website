@@ -1,4 +1,7 @@
 @extends('layouts.index-layout')
+@section('title')
+<title>KUSA Login</title>
+@stop
 @section('main-content')
 <style>
 .login-container {
@@ -18,7 +21,7 @@
         {{ csrf_field() }}
         <div class = "input-group" style = "margin-bottom: 25px">
           <span class = "input-group-addon"><i class = "glyphicon glyphicon-user"></i></span>
-          <input id = "login-username" type = "text" class = "form-control" name = "username" placeholder = "Username" required = "true">
+          <input id = "login-username" type = "text" class = "form-control" name = "username" placeholder = "Email Address" required = "true">
         </div>
         <div class = "input-group" style = "margin-bottom: 25px">
           <span class = "input-group-addon"><i class = "glyphicon glyphicon-lock"></i></span>
@@ -26,9 +29,10 @@
         </div>
         <div class = "form-group" style = "margin-top: 10px">
           <div class = "col-sm-12 controls">
+            <center>
             <button type = "submit" id = "btn-login" class = "btn btn-success">Login</button>
             <a class = "btn btn-primary">Forgot my password</a>
-            <a class = "btn btn-danger" href = "/">Cancel</a>
+           </center>
           </div>
         </div>
       </form>

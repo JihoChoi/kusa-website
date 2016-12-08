@@ -1,4 +1,7 @@
 @extends('layouts.index-layout')
+@section('title')
+<title>Join Purdue KUSA</title>
+@stop
 @section('main-content')
 <style>
 .register-container {
@@ -13,6 +16,18 @@
       <div class = "panel-title">Join Purdue KUSA</div>
     </div>
     <div class = "panel-body" style = "padding-top:30px;">
+      <div class = "well" style = "font-size: 15px">
+        We will use personal information to:
+        <ul>
+          <li>
+            provide information, particularly those associated with Korean Undergraduate Student Association's.
+          </li>
+          <li>
+            manage our internal operations.
+          </li>
+        </ul>
+        We will only disclose information for the purpose for which it was collected, and where appropriate, after obtaining the necessary consent from the individual.
+      </div>
       <div style = "display:none" id = "register-alert" class = "alert alert-danger col-sm-12"></div>
       <span style = "color: red; font-size: 12px;">* required field</span>
       <form id = "registerform" class = "form-horizontal" role = "form" method = "POST" action = "">
@@ -30,10 +45,6 @@
           <input id = "email" type = "email" class = "form-control" name = "email" placeholder = "Email address*" required = "true">
         </div>
         <div class = "input-group" style = "margin-bottom: 25px">
-          <span class = "input-group-addon"><i class = "glyphicon glyphicon-user"></i></span>
-          <input id = "register-username" tyle = "text" class = "form-control" name = "username" placeholder = "Username*" required = "true">
-        </div>
-        <div class = "input-group" style = "margin-bottom: 25px">
           <span class = "input-group-addon"><i class = "glyphicon glyphicon-lock"></i></span>
           <input id = "register-password" type = "password" class = "form-control" name = "password" placeholder = "Password*" required = "true">
         </div>
@@ -47,8 +58,9 @@
               <option>Undergraduate</option>
               <option>Graduate</option>
               <option>Faculty</option>
-              <option>Family</<option>
+              <option>Family</option>
               <option>Alumni</option>
+              <option>General</option>
             </select>
         </div>
         <script type = "text/javascript">
@@ -62,8 +74,7 @@
         </div>
         <div class = "form-group" style = "margin-top: 10px">
           <div class = "col-sm-12 controls">
-            <button type = "submit" id = "btn-login" class = "btn btn-success">Sign Up</button>
-            <a class = "btn btn-danger" href = "/">Cancel</a>
+            <center><button type = "submit" id = "btn-login" class = "btn btn-success">Sign Up</button></center>
           </div>
         </div>
       </form>

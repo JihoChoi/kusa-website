@@ -1,4 +1,7 @@
 @extends('layouts.index-layout')
+@section('title')
+<title>Welcome to Purdue KUSA</title>
+@stop
 @section('main-content')
 <div class = "container-fluid background-A3CFEA">
     <div class = "container main-title">

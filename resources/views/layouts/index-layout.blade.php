@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Purdue KUSA</title>
+    @yield('title')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
     <!-- STYLE -->
@@ -64,9 +64,9 @@
               @if (Auth::check())
               <?php $userinfo = Auth::user();?>
               <li class = "dropdown">
-                <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">Hello! <?php echo $userinfo->username?> <span class = "caret"></span></a>
+                <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">Hello! <?php echo $userinfo->firstname?> <span class = "caret"></span></a>
                 <ul class = "dropdown-menu">
-                  @if ($userinfo->admin == 1)
+                  @if ($userinfo->admin == TRUE)
                   <li><a href = "#">Dashboard</a></li>
                   @endif
                   <li><a href = "#">Your profile</a></li>
