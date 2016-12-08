@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use DB;
+use Hash;
+use Input;
 use Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
@@ -16,14 +18,14 @@ class MembersController extends Controller
 
     public function doLogin(Request $request) {
       $credential = array(
-        'username' => $request->input('username'),
+        'email' => $request->input('username'),
         'password' => $request->input('password')
       );
 
-      if (Auth::attempt(credential, false)) {
-        return view('/');
+      if (Auth::attempt($credential, false)) {
+        return redirect('/');
       } else {
-        return view('login');
+        return redirect('login');
       }
 
 
@@ -33,17 +35,31 @@ class MembersController extends Controller
       return view('register');
     }
 
+    public function doLogout() {
+      Auth::logout();
+      return redirect('/');
+    }
+
     public function doRegister(RegisterRequest $request) {
-      $profileimg = '/images/profiles/default.png';
+      $profileimg = '/images/profiles/default/default.png';
       $firstname = $request->input('firstname');
       $lastname = $request->input('lastname');
       $username = $request->input('email');
       $password = Hash::make($request->input('password-reconfirm'));
-      $registertype = Input::get('type');
+      $registertype = $request->input('type');
       $rememberToken = '';
       $userstatus = 'general';
-      $phonenumber - $request->input('phone');
+      $phonenumber = $request->input('phone');
       $kusa_team = 'none';
       $kusa_role = 'none';
+
+      DB::table('users')->insert([
+        [
+         'profile_img_path' => $profileimg, 'firstname' => $firstname,
+         'lastname' => $lastname, 'email' => $username, 'password' => $password,
+         'register_type' => $registertype, 'user_status' => $userstatus, 'phone_number' => $phonenumber,
+         'kusa_team' => $kusa_team, 'kusa_role' => $kusa_role, 'remember_token' => $rememberToken
+        ]
+      ]);
     }
 }

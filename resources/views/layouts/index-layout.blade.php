@@ -66,11 +66,13 @@
               <li class = "dropdown">
                 <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">Hello! <?php echo $userinfo->firstname?> <span class = "caret"></span></a>
                 <ul class = "dropdown-menu">
+                  <li><center><img src = "<?php echo $userinfo->profile_img_path?>" class = "default-profile"></center></li>
+                  <hr>
                   @if ($userinfo->user_status == "admin")
                   <li><a href = "#">Dashboard</a></li>
                   @endif
                   <li><a href = "#">Your profile</a></li>
-                  <li><a href = "#">Logout</a></li>
+                  <li><a href = "logout">Logout</a></li>
                 </ul>
               </li>
               @else

@@ -19,3 +19,4 @@ Route::get('login', 'MembersController@directLogin');
 Route::post('login', 'MembersController@doLogin');
 Route::get('register', 'MembersController@directRegister');
 Route::post('register', 'MembersController@doRegister');
+Route::get('logout', 'MembersController@doLogout');

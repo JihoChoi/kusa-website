@@ -17,7 +17,7 @@
     <div class = "panel-body" style = "padding-top:30px;">
       <div style = "display:none" id = "login-alert" class = "alert alert-danger col-sm-12"></div>
 
-      <form id = "loginform" class = "form-horizontal" role = "form" method = "POST" action = "">
+      <form id = "loginform" class = "form-horizontal" role = "form" method = "POST" action = "login">
         {{ csrf_field() }}
         <div class = "input-group" style = "margin-bottom: 25px">
           <span class = "input-group-addon"><i class = "glyphicon glyphicon-user"></i></span>
