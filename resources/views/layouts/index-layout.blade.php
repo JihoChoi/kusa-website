@@ -66,7 +66,7 @@
               <li class = "dropdown">
                 <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">Hello! <?php echo $userinfo->firstname?> <span class = "caret"></span></a>
                 <ul class = "dropdown-menu">
-                  @if ($userinfo->admin == TRUE)
+                  @if ($userinfo->user_status == "admin")
                   <li><a href = "#">Dashboard</a></li>
                   @endif
                   <li><a href = "#">Your profile</a></li>

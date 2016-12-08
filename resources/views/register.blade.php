@@ -54,7 +54,7 @@
         </div>
         <div class = "input-group" style = "margin-bottom: 25px">
           <label for="type">Registration Type*</label>
-            <select class="form-control" id="type">
+            <select class="form-control" id="type" name = "type">
               <option>Undergraduate</option>
               <option>Graduate</option>
               <option>Faculty</option>

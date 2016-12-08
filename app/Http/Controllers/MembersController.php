@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use Auth;
 use Illuminate\Http\Request;
+use App\Http\Requests\RegisterRequest;
 
 class MembersController extends Controller
 {
@@ -32,7 +33,17 @@ class MembersController extends Controller
       return view('register');
     }
 
-    public function doRegister(Request $request) {
-
+    public function doRegister(RegisterRequest $request) {
+      $profileimg = '/images/profiles/default.png';
+      $firstname = $request->input('firstname');
+      $lastname = $request->input('lastname');
+      $username = $request->input('email');
+      $password = Hash::make($request->input('password-reconfirm'));
+      $registertype = Input::get('type');
+      $rememberToken = '';
+      $userstatus = 'general';
+      $phonenumber - $request->input('phone');
+      $kusa_team = 'none';
+      $kusa_role = 'none';
     }
 }
