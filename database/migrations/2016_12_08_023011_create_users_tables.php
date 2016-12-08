@@ -43,6 +43,7 @@ class CreateUsersTables extends Migration
           $table->string('kusa_role');
           $table->rememberToken();
           $table->string('reset_token')->index();
+          $table->string('confirmation_code')->nullable();
           $table->timestamps();
         });
     }

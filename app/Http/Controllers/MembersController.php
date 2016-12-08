@@ -13,6 +13,9 @@ use App\Http\Requests\RegisterRequest;
 class MembersController extends Controller
 {
     //
+    public function directIndex() {
+      return view('index');
+    }
     public function directLogin() {
       return view('login');
     }
@@ -24,7 +27,12 @@ class MembersController extends Controller
       );
 
       if (Auth::attempt($credential, true)) {
-        return redirect('/');
+        $userinfo = Auth::user();
+        if ($userinfo->user_status == "invalid") {
+          echo 'confirm code first!';
+        } else {
+          return $this->directIndex();
+        }
       } else {
         $request->session()->flash('msg', 'Your email address or password does not match our record.');
         return $this->directLogin();
@@ -50,11 +58,12 @@ class MembersController extends Controller
       $password = Hash::make($request->input('password-reconfirm'));
       $registertype = $request->input('type');
       $rememberToken = '';
-      $userstatus = 'general';
+      $userstatus = 'invalid';
       $phonenumber = $request->input('phone');
       $kusa_team = 'none';
       $kusa_role = 'none';
       $reset_token = '';
+      $confirmation_code = str_random(45);
 
       $member = new Users();
       $member->profile_img_path = $profileimg;
@@ -69,9 +78,10 @@ class MembersController extends Controller
       $member->kusa_role = $kusa_role;
       $member->reset_token = $reset_token;
       $member->remember_token = $rememberToken;
+      $member->confirmation_code = $confirmation_code;
 
       if (Users::where('email', $username)->first()) {
-        $request->session()->flash('msg', 'An account already exists with that email you provided.');
+        $request->session()->flash('msg', 'An account already exists with the email you provided.');
         return $this->directLogin();
       }
       $registered = $member->save();
@@ -79,5 +89,9 @@ class MembersController extends Controller
       if ($registered) {
         echo 'Success!';
       }
+    }
+
+    public function confirm($confirmation_code) {
+
     }
 }

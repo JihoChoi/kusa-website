@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
+Route::get('/', 'MembersController@directIndex');
 Route::get('login', 'MembersController@directLogin');
 Route::post('login', 'MembersController@doLogin');
 Route::get('register', 'MembersController@directRegister');
