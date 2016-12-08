@@ -5,6 +5,7 @@
 @section('main-content')
 <style>
 .register-container {
+  position: relative;
   max-width: 650px;
   margin-top: 150px;
 }

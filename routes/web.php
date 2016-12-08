@@ -17,3 +17,5 @@ Route::post('login', 'MembersController@doLogin');
 Route::get('register', 'MembersController@directRegister');
 Route::post('register', 'MembersController@doRegister');
 Route::get('logout', 'MembersController@doLogout');
+
+Route::get('register/verify/{confirmation_code}', 'MembersController@confirm');

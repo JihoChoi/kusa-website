@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use Hash;
 use Input;
+use Mail;
 use Auth;
 use App\Users;
 use Illuminate\Http\Request;
@@ -29,7 +30,7 @@ class MembersController extends Controller
       if (Auth::attempt($credential, true)) {
         $userinfo = Auth::user();
         if ($userinfo->user_status == "invalid") {
-          $request->session()->flash('msg', 'Please confirm your verification code in your email inbox.');
+          $request->session()->flash('msg', 'Please confirm your verification code in your email.');
           return $this->doLogout();
         }
         $request->session()->flash('msg-general', 'Welcome '.$userinfo->firstname.'!');
@@ -48,7 +49,7 @@ class MembersController extends Controller
 
     public function doLogout() {
       Auth::logout();
-      return $this->directLogin();
+      return redirect()->action('MembersController@directLogin')->with('msg-general', 'You are now signed out.');
     }
 
     public function doRegister(Request $request) {
@@ -94,6 +95,12 @@ class MembersController extends Controller
     }
 
     public function confirm($confirmation_code) {
-
+      $user = Users::where('confirmation_code', $confirmation_code)->first();
+      if ($user) {
+        $user->user_status = "general";
+        $user->confirmation_code = null;
+        $user->save();
+        return redirect()->action('MembersController@directLogin')->with('msg-general', 'Success! Your account is verified.');
+      }
     }
 }
