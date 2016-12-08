@@ -32,6 +32,7 @@ class MembersController extends Controller
           $request->session()->flash('msg', 'Please confirm your verification code in your email inbox.');
           return $this->doLogout();
         }
+        $request->session()->flash('msg-general', 'Welcome '.$userinfo->firstname.'!');
         return $this->directIndex();
       } else {
         $request->session()->flash('msg', 'Your email address or password does not match our record.');
@@ -87,7 +88,8 @@ class MembersController extends Controller
       $registered = $member->save();
 
       if ($registered) {
-        echo 'Success!';
+        $request->session()->flash('msg-general', 'Thanks for joining us! Please check your email to verify your account.');
+        return $this->directIndex();
       }
     }
 

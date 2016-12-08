@@ -24,8 +24,20 @@
   <body>
       @if (session()->has('msg'))
         <div class = "alert-container">
-          <div class = "alert alert-danger" role = "alert">{{ session()->get('msg') }}</div>
+          <div class = "alert alert-danger alert-dismissible" role = "alert">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <center> {{ session()->get('msg') }} </center>
+          </div>
           <?php session()->forget('msg'); ?>
+        </div>
+      @endif
+      @if (session()->has('msg-general'))
+        <div class = "alert-container">
+          <div class = "alert alert-success alert-dismissible" role = "alert">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <center> {{ session()->get('msg-general') }} </center>
+          </div>
+          <?php session()->forget('msg-general'); ?>
         </div>
       @endif
       <nav class = "navbar navbar-default navbar-fixed-top">
@@ -72,7 +84,7 @@
               @if (Auth::check())
               <?php $userinfo = Auth::user();?>
               <li class = "dropdown">
-                <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">Hello! <?php echo $userinfo->firstname?> <span class = "caret"></span></a>
+                <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#"><?php echo $userinfo->firstname?><span class = "caret"></span></a>
                 <ul class = "dropdown-menu">
                   <li><center><img src = "<?php echo $userinfo->profile_img_path?>" class = "default-profile"></center></li>
                   <hr>
