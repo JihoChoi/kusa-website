@@ -18,7 +18,7 @@
 
     <div class = "panel-body" style = "padding-top:30px;">
       <div class = "well" style = "font-size: 15px">
-        We will use personal information to:
+        We will use your personal information to:
         <ul>
           <li>
             provide information, particularly those associated with Korean Undergraduate Student Association's.
@@ -32,14 +32,14 @@
       <form id = "registerform" class = "form-horizontal" role = "form" method = "POST" action = "register" data-toggle = "validator">
         {{ csrf_field() }}
         <div class = "form-group">
-          <label for="firstname" class = "col-sm-3 control-label">Firstname</label>
+          <label for="firstname" class = "col-sm-3 control-label">First Name</label>
           <div class = "col-sm-9">
             <input id = "firstname" type = "text" class = "form-control" name = "firstname" placeholder = "First name*" required = "true" data-error = "Please enter your first name">
             <div class = "help-block with-errors"></div>
           </div>
         </div>
         <div class = "form-group">
-          <label for="lastname" class = "col-sm-3 control-label">Lastname</label>
+          <label for="lastname" class = "col-sm-3 control-label">Last Name</label>
           <div class = "col-sm-9">
             <input id = "lastname" type = "text" class = "form-control" name = "lastname" placeholder = "Last name*" required = "true" data-error = "Please enter your last name">
             <div class = "help-block with-errors"></div>

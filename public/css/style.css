@@ -8,6 +8,13 @@ hr.style5 {
 .with-errors {
 	font-size: 15px;
 }
+.alert-container {
+	position: relative;
+	top: 150px;
+	max-width: 55em;
+	width: 90%;
+	margin: 0 auto;
+}
 /*
 |----------------------------------------------------
 | navbar style

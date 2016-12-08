@@ -23,10 +23,11 @@ class MembersController extends Controller
         'password' => $request->input('password')
       );
 
-      if (Auth::attempt($credential, false)) {
+      if (Auth::attempt($credential, true)) {
         return redirect('/');
       } else {
-        return redirect('login');
+        $request->session()->flash('msg', 'Your email address or password does not match our record.');
+        return $this->directLogin();
       }
 
 
@@ -38,10 +39,10 @@ class MembersController extends Controller
 
     public function doLogout() {
       Auth::logout();
-      return redirect('/');
+      return redirect('login');
     }
 
-    public function doRegister(RegisterRequest $request) {
+    public function doRegister(Request $request) {
       $profileimg = '/images/profiles/default/default.png';
       $firstname = $request->input('firstname');
       $lastname = $request->input('lastname');
@@ -67,12 +68,14 @@ class MembersController extends Controller
       $member->kusa_role = $kusa_role;
       $member->remember_token = $rememberToken;
 
+      if (Users::where('email', $username)->first()) {
+        $request->session()->flash('msg', 'An account already exists with that email you provided.');
+        return $this->directLogin();
+      }
       $registered = $member->save();
 
       if ($registered) {
-        echo 'Success!!!';
-      } else {
-        App::abort(500, 'Error');
+        echo 'Success!';
       }
     }
 }
