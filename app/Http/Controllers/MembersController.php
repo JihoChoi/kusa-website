@@ -29,10 +29,10 @@ class MembersController extends Controller
       if (Auth::attempt($credential, true)) {
         $userinfo = Auth::user();
         if ($userinfo->user_status == "invalid") {
-          echo 'confirm code first!';
-        } else {
-          return $this->directIndex();
+          $request->session()->flash('msg', 'Please confirm your verification code in your email inbox.');
+          return $this->doLogout();
         }
+        return $this->directIndex();
       } else {
         $request->session()->flash('msg', 'Your email address or password does not match our record.');
         return $this->directLogin();
@@ -47,7 +47,7 @@ class MembersController extends Controller
 
     public function doLogout() {
       Auth::logout();
-      return redirect('login');
+      return $this->directLogin();
     }
 
     public function doRegister(Request $request) {
