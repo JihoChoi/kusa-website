@@ -6,6 +6,7 @@ use DB;
 use Hash;
 use Input;
 use Auth;
+use App\Users;
 use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
 
@@ -53,13 +54,25 @@ class MembersController extends Controller
       $kusa_team = 'none';
       $kusa_role = 'none';
 
-      DB::table('users')->insert([
-        [
-         'profile_img_path' => $profileimg, 'firstname' => $firstname,
-         'lastname' => $lastname, 'email' => $username, 'password' => $password,
-         'register_type' => $registertype, 'user_status' => $userstatus, 'phone_number' => $phonenumber,
-         'kusa_team' => $kusa_team, 'kusa_role' => $kusa_role, 'remember_token' => $rememberToken
-        ]
-      ]);
+      $member = new Users();
+      $member->profile_img_path = $profileimg;
+      $member->firstname = $firstname;
+      $member->lastname = $lastname;
+      $member->email = $username;
+      $member->password = $password;
+      $member->register_type = $registertype;
+      $member->user_status = $userstatus;
+      $member->phone_number = $phonenumber;
+      $member->kusa_team = $kusa_team;
+      $member->kusa_role = $kusa_role;
+      $member->remember_token = $rememberToken;
+
+      $registered = $member->save();
+
+      if ($registered) {
+        echo 'Success!!!';
+      } else {
+        App::abort(500, 'Error');
+      }
     }
 }

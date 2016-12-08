@@ -7,6 +7,8 @@
     @yield('title')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.8/validator.min.js"></script>
+    
     <!-- STYLE -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -68,10 +70,10 @@
                 <ul class = "dropdown-menu">
                   <li><center><img src = "<?php echo $userinfo->profile_img_path?>" class = "default-profile"></center></li>
                   <hr>
+                  <li><a href = "#">Your profile</a></li>
                   @if ($userinfo->user_status == "admin")
                   <li><a href = "#">Dashboard</a></li>
                   @endif
-                  <li><a href = "#">Your profile</a></li>
                   <li><a href = "logout">Logout</a></li>
                 </ul>
               </li>
