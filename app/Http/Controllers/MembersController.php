@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+use Auth;
 use Illuminate\Http\Request;
 
 class MembersController extends Controller
@@ -30,7 +32,7 @@ class MembersController extends Controller
       return view('register');
     }
 
-    public function doRegister() {
+    public function doRegister(Request $request) {
 
     }
 }
