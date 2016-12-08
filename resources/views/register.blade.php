@@ -15,6 +15,7 @@
     <div class = "panel-heading">
       <div class = "panel-title">Join Purdue KUSA</div>
     </div>
+
     <div class = "panel-body" style = "padding-top:30px;">
       <div class = "well" style = "font-size: 15px">
         We will use personal information to:
@@ -28,49 +29,66 @@
         </ul>
         We will only disclose information for the purpose for which it was collected, and where appropriate, after obtaining the necessary consent from the individual.
       </div>
-      <div style = "display:none" id = "register-alert" class = "alert alert-danger col-sm-12"></div>
-      <span style = "color: red; font-size: 12px;">* required field</span>
-      <form id = "registerform" class = "form-horizontal" role = "form" method = "POST" action = "">
+      <form id = "registerform" class = "form-horizontal" role = "form" method = "POST" action = "register" data-toggle = "validator">
         {{ csrf_field() }}
-        <div class = "input-group" style = "margin-bottom: 25px">
-          <span class = "input-group-addon"><i class = "glyphicon glyphicon-user"></i></span>
-          <input id = "firstname" type = "text" class = "form-control" name = "firstname" placeholder = "First name*" required = "true">
+        <div class = "form-group">
+          <label for="firstname" class = "col-sm-3 control-label">Firstname</label>
+          <div class = "col-sm-9">
+            <input id = "firstname" type = "text" class = "form-control" name = "firstname" placeholder = "First name*" required = "true">
+            <div class = "help-block with-errors"></div>
+          </div>
         </div>
-        <div class = "input-group" style = "margin-bottom: 25px">
-          <span class = "input-group-addon"><i class = "glyphicon glyphicon-user"></i></span>
-          <input id = "lastname" type = "text" class = "form-control" name = "lastname" placeholder = "Last name*" required = "true">
+        <div class = "form-group">
+          <label for="lastname" class = "col-sm-3 control-label">Lastname</label>
+          <div class = "col-sm-9">
+            <input id = "lastname" type = "text" class = "form-control" name = "lastname" placeholder = "Last name*" required = "true">
+            <div class = "help-block with-errors"></div>
+          </div>
         </div>
-        <div class = "input-group" style = "margin-bottom: 25px">
-          <span class = "input-group-addon"><i class = "fa fa-at"></i></span>
-          <input id = "email" type = "email" class = "form-control" name = "email" placeholder = "Email address*" required = "true">
+        <div class = "form-group">
+          <label for = "email" class = "col-sm-3 control-label">Email</label>
+          <div class = "col-sm-9">
+            <input id = "email" type = "email" class = "form-control" name = "email" placeholder = "Email address*" data-error = "valid email address is required" required = "true">
+            <div class = "help-block with-errors"></div>
+          </div>
         </div>
-        <div class = "input-group" style = "margin-bottom: 25px">
-          <span class = "input-group-addon"><i class = "glyphicon glyphicon-lock"></i></span>
-          <input id = "register-password" type = "password" class = "form-control" name = "password" placeholder = "Password*" required = "true">
+        <div class = "form-group">
+          <label for = "register-password" class = "col-sm-3 control-label">Password</label>
+          <div class = "col-sm-9">
+            <input id = "register-password" type = "password" class = "form-control" name = "password" placeholder = "Password*" required = "true">
+            <div class = "help-block with-errors"></div>
+          </div>
         </div>
-        <div class = "input-group" style = "margin-bottom: 25px">
-          <span class = "input-group-addon"><i class = "glyphicon glyphicon-lock"></i></span>
-          <input id = "register-password-reconfirm" type = "password" class = "form-control" name = "password-reconfirm" placeholder = "Confirm Password*" required = "true">
+        <div class = "form-group">
+          <label for = "register-password-reconfirm" class = "col-sm-3 control-label">Confirm Password</label>
+          <div class = "col-sm-9">
+            <input id = "register-password-reconfirm" type = "password" class = "form-control" name = "password-reconfirm" placeholder = "Confirm Password*" required = "true" data-match = "#register-password" data-match-error = "Passwords don't match!">
+            <div class = "help-block with-errors"></div>
+          </div>
         </div>
-        <div class = "input-group" style = "margin-bottom: 25px">
-          <label for="type">Registration Type*</label>
-            <select class="form-control" id="type" name = "type">
-              <option>Undergraduate</option>
-              <option>Graduate</option>
-              <option>Faculty</option>
-              <option>Family</option>
-              <option>Alumni</option>
-              <option>General</option>
-            </select>
+        <div class = "form-group">
+          <label for="type" class = "col-sm-3 control-label">Registration Type</label>
+            <div class = "col-sm-9">
+              <select class="form-control" id="type" name = "type">
+                <option>Undergraduate</option>
+                <option>Graduate</option>
+                <option>Faculty</option>
+                <option>Family</option>
+                <option>Alumni</option>
+                <option>General</option>
+              </select>
+            </div>
         </div>
         <script type = "text/javascript">
         $('document').ready(function($) {
             $('#phone').mask('(000) 000-0000');
         });
         </script>
-        <div class = "input-group" style = "margin-bottom: 25px">
-          <span class = "input-group-addon"><i class = "glyphicon glyphicon-phone"></i></span>
-          <input id="phone" type = "text" class = "form-control" name = "phone" placeholder = "US Phone Number">
+        <div class = "form-group">
+          <label for="phone" class = "col-sm-3 control-label">Phone Number</label>
+          <div class = "col-sm-9">
+            <input id="phone" type = "text" class = "form-control" name = "phone" placeholder = "US Phone Number">
+          </div>
         </div>
         <div class = "form-group" style = "margin-top: 10px">
           <div class = "col-sm-12 controls">

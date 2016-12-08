@@ -2,6 +2,12 @@ hr.style5 {
 	background-color: #fff;
 	border-top: 2px dashed #8c8b8b;
 }
+.control-label {
+	font-size: 15px;
+}
+.with-errors {
+	font-size: 15px;
+}
 /*
 |----------------------------------------------------
 | navbar style

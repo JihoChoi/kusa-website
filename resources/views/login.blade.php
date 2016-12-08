@@ -17,15 +17,15 @@
     <div class = "panel-body" style = "padding-top:30px;">
       <div style = "display:none" id = "login-alert" class = "alert alert-danger col-sm-12"></div>
 
-      <form id = "loginform" class = "form-horizontal" role = "form" method = "POST" action = "login">
+      <form id = "loginform" class = "form-horizontal" role = "form" method = "POST" action = "login" data-toggle = "validator">
         {{ csrf_field() }}
         <div class = "input-group" style = "margin-bottom: 25px">
           <span class = "input-group-addon"><i class = "glyphicon glyphicon-user"></i></span>
-          <input id = "login-username" type = "text" class = "form-control" name = "username" placeholder = "Email Address" required="true">
+          <input id = "login-username" type = "text" class = "form-control" name = "username" placeholder = "Email Address" required="true" data-error = "Valid email address is required!">
         </div>
         <div class = "input-group" style = "margin-bottom: 25px">
           <span class = "input-group-addon"><i class = "glyphicon glyphicon-lock"></i></span>
-          <input id = "login-password" type = "password" class = "form-control" name = "password" placeholder = "Password" required="true">
+          <input id = "login-password" type = "password" class = "form-control" name = "password" placeholder = "Password" required="true" data-error = "Your password is empty!">
         </div>
         <div class = "form-group" style = "margin-top: 10px">
           <div class = "col-sm-12 controls">
