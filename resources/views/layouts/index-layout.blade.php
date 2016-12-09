@@ -90,7 +90,7 @@
                   <hr>
                   <li><a href = "#">My profile</a></li>
                   @if ($userinfo->user_status == "admin")
-                  <li><a href = "#">Dashboard</a></li>
+                  <li><a href = "dashboard">Dashboard</a></li>
                   @endif
                   <li><a href = "logout">Logout</a></li>
                 </ul>

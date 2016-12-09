@@ -112,6 +112,6 @@ class MembersController extends Controller
         $user->save();
         return redirect()->action('MembersController@directLogin')->with('msg-general', 'Success! Your email is verified.');
       }
-      return redirect()->action('MembersController@directLogin')->with('msg', 'This email is already verified.');
+      return redirect()->action('MembersController@directLogin')->with('msg', 'This email has been already verified.');
     }
 }
