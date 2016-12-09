@@ -30,13 +30,14 @@ class MembersController extends Controller
       if (Auth::attempt($credential, true)) {
         $userinfo = Auth::user();
         if ($userinfo->user_status == "invalid") {
-          $request->session()->flash('msg', 'Please confirm your verification code in your email.');
-          return $this->doLogout();
+          $request->session()->flash('msg', 'Please clink on the confirmation link in your email to verify before you can proceed.');
+          Auth::logout();
+          return $this->directLogin();
         }
         $request->session()->flash('msg-general', 'Welcome '.$userinfo->firstname.'!');
         return $this->directIndex();
       } else {
-        $request->session()->flash('msg', 'Your email address or password does not match our record.');
+        $request->session()->flash('msg', 'Your email address or password does not match with our record.');
         return $this->directLogin();
       }
 
@@ -49,7 +50,7 @@ class MembersController extends Controller
 
     public function doLogout() {
       Auth::logout();
-      return $this->directLogin();
+      return redirect()->action('MembersController@directLogin')->with('msg-general', 'You are now signed out.');
     }
 
     public function doRegister(Request $request) {
@@ -89,9 +90,18 @@ class MembersController extends Controller
       $registered = $member->save();
 
       if ($registered) {
-        $request->session()->flash('msg-general', 'Please check your email to verify your account.');
+        $request->session()->flash('msg-general', 'A confirmation email has been sent to '.$member->email.'. Please click the link in the email to confirm your account.');
+        $this->emailConfirmation($member);
         return $this->directIndex();
       }
+    }
+
+    public function emailConfirmation($member) {
+      Mail::send('email.email-verification', ['member' => $member], function ($message) use ($member) {
+        $message->from('purduekusa@gmail.com', 'Purdue KUSA');
+        $message->to($member->email);
+        $message->subject("Purdue KUSA: Verify your account");
+      });
     }
 
     public function confirm($confirmation_code) {
@@ -100,7 +110,8 @@ class MembersController extends Controller
         $user->user_status = "general";
         $user->confirmation_code = null;
         $user->save();
-        return redirect()->action('MembersController@directLogin')->with('msg-general', 'Success! Your account is verified.');
+        return redirect()->action('MembersController@directLogin')->with('msg-general', 'Success! Your email is verified.');
       }
+      return redirect()->action('MembersController@directLogin')->with('msg', 'This email is already verified.');
     }
 }
