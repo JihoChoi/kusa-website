@@ -30,6 +30,6 @@ class AdminController extends Controller
     }
 
     public function authFail() {
-      return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed');
+      return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed.');
     }
 }

@@ -18,6 +18,7 @@ class MembersController extends Controller
       return view('index');
     }
     public function directLogin() {
+      if (Auth::user() != null) return redirect('/');
       return view('login');
     }
 
@@ -35,7 +36,7 @@ class MembersController extends Controller
           return $this->directLogin();
         }
         $request->session()->flash('msg-general', 'Welcome '.$userinfo->firstname.'!');
-        return $this->directIndex();
+        return redirect('/');
       } else {
         $request->session()->flash('msg', 'Your email address or password does not match with our record.');
         return $this->directLogin();
@@ -45,6 +46,7 @@ class MembersController extends Controller
     }
 
     public function directRegister() {
+      if (Auth::user() != null) return redirect('/');
       return view('register');
     }
 
