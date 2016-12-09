@@ -30,7 +30,7 @@ class MembersController extends Controller
       if (Auth::attempt($credential, true)) {
         $userinfo = Auth::user();
         if ($userinfo->user_status == "invalid") {
-          $request->session()->flash('msg', 'Please clink on the confirmation link in your email to verify.');
+          $request->session()->flash('msg', 'Please click on the confirmation link in your email to verify.');
           Auth::logout();
           return $this->directLogin();
         }
