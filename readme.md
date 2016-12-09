@@ -1,6 +1,6 @@
 # Purdue Korean Undergraduate Student Association
 
-## Database 'user_status' variable description:
+### Database 'user_status' variable description:
 
 - active // current active KUSA member
 - nolonger // no longer active KUSA member
