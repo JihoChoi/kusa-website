@@ -49,7 +49,7 @@ class MembersController extends Controller
 
     public function doLogout() {
       Auth::logout();
-      return redirect()->action('MembersController@directLogin')->with('msg-general', 'You are now signed out.');
+      return $this->directLogin();
     }
 
     public function doRegister(Request $request) {
@@ -89,7 +89,7 @@ class MembersController extends Controller
       $registered = $member->save();
 
       if ($registered) {
-        $request->session()->flash('msg-general', 'Thanks for joining us! Please check your email to verify your account.');
+        $request->session()->flash('msg-general', 'Please check your email to verify your account.');
         return $this->directIndex();
       }
     }
