@@ -8,3 +8,4 @@ Homestead.yaml
 .env
 /public/images
 /public/videos
+/public/js/tinymce
