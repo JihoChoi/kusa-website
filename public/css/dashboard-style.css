@@ -1,3 +1,8 @@
+.container {
+  margin-left: 350px;
+  text-align: center;
+  max-width: 65%;
+}
 @media (min-width: 768px) {
   .navbar-collapse {
     height: auto;

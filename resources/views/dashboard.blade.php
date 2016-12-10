@@ -4,6 +4,6 @@ Purdue KUSA Admin dashboard
 @stop
 @section('content')
 <div class = "container">
-  <center><h1>TEST</h1></center>
+  <textarea></textarea>
 </div>
 @stop
