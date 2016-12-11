@@ -12,13 +12,18 @@ class AdminController extends Controller
     public function directIndex() {
       return view('dashboard');
     }
+
     public function directDashboard() {
-      $username = Auth::user();
-      $isadmin = $this->checkIfAdmin($username->email);
-      if ($isadmin) {
+      if ($this->isAdmin()) {
         return $this->directIndex();
       }
       return $this->authFail();
+    }
+
+    public function isAdmin() {
+      $username = Auth::user();
+      $isadmin = $this->checkIfAdmin($username->email);
+      return $isadmin;
     }
 
     public function checkIfAdmin($username) {
@@ -32,5 +37,22 @@ class AdminController extends Controller
     public function authFail() {
       return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed.');
     }
+
+
+    public function directPost() {
+      if ($this->isAdmin()) {
+        return view('CRUD.post');
+      }
+      return $this->authFail();
+    }
+
+    public function directEdit() {
+
+    }
+
+    public function directDelete() {
+
+    }
+
 
 }

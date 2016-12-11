@@ -43,7 +43,7 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">POST <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">쓰기</a></li>
+          <li><a href="post">쓰기</a></li>
           <li><a href="#">수정</a></li>
           <li><a href="#">삭제</a></li>
         </ul>
@@ -53,6 +53,8 @@
     </ul>
   </div>
   </nav>
-  @yield('content')
+  <div class = "container">
+    @yield('content')
+  </div>
 </body>
 </html>

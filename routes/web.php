@@ -20,3 +20,4 @@ Route::get('logout', 'MembersController@doLogout');
 Route::get('register/verify/{confirmation_code}', 'MembersController@confirm');
 
 Route::get('dashboard', ['uses' => 'AdminController@directDashboard', 'middleware' => 'auth']);
+Route::get('post', ['uses' => 'AdminController@directPost', 'middleware' => 'auth']);

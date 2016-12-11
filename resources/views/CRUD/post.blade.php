@@ -1,6 +1,6 @@
 @extends('layouts.dashboard-layout')
 @section('content')
-  <form role = "form" action = "dashboard/post" method = "POST">
+  <form role = "form" action = "" method = "POST">
     <div class = "form-group">
       <label for = "content_title" class = "col-sm-3 control-label">Content title:</label>
       <div class = "col-sm-9">
@@ -18,7 +18,9 @@
       </div>
     </div>
     <div class = "form-group">
+      <div class = "container">
         <textarea class = "form-control" name = "content_area"></textarea>
+      </div>
     </div>
     <div class = "form-group">
       <button type = "submit" class = "btn btn-primary">Post</button>
