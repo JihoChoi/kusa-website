@@ -35,17 +35,24 @@ This is a web application to manage Korean Undergraduate Student Association's u
   - [x] Dashboard access filter
   - [ ] Post controller
     - [ ] CRUD
+      - [ ] Posts
 - [ ] REST API routes
 - [ ] PUSH NOTIFICATION
 
 ### Database 'user_status' variable description
 
-- active // current active KUSA member
-- nolonger // no longer active KUSA member
-- general // registered general user
-- admin
-- invalid // user that is not verfied via email
-- blocked
+- active: current active KUSA member
+- nolonger: no longer active KUSA member
+- general: registered general user
+- admin: admin
+- invalid: user that is not verified via email
+- blocked: blocked
+
+### EVENT_CATEGORY default values (in select)
+
+- D-Korea
+- Volunteer
+- Orientation
 
 ## License
 
