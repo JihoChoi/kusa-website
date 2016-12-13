@@ -26,7 +26,10 @@ This is a web application to manage Korean Undergraduate Student Association's u
     - [ ] Calendar
   - [ ] Resources
 - [ ] Email verification re-design
-- [ ] Complete Dashboard 
+- [ ] Complete Dashboard
+  - [ ] Dashboard main-page
+    - [ ] Show list of posts
+    - [ ] Show list of users in simple number
 
 #### Back-end
 

@@ -26,6 +26,24 @@
 
 </head>
 <body>
+  @if (session()->has('msg'))
+    <div class = "alert-container">
+      <div class = "alert alert-danger alert-dismissible" role = "alert">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <center> {{ session()->get('msg') }} </center>
+      </div>
+      <?php session()->forget('msg'); ?>
+    </div>
+  @endif
+  @if (session()->has('msg-general'))
+    <div class = "alert-container">
+      <div class = "alert alert-success alert-dismissible" role = "alert">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <center> {{ session()->get('msg-general') }} </center>
+      </div>
+      <?php session()->forget('msg-general'); ?>
+    </div>
+  @endif
   <nav class="navbar navbar-inverse" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">

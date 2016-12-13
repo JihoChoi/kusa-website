@@ -10,7 +10,7 @@ use App\EVENT_CATEGORY;
 
 class PostsController extends Controller
 {
-    //
+    // CRUD Controller
     public function postContent(Request $request) {
       $title = $request->input('content_title');
       $category = $request->input('event_category');
@@ -23,7 +23,7 @@ class PostsController extends Controller
       $issaved = $post->save();
 
       if ($issaved) {
-        
+        return redirect()->action('AdminController@directDashboard')->with('msg-general', 'Content has been posted.');
       }
     }
 }

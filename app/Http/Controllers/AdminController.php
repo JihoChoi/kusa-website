@@ -47,11 +47,19 @@ class AdminController extends Controller
     }
 
     public function directEdit() {
-
+      if ($this->isAdmin()) {
+        return view('CRUD.edit');
+      }
+      return $this->authFail();
+    }
     }
 
     public function directDelete() {
-
+      if ($this->isAdmin()) {
+        return view('CRUD.delete');
+      }
+      return $this->authFail();
+    }
     }
 
 
