@@ -52,7 +52,7 @@ class AdminController extends Controller
       }
       return $this->authFail();
     }
-    }
+    
 
     public function directDelete() {
       if ($this->isAdmin()) {
@@ -60,7 +60,7 @@ class AdminController extends Controller
       }
       return $this->authFail();
     }
-    }
+
 
 
 }

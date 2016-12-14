@@ -1,9 +1,7 @@
 @extends('layouts.dashboard-layout')
 @section('title')
-Purdue KUSA Admin dashboard
+Purdue KUSA Admin Dashboard
 @stop
 @section('content')
-<div class = "container">
-  
-</div>
+
 @stop
