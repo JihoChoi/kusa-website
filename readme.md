@@ -37,9 +37,9 @@ This is a web application to manage Korean Undergraduate Student Association's u
 - [x] Send email verification after submit register
 - [ ] Dashboard
   - [x] Dashboard access filter
-  - [ ] Post controller
+  - [ ] Posts controller
     - [ ] CRUD
-      - [ ] Posts
+      - [x] Posts
 - [ ] REST API routes
 - [ ] PUSH NOTIFICATION
 
