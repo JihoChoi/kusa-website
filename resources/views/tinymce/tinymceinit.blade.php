@@ -8,7 +8,7 @@ tinymce.init({
     'spellchecker searchreplace tabfocus table template'
   ],
   file_picker_types: 'file image media',
-  toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor | imageupload',
+  toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor',
   textcolor_map: [
      "000000", "Black",
      "993300", "Burnt orange",
@@ -50,7 +50,7 @@ tinymce.init({
      "99CCFF", "Light sky blue",
      "CC99FF", "Plum"
    ],
-   setup: function(editor) {
+   /*setup: function(editor) {
            var inp = $('<input id="tinymce-uploader" type="file" name="pic" accept="image/*" style="display:none">');
            $(editor.getElement()).parent().append(inp);
 
@@ -74,7 +74,7 @@ tinymce.init({
                    inp.trigger('click');
                }
            });
-       }
+       }*/
 
 
 });

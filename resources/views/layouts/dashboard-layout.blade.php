@@ -55,16 +55,10 @@
                    </a>
                </li>
                <li>
-                   <a href="#">Home</a>
+                   <a href="dashboard">Home</a>
                </li>
                <li>
-                   <a href="post">Create posts</a>
-               </li>
-               <li>
-                   <a href="#">Edit Posts</a>
-               </li>
-               <li>
-                   <a href="#">Delete Posts</a>
+                   <a href="post">Create Post</a>
                </li>
                <li>
                    <a href="#">PUSH NOTIFICATION</a>
@@ -73,7 +67,7 @@
                    <a href="#">Users</a>
                </li>
                <li>
-                   <a href="/logout">Logout</a>
+                   <a href="logout">Logout</a>
                </li>
            </ul>
        </div>
