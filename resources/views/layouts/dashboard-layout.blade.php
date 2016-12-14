@@ -61,6 +61,9 @@
                    <a href="post">Create Post</a>
                </li>
                <li>
+                   <a href="#">Messages</a>
+               </li>
+               <li>
                    <a href="#">PUSH NOTIFICATION</a>
                </li>
                <li>

@@ -5,7 +5,7 @@
     {{ csrf_field() }}
     <div class = "container">
       <div class = "form-group">
-        <label for = "content_title" class = "col-sm-3 control-label">Content title:</label>
+        <label for = "content_title" class = "col-sm-3 control-label">Content Title:</label>
         <div class = "col-sm-9">
           <input type = "text" class = "form-control" name = "content_title" required>
         </div>

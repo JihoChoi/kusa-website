@@ -28,8 +28,9 @@ This is a web application to manage Korean Undergraduate Student Association's u
 - [ ] Email verification re-design
 - [ ] Complete Dashboard
   - [ ] Dashboard main-page
-    - [ ] Show list of posts
-    - [ ] Show list of users in simple number
+    - [x] Show list of posts
+    - [x] Show list of users in simple number
+    - [ ] Show total messages
 
 #### Back-end
 
@@ -40,8 +41,11 @@ This is a web application to manage Korean Undergraduate Student Association's u
   - [ ] Posts controller
     - [ ] CRUD
       - [x] Posts
+      - [ ] Edit
+      - [ ] Delete
 - [ ] REST API routes
 - [ ] PUSH NOTIFICATION
+- [ ] Private Message
 
 ### Database 'user_status' variable description
 

@@ -24,13 +24,5 @@ class PostsController extends Controller
         return redirect()->action('AdminController@directDashboard')->with('msg-general', 'Content has been posted.');
       }
     }
-
-    public function getTitles() {
-      $titles = Posts::where('content_title')->get();
-      return $titles;
-    }
-
-    public function getCategories() {
-      $categories = Posts::where('event_category')->get();
-    }
+    
 }

@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Users;
 use Auth;
+use DB;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     //
     public function directIndex() {
-      return view('dashboard');
+      $users = DB::table('users')->get();
+      $contents = DB::table('posts_table')->get();
+      //$contents = $contents->toArray();
+      return view('dashboard', compact("contents", "users"));
     }
 
     public function directDashboard() {
@@ -52,7 +56,7 @@ class AdminController extends Controller
       }
       return $this->authFail();
     }
-    
+
 
     public function directDelete() {
       if ($this->isAdmin()) {
