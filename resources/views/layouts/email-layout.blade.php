@@ -18,7 +18,7 @@ body {
   text-align: center;
 }
 #headerImage {
-  width: 250px;
+  width: 350px;
   height: 100px;
 }
 

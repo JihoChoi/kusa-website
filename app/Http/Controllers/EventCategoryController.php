@@ -17,4 +17,14 @@ class EventCategoryController extends Controller
         return redirect()->action('AdminController@directDashboard')->with('msg-general', 'Category has been added.');
       }
     }
+
+    public function getModifyView(Request $request) {
+      $event_type = $request->input('event_type');
+      $event_type_modify = EVENT_CATEGORY::where('event_type', $event_type)->first();
+      return view('CRUD.event-category-manage-edit', compact("event_type_modify"));
+    }
+
+    public function delete() {
+      
+    }
 }
