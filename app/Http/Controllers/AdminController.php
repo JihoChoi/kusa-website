@@ -10,19 +10,6 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     //
-    public function directIndex() {
-      $users = DB::table('users')->get();
-      $contents = DB::table('posts_table')->get();
-      //$contents = $contents->toArray();
-      return view('dashboard', compact("contents", "users"));
-    }
-
-    public function directDashboard() {
-      if ($this->isAdmin()) {
-        return $this->directIndex();
-      }
-      return $this->authFail();
-    }
 
     public function isAdmin() {
       $username = Auth::user();
@@ -42,6 +29,30 @@ class AdminController extends Controller
       return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed.');
     }
 
+/*
+--------------------------------------------------------------
+| Direct Collections
+--------------------------------------------------------------
+|
+| Directing to various routes.
+|
+|
+|
+*/
+
+    public function directIndex() {
+      $users = DB::table('users')->get();
+      $contents = DB::table('posts_table')->get();
+      //$contents = $contents->toArray();
+      return view('dashboard', compact("contents", "users"));
+    }
+
+    public function directDashboard() {
+      if ($this->isAdmin()) {
+        return $this->directIndex();
+      }
+      return $this->authFail();
+    }
 
     public function directPost() {
       if ($this->isAdmin()) {
@@ -62,6 +73,14 @@ class AdminController extends Controller
     public function directDelete() {
       if ($this->isAdmin()) {
         return view('CRUD.delete');
+      }
+      return $this->authFail();
+    }
+
+    public function directEventCategoryManage() {
+      if ($this->isAdmin()) {
+        $categories = DB::table('event_categories')->get();
+        return view('CRUD.event-category-manage', compact("categories"));
       }
       return $this->authFail();
     }

@@ -22,7 +22,7 @@
           </select>
         </div>
         <div class = "col-sm-3">
-          <a class = "btn btn-primary"><i class = "fa fa-plus"></i> Add Category</a>
+          <a class = "btn btn-primary" href = "event-category-manage"><i class = "fa fa-plus"></i> Add Category</a>
         </div>
       </div>
     </div>

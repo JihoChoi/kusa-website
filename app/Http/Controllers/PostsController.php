@@ -24,5 +24,4 @@ class PostsController extends Controller
         return redirect()->action('AdminController@directDashboard')->with('msg-general', 'Content has been posted.');
       }
     }
-    
 }

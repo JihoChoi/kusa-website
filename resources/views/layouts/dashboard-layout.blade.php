@@ -70,7 +70,7 @@
                    <a href="#"><i class = "fa fa-users"></i> Users</a>
                </li>
                <li>
-                  <a href = "#"><i class = "fa fa-gear"></i> Manage Event Categories</a>
+                  <a href = "event-category-manage"><i class = "fa fa-gear"></i> Manage Event Categories</a>
                </li>
                <li>
                  <a href = "#"><i class = "fa fa-gear"></i> Manage KUSA Teams</a>
