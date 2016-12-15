@@ -65,8 +65,8 @@
               <li class = "dropdown">
                 <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">Updates<span class = "caret"></span></a>
                 <ul class = "dropdown-menu">
-                  <li><a href = "news">News</a></li>
-                  <li><a href = "d-korea">D-Korea</a></li>
+                  <li><a href = "news">Announcements</a></li>
+                  <li><a href = "d-korea">Past Events</a></li>
                   <li><a href = "calendar">Calendar</a></li>
                 </ul>
               </li>

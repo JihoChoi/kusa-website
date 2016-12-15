@@ -64,10 +64,19 @@
                    <a href="#"><i class = "fa fa-envelope-o"></i> Messages</a>
                </li>
                <li>
-                   <a href="#"><i class = "fa fa-bell"></i> PUSH NOTIFICATION</a>
+                   <a href="#"><i class = "fa fa-bell"></i> Push Notification</a>
                </li>
                <li>
                    <a href="#"><i class = "fa fa-users"></i> Users</a>
+               </li>
+               <li>
+                  <a href = "#"><i class = "fa fa-gear"></i> Manage Event Categories</a>
+               </li>
+               <li>
+                 <a href = "#"><i class = "fa fa-gear"></i> Manage KUSA Teams</a>
+               </li>
+               <li>
+                 <a href = "#"><i class = "fa fa-gear"></i> Manage KUSA Roles</a>
                </li>
                <li>
                    <a href = "/"><i class = "fa fa-undo"></i> Back to Homepage</a>

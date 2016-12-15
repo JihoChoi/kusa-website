@@ -21,8 +21,8 @@ This is a web application to manage Korean Undergraduate Student Association's u
     - [ ] KUSA
     - [ ] Members
   - [ ] Updates
-    - [ ] News
-    - [ ] D-Korea
+    - [ ] Announcements
+    - [ ] Past Events
     - [ ] Calendar
   - [ ] Resources
 - [x] Email verification re-design
@@ -40,9 +40,13 @@ This is a web application to manage Korean Undergraduate Student Association's u
   - [x] Dashboard access filter
   - [ ] Posts controller
     - [ ] CRUD
-      - [x] Posts
+      - [ ] View: Link to page
+      - [x] Post
       - [ ] Edit
       - [ ] Delete
+    - [ ] Manage Event Categories
+    - [ ] Manage KUSA Teams
+    - [ ] Manage KUSA Member Roles
 - [ ] REST API routes
 - [ ] PUSH NOTIFICATION
 - [ ] Private Message

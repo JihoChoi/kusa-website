@@ -14,12 +14,15 @@
     <div class = "container">
       <div class = "form-group">
         <label for = "content_category" class = "col-sm-3 control-label">Category:</label>
-        <div class = "col-sm-9">
+        <div class = "col-sm-6">
           <select class="form-control" id="content_category" name = "content_category">
             @foreach ($event_types as $event_type)
             <option>{{ $event_type->event_type }}</option>
             @endforeach
           </select>
+        </div>
+        <div class = "col-sm-3">
+          <a class = "btn btn-primary"><i class = "fa fa-plus"></i> Add Category</a>
         </div>
       </div>
     </div>

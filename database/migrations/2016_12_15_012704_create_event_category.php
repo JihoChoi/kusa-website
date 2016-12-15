@@ -16,7 +16,7 @@ class CreateEventCategory extends Migration
         //
         Schema::create('event_categories', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('event_type');
+          $table->string('event_type')->unique();
           $table->rememberToken();
           $table->timestamps();
         });
