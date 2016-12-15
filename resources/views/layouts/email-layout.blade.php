@@ -9,7 +9,7 @@
 
 <style>
 body {
-  background-color: #A3CFEA;
+  background-color: white;
 }
 
 #header {
@@ -24,7 +24,7 @@ body {
 
 .message {
   margin-top: 15px;
-  background-color: #EEEEEE;
+  background-color: white;
   padding: 20px;
   width: 500px;
   margin-left: auto;

@@ -50,27 +50,30 @@
        <div id="sidebar-wrapper">
            <ul class="sidebar-nav">
                <li class="sidebar-brand">
-                   <a href="/">
+                   <a href="#">
                        KUSA Admin Dashboard
                    </a>
                </li>
                <li>
-                   <a href="dashboard">Home</a>
+                   <a href="dashboard"><i class = "fa fa-tachometer"></i> Dashboard</a>
                </li>
                <li>
-                   <a href="post">Create Post</a>
+                   <a href="post"><i class = "fa fa-pencil"></i> Create Post</a>
                </li>
                <li>
-                   <a href="#">Messages</a>
+                   <a href="#"><i class = "fa fa-envelope-o"></i> Messages</a>
                </li>
                <li>
-                   <a href="#">PUSH NOTIFICATION</a>
+                   <a href="#"><i class = "fa fa-bell"></i> PUSH NOTIFICATION</a>
                </li>
                <li>
-                   <a href="#">Users</a>
+                   <a href="#"><i class = "fa fa-users"></i> Users</a>
                </li>
                <li>
-                   <a href="logout">Logout</a>
+                   <a href = "/"><i class = "fa fa-undo"></i> Back to Homepage</a>
+               </li>
+               <li>
+                   <a href="logout"><i class = "fa fa-sign-out"></i>Logout</a>
                </li>
            </ul>
        </div>

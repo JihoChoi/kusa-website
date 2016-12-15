@@ -25,7 +25,7 @@ This is a web application to manage Korean Undergraduate Student Association's u
     - [ ] D-Korea
     - [ ] Calendar
   - [ ] Resources
-- [ ] Email verification re-design
+- [x] Email verification re-design
 - [ ] Complete Dashboard
   - [ ] Dashboard main-page
     - [x] Show list of posts

@@ -45,7 +45,8 @@ class AdminController extends Controller
 
     public function directPost() {
       if ($this->isAdmin()) {
-        return view('CRUD.post');
+        $event_types = DB::table('event_categories')->get();
+        return view('CRUD.post', compact('event_types'));
       }
       return $this->authFail();
     }
