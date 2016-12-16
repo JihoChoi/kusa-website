@@ -80,7 +80,7 @@ class AdminController extends Controller
     public function directEventCategoryManage() {
       if ($this->isAdmin()) {
         $categories = DB::table('event_categories')->get();
-        return view('CRUD.event-category-manage', compact("categories"));
+        return view('CRUD.EVENTS.event-category-manage', compact("categories"));
       }
       return $this->authFail();
     }
