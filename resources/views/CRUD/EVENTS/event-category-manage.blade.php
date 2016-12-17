@@ -39,7 +39,7 @@
               @foreach ($categories as $category)
               <tr>
                 <td>{{ $category->event_type }}</td>
-                <td><a class = "btn btn-success">Edit</a><a class = "btn btn-danger">Delete</a></td>
+                <td><a href = "event-category-manage-edit/{{ $category->event_type }}"class = "btn btn-success">Edit</a><a class = "btn btn-danger">Delete</a></td>
               </tr>
               @endforeach
             </tbody>
