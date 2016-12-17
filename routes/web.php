@@ -19,9 +19,12 @@ Route::post('register', 'MembersController@doRegister');
 Route::get('logout', 'MembersController@doLogout');
 Route::get('register/verify/{confirmation_code}', 'MembersController@confirm');
 
-Route::get('dashboard', ['uses' => 'AdminController@directDashboard', 'middleware' => 'auth']);
-Route::get('post', ['uses' => 'AdminController@directPost', 'middleware' => 'auth']);
-Route::post('post', 'PostsController@postContent');
+Route::group(['middleware' => 'auth'], function() {
+  Route::get('dashboard', 'AdminController@directDashboard');
+  Route::get('post', 'AdminController@directPost');
+  Route::post('post', 'PostsController@postContent');
 
-Route::get('event-category-manage', ['uses' => 'AdminController@directEventCategoryManage', 'middleware' => 'auth']);
-Route::post('event-category-manage', 'EventCategoryController@postEventCategory');
+  Route::get('event-category-manage', 'AdminController@directEventCategoryManage');
+  Route::post('event-category-manage', 'EventCategoryController@postEventCategory');
+
+});
