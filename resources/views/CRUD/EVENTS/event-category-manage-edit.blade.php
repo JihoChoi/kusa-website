@@ -9,6 +9,7 @@
     </div>
     <div class = "panel-body">
       <form role = "forms" method = "POST" action = "">
+        {{ csrf_field( )}}
         <div class = "form-group">
           <div class = "col-sm-6">
             <input type = "text" class = "form-control" name = "event-category-edit-field">
