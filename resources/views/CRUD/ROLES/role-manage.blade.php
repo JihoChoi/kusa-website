@@ -6,14 +6,14 @@
       <div class = "panel panel-primary">
         <div class = "panel-heading">
           <div class = "panel-title">
-            Add a new category
+            Add a role
           </div>
         </div>
         <div class = "panel-body" style = "text-align: center;">
           <form role = "form" action = "" method = "POST" data-toggle = "validator">
             {{ csrf_field( )}}
             <div class = "col-sm-10">
-              <input type = "text" class = "form-control" required placeholder = "Event category title" name = "event_type">
+              <input type = "text" class = "form-control" required placeholder = "Role title" name = "role_title">
             </div>
             <button class = "btn btn-primary" type = "submit"><i class = "fa fa-plus"></i> Add</button>
           </form>
@@ -24,25 +24,25 @@
       <div class = "panel panel-primary">
         <div class = "panel-heading">
           <div class = "panel-title">
-            Manage Categories
+            Manage Roles
           </div>
         </div>
         <div class = "panel-body">
           <table class = "table">
             <thead>
               <tr>
-                <th>Category</th>
+                <th>Role Title</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
-              @foreach ($categories as $category)
-                <form role = "form" method = "POST" action = "event-category-manage-edit">
+              @foreach ($roles as $role)
+                <form role = "form" method = "POST" action = "role-manage-edit">
                   {{ csrf_field() }}
                   <tr>
-                    <input type = "hidden" value = "{{ $category->id }}" name = "category_id">
-                    <td><input type = "text" class = "form-control" name = "modify_field" value = "{{ $category->event_type }}"></td>
-                    <td><button type = "submit" class = "btn btn-success">Edit</button> <a href = "event-category-manage-delete/{{ $category->id }}"class = "btn btn-danger">Delete</a></td>
+                    <input type = "hidden" value = "{{ $role->id }}" name = "role_id">
+                    <td><input type = "text" class = "form-control" name = "modify_field" value = "{{ $role->role }}"></td>
+                    <td><button type = "submit" class = "btn btn-success">Edit</button> <a href = "team-manage-delete/{{ $role->id }}"class = "btn btn-danger">Delete</a></td>
                   </tr>
                 </form>
               @endforeach

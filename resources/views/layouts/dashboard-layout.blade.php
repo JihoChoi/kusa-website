@@ -69,15 +69,17 @@
                <li>
                    <a href="#"><i class = "fa fa-users"></i> Users</a>
                </li>
+               <hr>
                <li>
                   <a href = "event-category-manage"><i class = "fa fa-gear"></i> Manage Event Categories</a>
                </li>
                <li>
-                 <a href = "#"><i class = "fa fa-gear"></i> Manage KUSA Teams</a>
+                 <a href = "team-manage"><i class = "fa fa-gear"></i> Manage KUSA Teams</a>
                </li>
                <li>
-                 <a href = "#"><i class = "fa fa-gear"></i> Manage KUSA Roles</a>
+                 <a href = "role-manage"><i class = "fa fa-gear"></i> Manage KUSA Roles</a>
                </li>
+               <hr>
                <li>
                    <a href = "/"><i class = "fa fa-undo"></i> Back to Homepage</a>
                </li>

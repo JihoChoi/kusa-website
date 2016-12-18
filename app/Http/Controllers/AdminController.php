@@ -36,8 +36,6 @@ class AdminController extends Controller
 |
 | Directing to various routes.
 |
-|
-|
 */
 
     public function directIndex() {
@@ -85,6 +83,20 @@ class AdminController extends Controller
       return $this->authFail();
     }
 
+    public function directTeamManage() {
+      if ($this->isAdmin()) {
+        $teams = DB::table('kusa-team')->get();
+        return view('CRUD.TEAMS.team-manage', compact("teams"));
+      }
+      return $this->authFail();
+    }
 
+    public function directRoleManage() {
+      if ($this->isAdmin()) {
+        $roles = DB::table('roles')->get();
+        return view('CRUD.ROLES.role-manage', compact("roles"));
+      }
+      return $this->authFail();
+    }
 
 }

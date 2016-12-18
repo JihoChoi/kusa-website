@@ -16,7 +16,7 @@ class CreateKusateamTable extends Migration
         //
         Schema::create('kusa-team', function(Blueprint $table) {
           $table->increments('id');
-          $table->string('team-name')->unique();
+          $table->string('team_name')->unique();
           $table->rememberToken();
           $table->timestamps();
         });
