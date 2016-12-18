@@ -58,8 +58,14 @@
                    <a href="dashboard"><i class = "fa fa-tachometer"></i> Dashboard</a>
                </li>
                <li>
-                   <a href="post"><i class = "fa fa-pencil"></i> Create Post</a>
+                   <a href = "/"><i class = "fa fa-home"></i> Back to Homepage</a>
                </li>
+               <hr>
+               <li>
+                   <a href="post"><i class = "fa fa-pencil-square-o"></i> Create Post</a>
+                   <a href=""><i class = "fa fa-pencil"></i> Manage Posts </a>
+               </li>
+               <hr>
                <li>
                    <a href="#"><i class = "fa fa-envelope-o"></i> Messages</a>
                </li>
@@ -80,9 +86,6 @@
                  <a href = "role-manage"><i class = "fa fa-gear"></i> Manage KUSA Roles</a>
                </li>
                <hr>
-               <li>
-                   <a href = "/"><i class = "fa fa-undo"></i> Back to Homepage</a>
-               </li>
                <li>
                    <a href="logout"><i class = "fa fa-sign-out"></i>Logout</a>
                </li>

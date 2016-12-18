@@ -59,14 +59,14 @@
                 <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">About<span class = "caret"></span></a>
                 <ul class = "dropdown-menu">
                   <li><a href = "kusa">Kusa</a></li>
-                  <li><a href = "members">Members</a></li>
+                  <li><a href = "members">Board</a></li>
                 </ul>
               </li>
               <li class = "dropdown">
                 <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">Updates<span class = "caret"></span></a>
                 <ul class = "dropdown-menu">
                   <li><a href = "news">Announcements</a></li>
-                  <li><a href = "d-korea">Past Events</a></li>
+                  <li><a href = "d-korea">Events</a></li>
                   <li><a href = "calendar">Calendar</a></li>
                 </ul>
               </li>

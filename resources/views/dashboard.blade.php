@@ -28,7 +28,7 @@ Purdue KUSA Admin Dashboard
 <div class = "container">
   <div class = "panel panel-primary" style = "margin-left: 150px;">
     <div class = "panel-heading">
-      <div class = "panel-title">Posts</div>
+      <div class = "panel-title">Recent Posts</div>
     </div>
     <div class = "panel-body">
       <table class = "table">
@@ -44,7 +44,7 @@ Purdue KUSA Admin Dashboard
           <tr>
             <td>{{ $content->content_title }}</td>
             <td>{{ $content->event_category }}</td>
-            <td><a class = "btn btn-primary">View</a><a class = "btn btn-success">Edit</a><a class = "btn btn-danger">Delete</a></td>
+            <td><a class = "btn btn-primary">View</a> <a class = "btn btn-success">Edit</a> <a class = "btn btn-danger">Delete</a></td>
           </tr>
           @endforeach
         </tbody>

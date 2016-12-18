@@ -60,12 +60,6 @@ This is a web application to manage Korean Undergraduate Student Association's u
 - invalid: user that is not verified via email
 - blocked: blocked
 
-### EVENT_CATEGORY default values (in select)
-
-- D-Korea
-- Volunteer
-- Orientation
-
 ## License
 
 MIT License

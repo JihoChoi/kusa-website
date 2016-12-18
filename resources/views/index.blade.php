@@ -6,9 +6,8 @@
 <div class = "container-fluid background-A3CFEA">
     <div class = "container main-title">
       <h1 style="color: black;">
-        We are a <span style = "color: white">Korean Community</span> that helps fellow international students gently blend in with the foreign customs.
+        WELCOME TO PURDUE KOREAN UNDERGRADUATE STUDENT ASSOCIATION
       </h1>
-
     </div>
     <div class = "container sub-video">
       <div class = "outer">
