@@ -45,4 +45,7 @@ Route::group(['middleware' => 'auth'], function() {
   Route::post('role-manage-edit', 'RoleController@modifyRole');
   Route::get('role-manage-delete/{role_id}', 'RoleController@deleteRole');
 
+  /* User Manage Routes */
+  Route::get('user-manage', 'AdminController@directUserManage');
+
 });

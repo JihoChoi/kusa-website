@@ -99,4 +99,12 @@ class AdminController extends Controller
       return $this->authFail();
     }
 
+    public function directUserManage() {
+      if ($this->isAdmin()) {
+        $users = DB::table('users')->get();
+        return view('CRUD.USERS.user-manage', compact("users"));
+      }
+      return $this->authFail();
+    }
+
 }
