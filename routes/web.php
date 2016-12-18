@@ -20,11 +20,15 @@ Route::get('logout', 'MembersController@doLogout');
 Route::get('register/verify/{confirmation_code}', 'MembersController@confirm');
 
 Route::group(['middleware' => 'auth'], function() {
+
   Route::get('dashboard', 'AdminController@directDashboard');
   Route::get('post', 'AdminController@directPost');
   Route::post('post', 'PostsController@postContent');
 
   Route::get('event-category-manage', 'AdminController@directEventCategoryManage');
   Route::post('event-category-manage', 'EventCategoryController@postEventCategory');
+
+  Route::post('event-category-manage-edit', 'EventCategoryController@modifyEventCategory');
+  Route::get('event-category-manage-delete/{category_id}', 'EventCategoryCOntroller@deleteEventCategory');
 
 });

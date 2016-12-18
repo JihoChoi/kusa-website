@@ -37,10 +37,14 @@
             </thead>
             <tbody>
               @foreach ($categories as $category)
-              <tr>
-                <td>{{ $category->event_type }}</td>
-                <td><a href = "event-category-manage-edit/{{ $category->event_type }}"class = "btn btn-success">Edit</a><a class = "btn btn-danger">Delete</a></td>
-              </tr>
+                <form role = "form" method = "POST" action = "event-category-manage-edit">
+                  {{ csrf_field() }}
+                  <tr>
+                    <input type = "hidden" value = "{{ $category->id }}" name = "category_id">
+                    <td><input type = "text" class = "form-control" name = "modify_field" value = "{{ $category->event_type }}"></td>
+                    <td><button type = "submit" class = "btn btn-success">Edit</button><a href = "event-category-manage-delete/{{ $category->id }}"class = "btn btn-danger">Delete</a></td>
+                  </tr>
+                </form>
               @endforeach
             </tbody>
           </table>
