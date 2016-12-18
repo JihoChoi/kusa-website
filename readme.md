@@ -44,7 +44,7 @@ This is a web application to manage Korean Undergraduate Student Association's u
       - [x] Post
       - [ ] Edit
       - [ ] Delete
-    - [ ] Manage Event Categories
+    - [x] Manage Event Categories
     - [x] Manage KUSA Teams
     - [x] Manage KUSA Member Roles
 - [ ] REST API routes
