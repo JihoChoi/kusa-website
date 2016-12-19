@@ -49,7 +49,7 @@
             <form method = "POST" action = "user-manage-edit">
               {{ csrf_field() }}
               <input type = "hidden" value = "{{$user->id}}" name = "id">
-              <td><img src = "{{ $user->profile_img_path }}"></td>
+              <td><img src = "/images/profiles/{{ $user->profile_img }}"></td>
               <td>
                 @if ($user->user_status == "admin")
                   {{$user->firstname}}

@@ -61,7 +61,7 @@ class MembersController extends Controller
     }
 
     public function doRegister(Request $request) {
-      $profileimg = '/images/profiles/default/default.png';
+      $profileimg = 'default.png';
       $firstname = $request->input('firstname');
       $lastname = $request->input('lastname');
       $username = $request->input('email');
@@ -76,7 +76,7 @@ class MembersController extends Controller
       $confirmation_code = str_random(45);
 
       $member = new Users();
-      $member->profile_img_path = $profileimg;
+      $member->profile_img = $profileimg;
       $member->firstname = $firstname;
       $member->lastname = $lastname;
       $member->email = $username;
