@@ -8,6 +8,8 @@ use Input;
 use Mail;
 use Auth;
 use App\Users;
+use App\KUSA_TEAM;
+use App\KUSA_ROLE;
 use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
 
@@ -34,6 +36,9 @@ class MembersController extends Controller
           $request->session()->flash('msg', 'Please click on the confirmation link in your email to verify.');
           Auth::logout();
           return $this->directLogin();
+        } else if ($userinfo->user_status == "blocked") {
+          Auth::logout();
+          return view('errors.blocked');
         }
         $request->session()->flash('msg-general', 'Welcome '.$userinfo->firstname.'!');
         return redirect('/');
@@ -128,7 +133,7 @@ class MembersController extends Controller
     | user_status:
     |
     |   0. all
-    |   1. active
+    |   1. member
     |   2. nolonger
     |   3. general
     |   4. invalid
@@ -139,14 +144,59 @@ class MembersController extends Controller
 
     public function filterUsers(Request $request) {
       $user_status = $request->input('user_status');
-      $search_field = $request->input('search_field');
+    //  $search_field = $request->input('search_field');
       $users = Users::where('user_status', $user_status)->get();
+      $teams = KUSA_TEAM::all();
+      $roles = KUSA_ROLE::all();
       if ($user_status == "all") {
         $users = DB::table('users')->get();
-        return view('CRUD.USERS.user-manage', compact("users"));
+        return view('CRUD.USERS.user-manage', compact("users", "teams", "roles"));
       } else {
-        return view('CRUD.USERS.user-manage', compact("users"));
+        return view('CRUD.USERS.user-manage', compact("users", "teams", "roles"));
       }
     }
+
+    public function modifyUser(Request $request) {
+      $user = Auth::user();
+      if ($user->user_status != "admin") return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed.');
+      $id = $request->input('id');
+      $firstname = $request->input('firstname');
+      $lastname = $request->input('lastname');
+      $email = $request->input('email');
+      $register_type = $request->input('register_type');
+      $user_status = $request->input('user_status');
+      $phone_number = $request->input('phone_number');
+      $kusa_team = $request->input('kusa_team');
+      $kusa_role = $request->input('kusa_role');
+
+      if ($kusa_team == NULL) $kusa_team = 'none';
+      if ($kusa_role == NULL) $kusa_role = 'none';
+
+      $users = new Users();
+      if ($users::where('id', $id)->update(array(
+        'firstname' => $firstname,
+        'lastname' => $lastname,
+        'email' => $email,
+        'register_type' => $register_type,
+        'user_status' => $user_status,
+        'phone_number' => $phone_number,
+        'kusa_team' => $kusa_team,
+        'kusa_role' => $kusa_role
+      ))) {
+        return redirect()->action('AdminController@directUserManage')->with('msg-general', 'User information is modified.');
+      }
+    }
+
+    public function deleteUser($user_id) {
+      $user = Auth::user();
+      if ($user->user_status == "admin") {
+        $users = new Users();
+        if ($users::where('id', $user_id)->delete()) {
+            return redirect()->action('AdminController@directUserManage')->with('msg-general', 'User has been deleted.');
+        }
+      }
+      return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed.');
+    }
+
 
 }

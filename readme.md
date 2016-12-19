@@ -11,6 +11,8 @@ This is a web application to manage Korean Undergraduate Student Association's u
 
 #### Front-end
 
+ ''*'' Currently working on
+
 - [ ] Video not appear in safari problem
 - [ ] Tinymce
   - [x] Tinymce default setup
@@ -31,6 +33,7 @@ This is a web application to manage Korean Undergraduate Student Association's u
     - [x] Show list of posts
     - [x] Show list of users in simple number
     - [ ] Show total messages
+  - [ ] Users: Users Pagination*
 
 #### Back-end
 
@@ -38,6 +41,7 @@ This is a web application to manage Korean Undergraduate Student Association's u
 - [x] Send email verification after submit register
 - [ ] Dashboard
   - [x] Dashboard access filter
+  - [ ] Users: after edit or delete, redirect back to exactly where it was.*
   - [ ] Posts controller
     - [ ] CRUD
       - [ ] View: Link to page
@@ -53,7 +57,7 @@ This is a web application to manage Korean Undergraduate Student Association's u
 
 ### Database 'user_status' variable description
 
-- active: current active KUSA member
+- member: current active KUSA member
 - nolonger: no longer active KUSA member
 - general: registered general user
 - admin: admin

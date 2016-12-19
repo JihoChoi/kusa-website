@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Users;
+use App\KUSA_TEAM;
+use App\KUSA_ROLE;
 use Auth;
 use DB;
 use Illuminate\Http\Request;
@@ -102,7 +104,9 @@ class AdminController extends Controller
     public function directUserManage() {
       if ($this->isAdmin()) {
         $users = DB::table('users')->get();
-        return view('CRUD.USERS.user-manage', compact("users"));
+        $teams = KUSA_TEAM::all();
+        $roles = KUSA_ROLE::all();
+        return view('CRUD.USERS.user-manage', compact("users", "teams", "roles"));
       }
       return $this->authFail();
     }
