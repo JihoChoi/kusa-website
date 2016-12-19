@@ -50,4 +50,6 @@ Route::group(['middleware' => 'auth'], function() {
   Route::post('user-manage-edit', 'MembersController@modifyUser');
   Route::get('user-manage-delete/{user_id}', 'MembersController@deleteUser');
 
+  /* User Profile Routes */
+  
 });
