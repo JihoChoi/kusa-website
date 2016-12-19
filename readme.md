@@ -1,6 +1,7 @@
 # Purdue Korean Undergraduate Student Association Website Source Code
 
-<center><img src = "KUSA_Logo.png" style = "width:450px; height:auto;"></center>
+<center><img src = "KUSA_Logo.png" style = "width:350px; height:auto;"></center>
+
 ## Introduction
 
 This is a web application to manage Korean Undergraduate Student Association's users and members.
