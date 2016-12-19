@@ -52,28 +52,28 @@
               <td><img src = "{{ $user->profile_img_path }}"></td>
               <td>
                 @if ($user->user_status == "admin")
-                {{$user->firstname}}
+                  {{$user->firstname}}
                 @else
                 <input class = "form-control" value = "{{ $user->firstname }}" style = "width: 80px;" name = "firstname">
                 @endif
               </td>
               <td>
                 @if ($user->user_status == "admin")
-                {{$user->lastname}}
+                  {{$user->lastname}}
                 @else
                 <input class = "form-control" value = "{{ $user->lastname }}" style = "width: 80px;" name = "lastname">
                 @endif
               </td>
               <td>
                 @if ($user->user_status == "admin")
-                {{$user->email}}
+                  {{$user->email}}
                 @else
                 <input class = "form-control" value = "{{ $user->email }}" style = "width: 200px;" name = "email">
                 @endif
               </td>
               <td>
                 @if ($user->user_status == "admin")
-                {{ $user->register_type }}
+                  {{ $user->register_type }}
                 @else
                 <select class = "form-control" id = "register_type" name = "register_type">
                   <option <?php if ($user->register_type == "Undergraduate") echo ("selected")?>>Undergraduate</option>
@@ -87,7 +87,7 @@
               </td>
               <td>
                 @if ($user->user_status == "admin")
-                {{ $user->user_status }}
+                  {{ $user->user_status }}
                 @else
                 <select class = "form-control" id = "user_status" name = "user_status">
                   <option <?php if ($user->user_status == "active") echo ("selected") ?>>member</option>
@@ -100,21 +100,21 @@
               </td>
               <td>
                 @if ($user->user_status == "admin")
-                {{ $user->phone_number }}
+                  {{ $user->phone_number }}
                 @else
                 <input class = "form-control" value = "{{ $user->phone_number }}" style = "width: 120px;" name = "phone_number">
                 @endif
               </td>
               <td>
                 @if ($user->user_status == "member")
-                <select class = "form-control" name = "kusa_team">
-                  <option selected>none</option>
-                  @foreach ($teams as $team)
+                  <select class = "form-control" name = "kusa_team">
+                    <option selected>none</option>
+                    @foreach ($teams as $team)
                       <option <?php if ($user->kusa_team == $team->team_name) echo ("selected") ?>>{{$team->team_name}}</option>
-                  @endforeach
-                </select>
+                      @endforeach
+                    </select>
                 @else
-                none
+                  none
                 @endif
               </td>
               <td>
@@ -131,7 +131,7 @@
               </td>
               <td>
                 @if ($user->user_status != "admin")
-                <button type = "submit" class = "btn btn-success">Edit</button> <a class = "btn btn-danger" href = "user-manage-delete/{{$user->id}}">Delete</a>
+                  <button type = "submit" class = "btn btn-success">Edit</button> <a class = "btn btn-danger" href = "user-manage-delete/{{$user->id}}">Delete</a>
                 @endif
               </td>
             </form>
