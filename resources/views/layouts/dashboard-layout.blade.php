@@ -73,7 +73,7 @@
                    <a href="#"><i class = "fa fa-bell"></i> Push Notification</a>
                </li>
                <li>
-                   <a href="#"><i class = "fa fa-users"></i> Users</a>
+                   <a href="user-manage"><i class = "fa fa-users"></i> Users</a>
                </li>
                <hr>
                <li>

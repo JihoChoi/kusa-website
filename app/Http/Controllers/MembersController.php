@@ -116,4 +116,44 @@ class MembersController extends Controller
       }
       return redirect()->action('MembersController@directLogin')->with('msg', 'This email has been already verified.');
     }
+
+    /*
+
+    ---------------------------------------
+    | Member Search
+    ---------------------------------------
+    |
+    | Member Search
+    |
+    | user_status:
+    |
+    |   0. all
+    |   1. active
+    |   2. nolonger
+    |   3. general
+    |   4. invalid
+    |   5. blocked
+    |
+
+    */
+
+    public function filterUsers(Request $request) {
+      $user_status = $request->input('user_status');
+      $search_field = $request->input('search_field');
+      $users = Users::where('user_status', $user_status)->get();
+      if ($user_status == "all") {
+        $users = Users::where('user_status')->get();
+      } else if ($user_status == "active") {
+
+      } else if ($user_status == "nolonger") {
+
+      } else if ($user_status == "general") {
+
+      } else if ($user_status == "invalid") {
+
+      } else if ($user_status == "blocked") {
+
+      }
+    }
+
 }

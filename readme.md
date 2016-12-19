@@ -54,7 +54,6 @@ This is a web application to manage Korean Undergraduate Student Association's u
 ### Database 'user_status' variable description
 
 - active: current active KUSA member
--
 - nolonger: no longer active KUSA member
 - general: registered general user
 - admin: admin

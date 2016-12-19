@@ -92,12 +92,12 @@
                   @if ($userinfo->user_status == "admin")
                   <li><a href = "dashboard">Dashboard</a></li>
                   @endif
-                  <li><a href = "logout">Logout</a></li>
+                  <li><a href = "logout">Sign-out</a></li>
                 </ul>
               </li>
               @else
-              <li><a href = "register"><span class = "glyphicon glyphicon-user"></span> Sign Up </a></li>
-              <li><a href = "login"><span class = "glyphicon glyphicon-log-in"></span> Login </a></li>
+              <li><a href = "register"><span class = "glyphicon glyphicon-user"></span> Sign-up </a></li>
+              <li><a href = "login"><span class = "glyphicon glyphicon-log-in"></span> Sign-in </a></li>
               @endif
             </ul>
           </div>
