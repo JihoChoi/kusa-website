@@ -19,10 +19,10 @@ This is a web application to manage Korean Undergraduate Student Association's u
 - [ ] Complete other pages
   - [ ] About
     - [ ] KUSA
-    - [ ] Members
+    - [ ] Board
   - [ ] Updates
     - [ ] Announcements
-    - [ ] Past Events
+    - [ ] Events
     - [ ] Calendar
   - [ ] Resources
 - [x] Email verification re-design
