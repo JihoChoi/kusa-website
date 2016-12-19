@@ -47,5 +47,6 @@ Route::group(['middleware' => 'auth'], function() {
 
   /* User Manage Routes */
   Route::get('user-manage', 'AdminController@directUserManage');
+  Route::post('user-manage', 'MembersController@filterUsers');
 
 });

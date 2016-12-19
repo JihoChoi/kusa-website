@@ -142,17 +142,10 @@ class MembersController extends Controller
       $search_field = $request->input('search_field');
       $users = Users::where('user_status', $user_status)->get();
       if ($user_status == "all") {
-        $users = Users::where('user_status')->get();
-      } else if ($user_status == "active") {
-
-      } else if ($user_status == "nolonger") {
-
-      } else if ($user_status == "general") {
-
-      } else if ($user_status == "invalid") {
-
-      } else if ($user_status == "blocked") {
-
+        $users = DB::table('users')->get();
+        return view('CRUD.USERS.user-manage', compact("users"));
+      } else {
+        return view('CRUD.USERS.user-manage', compact("users"));
       }
     }
 

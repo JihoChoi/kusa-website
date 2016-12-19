@@ -7,6 +7,7 @@
     </div>
     <div class = "panel-body">
       <form method = "POST" action = "">
+        {{ csrf_field() }}
         <div class = "form-group">
           <div class = "col-sm-3">
             <select class = "form-control" name = "user_status">
@@ -34,7 +35,7 @@
       <tr>
         <th>Profile</th>
         <th>First name</th>
-        <th>Last Name</th>
+        <th>Last name</th>
         <th>Email</th>
         <th>Registration type</th>
         <th>User Status</th>
