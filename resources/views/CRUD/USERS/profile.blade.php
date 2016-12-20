@@ -6,7 +6,7 @@
 <div class = "container" style = "margin-top: 130px; font-family: 'Ubuntu', sans-serif;">
   <div class = "row">
     <div class = "col-md-10 col-md-offset-1">
-      <img src = "/images/profiles/{{ $user->profile_img }}" style = "width: 150px; height: 150px; float: left; border-radius: 50%; margin-right: 25px;">
+      <img src = "/images/profiles/{{ $user->profile_img }}" style = "width: 150px; height: 150px; float: left; margin-right: 25px;">
       <h2>{{ $user->firstname }}'s profile</h2>
       <hr>
       <label class = "label-control">Update Profile Image</label>
@@ -17,5 +17,9 @@
       </form>
     </div>
   </div>
+</div>
+<div class = "container" style = "margin-top: 100px;">
+  
+  <hr>
 </div>
 @stop

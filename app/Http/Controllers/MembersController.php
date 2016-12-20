@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use DB;
 use Hash;
-use Input;
 use Mail;
 use Auth;
+use Image;
 use App\Users;
 use App\KUSA_TEAM;
 use App\KUSA_ROLE;
 use Illuminate\Http\Request;
-use App\Http\Requests\RegisterRequest;
 
 class MembersController extends Controller
 {
@@ -135,6 +134,18 @@ class MembersController extends Controller
 
     public function directProfile() {
       return view('CRUD.USERS.profile', array('user' => AUth::user()));
+    }
+
+    public function updateProfile(Request $request) {
+      if ($request->hasFile('profile')) {
+        $profile = $request->file('profile');
+        $filename = time() . str_random(10) . '.' . $profile->getClientOriginalExtension();
+        Image::make($profile)->resize(300, 300)->save( public_path('/images/profiles/' . $filename) );
+        $user = Auth::user();
+        $user->profile_img = $filename;
+        $user->save();
+      }
+      return view('CRUD.USERS.profile', array('user' => Auth::user()));
     }
 
     /*
