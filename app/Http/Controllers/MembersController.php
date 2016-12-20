@@ -136,7 +136,7 @@ class MembersController extends Controller
       return view('CRUD.USERS.profile', array('user' => AUth::user()));
     }
 
-    public function updateProfile(Request $request) {
+    public function updateProfileImage(Request $request) {
       if ($request->hasFile('profile')) {
         $profile = $request->file('profile');
         $filename = time() . str_random(10) . '.' . $profile->getClientOriginalExtension();
@@ -146,6 +146,23 @@ class MembersController extends Controller
         $user->save();
       }
       return view('CRUD.USERS.profile', array('user' => Auth::user()));
+    }
+
+    public function updateProfile(Request $request) {
+      $id = $request->input('id');
+      $firstname = $request->input('firstname');
+      $lastname = $request->input('lastname');
+      $register_type = $request->input('type');
+      $phone_number = $request->input('phone');
+      $users = new Users();
+      if ($users::where('id', $id)->update(array(
+        'firstname' => $firstname,
+        'lastname' => $lastname,
+        'register_type' => $register_type,
+        'phone_number' => $phone_number
+      ))) {
+        return redirect()->action('MembersController@directProfile')->with('msg-general', 'User information is modified.');
+      }
     }
 
     /*

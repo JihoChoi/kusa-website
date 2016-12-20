@@ -52,5 +52,6 @@ Route::group(['middleware' => 'auth'], function() {
 
   /* User Profile Routes */
   Route::get('profile', 'MembersController@directProfile');
-  Route::post('profile', 'MembersController@updateProfile');  
+  Route::post('profile', 'MembersController@updateProfileImage');
+  Route::post('profile_update', 'MembersController@updateProfile');
 });

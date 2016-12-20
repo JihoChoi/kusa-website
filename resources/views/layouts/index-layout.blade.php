@@ -86,7 +86,7 @@
               <li class = "dropdown">
                 <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#"><?php echo $userinfo->firstname?><span class = "caret"></span></a>
                 <ul class = "dropdown-menu">
-                  <li><center><img src = "/images/profiles/<?php echo $userinfo->profile_img?>" class = "default-profile"></center></li>
+                  <li><center><img src = "/images/profiles/<?php echo $userinfo->profile_img?>"  style = "margin-top: 15px;" class = "default-profile"></center></li>
                   <hr>
                   <li><a href = "profile">My profile</a></li>
                   @if ($userinfo->user_status == "admin")
