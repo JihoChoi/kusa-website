@@ -88,7 +88,7 @@
                 <ul class = "dropdown-menu">
                   <li><center><img src = "/images/profiles/<?php echo $userinfo->profile_img?>" class = "default-profile"></center></li>
                   <hr>
-                  <li><a href = "#">My profile</a></li>
+                  <li><a href = "profile">My profile</a></li>
                   @if ($userinfo->user_status == "admin")
                   <li><a href = "dashboard">Dashboard</a></li>
                   @endif

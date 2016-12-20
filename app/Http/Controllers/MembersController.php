@@ -125,6 +125,21 @@ class MembersController extends Controller
     /*
 
     ---------------------------------------
+    | User Profile
+    ---------------------------------------
+    |
+    | Show user profile
+    |
+
+    */
+
+    public function directProfile() {
+      return view('CRUD.USERS.profile', array('user' => AUth::user()));
+    }
+
+    /*
+
+    ---------------------------------------
     | Member Search
     ---------------------------------------
     |

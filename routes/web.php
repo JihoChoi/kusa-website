@@ -51,5 +51,6 @@ Route::group(['middleware' => 'auth'], function() {
   Route::get('user-manage-delete/{user_id}', 'MembersController@deleteUser');
 
   /* User Profile Routes */
-  
+  Route::get('profile', 'MembersController@directProfile');
+    
 });
