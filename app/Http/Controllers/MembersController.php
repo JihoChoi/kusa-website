@@ -161,7 +161,7 @@ class MembersController extends Controller
         'register_type' => $register_type,
         'phone_number' => $phone_number
       ))) {
-        return redirect()->action('MembersController@directProfile')->with('msg-general', 'User information is modified.');
+        return redirect()->action('MembersController@directProfile')->with('msg-general', 'Basic profile is modified.');
       }
     }
 
