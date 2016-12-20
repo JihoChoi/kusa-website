@@ -48,7 +48,7 @@
           <tr>
             <form method = "POST" action = "user-manage-edit">
               {{ csrf_field() }}
-              <input type = "hidden" value = "{{$user->id}}" name = "id">
+              <input type = "hidden" value = "{{ $user->id }}" name = "id">
               <td><img src = "/images/profiles/{{ $user->profile_img }}"></td>
               <td>
                 @if ($user->user_status == "admin")
@@ -118,7 +118,7 @@
                 <select class = "form-control" name = "kusa_role">
                   <option selected>none</option>
                   @foreach ($roles as $role)
-                      <option <?php if ($user->kusa_role == $role->role) echo ("selected") ?>>{{$role->role}}</option>
+                      <option <?php if ($user->kusa_role == $role->role) echo ("selected") ?>>{{ $role->role }}</option>
                   @endforeach
                 </select>
                 @else
@@ -127,7 +127,7 @@
               </td>
               <td>
                 @if ($user->user_status != "admin")
-                  <button type = "submit" class = "btn btn-success">Save</button> <a class = "btn btn-danger" href = "user-manage-delete/{{$user->id}}">Delete</a>
+                  <button type = "submit" class = "btn btn-success">Save</button> <a class = "btn btn-danger" href = "user-manage-delete/{{ $user->id }}">Delete</a>
                 @endif
               </td>
             </form>
