@@ -14,6 +14,11 @@
 </style>
 <div class = "container" style = "margin-top: 130px; font-family: 'Ubuntu', sans-serif;">
   <div class = "panel panel-primary">
+    <div class = "panel-heading">
+      <div class = "panel-title">
+        Basic Profile
+      </div>
+    </div>
     <div class = "panel-body">
       <div class = "row">
         <div class = "col-md-10 col-md-offset-1">
@@ -33,9 +38,6 @@
 </div>
 <div class = "container" style = "margin-top: 100px;">
   <div class = "panel panel-primary">
-    <div class = "panel-heading">
-      <div class = "panel-title">Basic Profile</div>
-    </div>
     <div class = "panel-body">
       <form class = "form-horizontal" method = "POST" action = "profile_update" data-toggle = "validator">
         {{ csrf_field() }}
