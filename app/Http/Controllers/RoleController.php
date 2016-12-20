@@ -39,6 +39,8 @@ class RoleController extends Controller
         $role = new Roles();
         if ($role::where('id', $role_id)->delete()) {
             return redirect()->action('AdminController@directRoleManage')->with('msg-general', 'Role has been deleted.');
+        } else {
+          return redirect()->action('MembersController@directRoleManage')->with('msg', 'Error occured.');
         }
       }
       return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed.');

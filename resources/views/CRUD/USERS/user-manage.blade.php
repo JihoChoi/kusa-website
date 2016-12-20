@@ -99,11 +99,7 @@
                 @endif
               </td>
               <td>
-                @if ($user->user_status == "admin")
-                  {{ $user->phone_number }}
-                @else
-                <input class = "form-control" value = "{{ $user->phone_number }}" style = "width: 120px;" name = "phone_number">
-                @endif
+                {{ $user->phone_number }}
               </td>
               <td>
                 @if ($user->user_status == "member")
@@ -131,7 +127,7 @@
               </td>
               <td>
                 @if ($user->user_status != "admin")
-                  <button type = "submit" class = "btn btn-success">Edit</button> <a class = "btn btn-danger" href = "user-manage-delete/{{$user->id}}">Delete</a>
+                  <button type = "submit" class = "btn btn-success">Save</button> <a class = "btn btn-danger" href = "user-manage-delete/{{$user->id}}">Delete</a>
                 @endif
               </td>
             </form>
