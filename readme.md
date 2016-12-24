@@ -13,7 +13,7 @@ This is a web application to manage Korean Undergraduate Student Association's u
 #### Front-end
 
 - [ ] Video not appear in safari problem
-  - [ ] Video Format
+  - [ ] Video Reformat
 - [ ] Tinymce
   - [x] Tinymce default setup
   - [ ] Multiple image uploads

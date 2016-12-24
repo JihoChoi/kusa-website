@@ -26,13 +26,13 @@
         </div>
       </div>
     </div>
-    <div class = "container">
+  <!--  <div class = "container">
       <form enctype = "multipart/form-data" action = "profile" method = "POST" style = "margin-left: 150px;">
         {{ csrf_field() }}
         <input type = "file" name = "profile" class = "pull-left" style = "margin-top: 5px;" multiple>
         <button type = "submit" class = "pull-right btn btn-primary"><i class = "fa fa-cloud-upload"></i> Upload</button>
       </form>
-    </div>
+    </div> -->
     <div class = "container">
       <div class = "form-group">
         <textarea class = "form-control" name = "content_area"></textarea>
