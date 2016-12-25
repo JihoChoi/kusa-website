@@ -39,7 +39,7 @@ class PostsController extends Controller
           'content' => $content,
           'event_category' => $category,
         ])) {
-          return redirect()->action('AdminController@directDashboard')->with('msg-general', 'Content has been modified.');
+            return redirect()->action('AdminController@directDashboard')->with('msg-general', 'Content has been modified.');
         }
     }
 }
