@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\KUSA_ROLE;
 use App\KUSA_TEAM;
+use App\EVENT_CATEGORY;
 use App\Users;
 use Auth;
 use DB;
@@ -66,7 +67,7 @@ class AdminController extends Controller
     public function directPost()
     {
         if ($this->isAdmin()) {
-            $event_types = DB::table('event_categories')->get();
+            $event_types = EVENT_CATEGORY::all();
 
             return view('CRUD.post', compact('event_types'));
         }
@@ -95,7 +96,7 @@ class AdminController extends Controller
     public function directEventCategoryManage()
     {
         if ($this->isAdmin()) {
-            $categories = DB::table('event_categories')->get();
+            $categories = EVENT_CATEGORY::paginate(10);
 
             return view('CRUD.EVENTS.event-category-manage', compact('categories'));
         }
@@ -106,7 +107,7 @@ class AdminController extends Controller
     public function directTeamManage()
     {
         if ($this->isAdmin()) {
-            $teams = DB::table('kusa-team')->get();
+            $teams = KUSA_TEAM::paginate(10);
 
             return view('CRUD.TEAMS.team-manage', compact('teams'));
         }
@@ -117,7 +118,7 @@ class AdminController extends Controller
     public function directRoleManage()
     {
         if ($this->isAdmin()) {
-            $roles = DB::table('roles')->get();
+            $roles = KUSA_ROLE::paginate(10);
 
             return view('CRUD.ROLES.role-manage', compact('roles'));
         }
@@ -128,7 +129,7 @@ class AdminController extends Controller
     public function directUserManage()
     {
         if ($this->isAdmin()) {
-            $users = DB::table('users')->get();
+            $users = Users::paginate(10);
             $teams = KUSA_TEAM::all();
             $roles = KUSA_ROLE::all();
 

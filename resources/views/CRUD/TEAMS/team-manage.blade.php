@@ -42,7 +42,7 @@
                   <tr>
                     <input type = "hidden" value = "{{ $team->id }}" name = "team_id">
                     <td><input type = "text" class = "form-control" name = "modify_field" value = "{{ $team->team_name }}"></td>
-                    <td><button type = "submit" class = "btn btn-success">Edit</button> <a href = "team-manage-delete/{{ $team->id }}"class = "btn btn-danger">Delete</a></td>
+                    <td><button type = "submit" class = "btn btn-success">Save</button> <a href = "team-manage-delete/{{ $team->id }}"class = "btn btn-danger">Delete</a></td>
                   </tr>
                 </form>
               @endforeach

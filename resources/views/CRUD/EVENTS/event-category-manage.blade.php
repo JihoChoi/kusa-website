@@ -42,12 +42,13 @@
                   <tr>
                     <input type = "hidden" value = "{{ $category->id }}" name = "category_id">
                     <td><input type = "text" class = "form-control" name = "modify_field" value = "{{ $category->event_type }}"></td>
-                    <td><button type = "submit" class = "btn btn-success">Edit</button> <a href = "event-category-manage-delete/{{ $category->id }}"class = "btn btn-danger">Delete</a></td>
+                    <td><button type = "submit" class = "btn btn-success">Save</button> <a href = "event-category-manage-delete/{{ $category->id }}"class = "btn btn-danger">Delete</a></td>
                   </tr>
                 </form>
               @endforeach
             </tbody>
           </table>
+          {!! $categories->render(); !!}
         </div>
       </div>
     </div>

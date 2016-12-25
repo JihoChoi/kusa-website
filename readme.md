@@ -36,7 +36,7 @@ This is a web application to manage Korean Undergraduate Student Association's u
     - [x] Show list of posts
     - [x] Show list of users in simple number
     - [ ] Show total messages
-  - [ ] Users: Users Pagination
+  - [x] Users: Users Pagination
 
 #### Back-end
 

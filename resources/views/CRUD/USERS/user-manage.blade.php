@@ -135,6 +135,7 @@
           @endforeach
         </tbody>
       </table>
+      <center> {!! $users->render(); !!} </center>
     </div>
 </div>
 </div>

@@ -42,12 +42,13 @@
                   <tr>
                     <input type = "hidden" value = "{{ $role->id }}" name = "role_id">
                     <td><input type = "text" class = "form-control" name = "modify_field" value = "{{ $role->role }}"></td>
-                    <td><button type = "submit" class = "btn btn-success">Edit</button> <a href = "role-manage-delete/{{ $role->id }}"class = "btn btn-danger">Delete</a></td>
+                    <td><button type = "submit" class = "btn btn-success">Save</button> <a href = "role-manage-delete/{{ $role->id }}"class = "btn btn-danger">Delete</a></td>
                   </tr>
                 </form>
               @endforeach
             </tbody>
           </table>
+          <center> {!! $roles->render(); !!} </center>
         </div>
       </div>
     </div>
