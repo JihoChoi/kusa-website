@@ -28,13 +28,18 @@ class PostsController extends Controller
 
     public function editContent(Request $request)
     {
+        $id = $request->input('content_id');
         $title = $request->input('content_title');
         $category = $request->input('content_category');
         $content = $request->input('content_area');
 
         $post = new Posts();
-        $post->content_title = $title;
-        $post->content = $content;
-        $post->category = $category;
+        if ($posts::where('id', $id)->update([
+          'content_title' => $title,
+          'content' => $content,
+          'event_category' => $category,
+        ])) {
+          return redirect()->action('AdminController@directDashboard')->with('msg-general', 'Content has been modified.');
+        }
     }
 }
