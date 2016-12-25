@@ -8,7 +8,6 @@ use App\KUSA_TEAM;
 use App\Posts;
 use App\Users;
 use Auth;
-use DB;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -54,9 +53,10 @@ class AdminController extends Controller
     public function directDashboard()
     {
         if ($this->isAdmin()) {
-          $users = Users::all();
-          $contents = Posts::all();
-          return view('dashboard', compact('contents', 'users'));
+            $users = Users::all();
+            $contents = Posts::all();
+
+            return view('dashboard', compact('contents', 'users'));
         }
 
         return $this->authFail();

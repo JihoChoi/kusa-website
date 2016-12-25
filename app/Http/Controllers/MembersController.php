@@ -6,7 +6,6 @@ use App\KUSA_ROLE;
 use App\KUSA_TEAM;
 use App\Users;
 use Auth;
-use DB;
 use Hash;
 use Illuminate\Http\Request;
 use Image;
@@ -218,6 +217,7 @@ class MembersController extends Controller
         $users = Users::where('user_status', $user_status)->paginate(1)->appends($user_status);
         $teams = KUSA_TEAM::all();
         $roles = KUSA_ROLE::all();
+
         return view('CRUD.USERS.user-manage', compact('users', 'teams', 'roles', 'user_status'));
     }
 
