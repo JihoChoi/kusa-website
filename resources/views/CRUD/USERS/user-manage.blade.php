@@ -11,12 +11,12 @@
         <div class = "form-group">
           <div class = "col-sm-3">
             <select class = "form-control" name = "user_status">
-              <option>all</option>
-              <option>member</option>
-              <option>nolonger</option>
-              <option>general</option>
-              <option>invalid</option>
-              <option>blocked</option>
+              <option <?php if ($user_status == "all") echo ("selected")?>>all</option>
+              <option <?php if ($user_status == "member") echo ("selected")?>>member</option>
+              <option <?php if ($user_status == "nolonger") echo ("selected")?>>nolonger</option>
+              <option <?php if ($user_status == "general") echo ("selected")?>>general</option>
+              <option <?php if ($user_status == "invalid") echo ("selected")?>>invalid</option>
+              <option <?php if ($user_status == "blocked") echo ("selected")?>>blocked</option>
             </select>
           </div>
           <div class = "col-sm-3">

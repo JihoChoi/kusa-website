@@ -215,15 +215,10 @@ class MembersController extends Controller
     {
         $user_status = $request->input('user_status');
     //  $search_field = $request->input('search_field');
-        $users = Users::where('user_status', $user_status)->paginate(10);
+        $users = Users::where('user_status', $user_status)->paginate(1)->appends($user_status);
         $teams = KUSA_TEAM::all();
         $roles = KUSA_ROLE::all();
-        if ($user_status == 'all') {
-            $users = Users::paginate(10);
-            return view('CRUD.USERS.user-manage', compact('users', 'teams', 'roles'));
-        } else {
-            return view('CRUD.USERS.user-manage', compact('users', 'teams', 'roles'));
-        }
+        return view('CRUD.USERS.user-manage', compact('users', 'teams', 'roles', 'user_status'));
     }
 
     public function modifyUser(Request $request)

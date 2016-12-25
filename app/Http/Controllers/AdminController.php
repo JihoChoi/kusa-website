@@ -9,6 +9,7 @@ use App\Posts;
 use App\Users;
 use Auth;
 use DB;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
@@ -123,14 +124,15 @@ class AdminController extends Controller
         return $this->authFail();
     }
 
-    public function directUserManage()
+    public function directUserManage(Request $request)
     {
         if ($this->isAdmin()) {
-            $users = Users::paginate(10);
+            $user_status = $request->input('user_status');
+            $users = Users::paginate(1)->appends($user_status);
             $teams = KUSA_TEAM::all();
             $roles = KUSA_ROLE::all();
 
-            return view('CRUD.USERS.user-manage', compact('users', 'teams', 'roles'));
+            return view('CRUD.USERS.user-manage', compact('users', 'teams', 'roles', 'user_status'));
         }
 
         return $this->authFail();
