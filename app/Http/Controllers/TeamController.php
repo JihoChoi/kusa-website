@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Teams;
+use App\KUSA_TEAM;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -12,7 +12,7 @@ class TeamController extends Controller
     public function postTeamTitle(Request $request)
     {
         $team_title = $request->input('team_title');
-        $team = new Teams();
+        $team = new KUSA_TEAM();
         $team->team_name = $team_title;
         if (!($team::where('team_name', $team_title)->first())) {
             if ($team->save()) {
@@ -27,7 +27,7 @@ class TeamController extends Controller
     {
         $team_id = $request->input('team_id');
         $team_title = $request->input('modify_field');
-        $team = new Teams();
+        $team = new KUSA_TEAM();
         if ($team::where('id', $team_id)->update([
         'team_name' => $team_title,
       ])) {
@@ -39,7 +39,7 @@ class TeamController extends Controller
     {
         $user = Auth::user();
         if ($user->user_status == 'admin') {
-            $team = new Teams();
+            $team = new KUSA_TEAM();
             if ($team::where('id', $team_id)->delete()) {
                 return redirect()->action('AdminController@directTeamManage')->with('msg-general', 'Team has been deleted.');
             }

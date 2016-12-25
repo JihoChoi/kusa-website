@@ -244,6 +244,10 @@ class MembersController extends Controller
             $kusa_role = 'none';
         }
 
+        if ($phone_number == null) {
+            $phone_number = 'none';
+        }
+
         $users = new Users();
         if ($users::where('id', $id)->update([
         'firstname' => $firstname,

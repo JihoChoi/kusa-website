@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Roles;
+use App\KUSA_ROLE;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -12,7 +12,7 @@ class RoleController extends Controller
     public function postRole(Request $request)
     {
         $role_title = $request->input('role_title');
-        $roles = new Roles();
+        $roles = new KUSA_ROLE();
         $roles->role = $role_title;
         if (!($roles::where('role', $role_title)->first())) {
             if ($roles->save()) {
@@ -27,7 +27,7 @@ class RoleController extends Controller
     {
         $role_id = $request->input('role_id');
         $role_title = $request->input('modify_field');
-        $role = new Roles();
+        $role = new KUSA_ROLE();
         if ($role::where('id', $role_id)->update([
         'role' => $role_title,
       ])) {
@@ -39,7 +39,7 @@ class RoleController extends Controller
     {
         $user = Auth::user();
         if ($user->user_status == 'admin') {
-            $role = new Roles();
+            $role = new KUSA_ROLE();
             if ($role::where('id', $role_id)->delete()) {
                 return redirect()->action('AdminController@directRoleManage')->with('msg-general', 'Role has been deleted.');
             } else {
