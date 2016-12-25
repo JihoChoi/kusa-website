@@ -48,6 +48,7 @@
               @endforeach
             </tbody>
           </table>
+          {!! $teams->render(); !!}
         </div>
       </div>
     </div>
