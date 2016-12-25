@@ -25,6 +25,15 @@ class PostsController extends Controller
       }
     }
 
-    public function editContent(Request $request) {}
-      
+    public function editContent(Request $request) {
+      $title = $request->input('content_title');
+      $category = $request->input('content_category');
+      $content = $request->input('content_area');
+
+      $post = new Posts();
+      $post->content_title = $title;
+      $post->content = $content;
+      $post->category = $category;
+    }
+
 }

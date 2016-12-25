@@ -229,7 +229,7 @@ class MembersController extends Controller
         return redirect()->action('AdminController@directUserManage')->with('msg-general', 'User information is modified.');
       }
     }
-
+    
     public function deleteUser($user_id) {
       $user = Auth::user();
       if ($user->user_status == "admin") {

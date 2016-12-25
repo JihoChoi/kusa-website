@@ -6,6 +6,9 @@
 
 This is a web application to manage Korean Undergraduate Student Association's users and members.
 
+[![forthebadge](http://forthebadge.com/images/badges/built-with-swag.svg)](http://forthebadge.com)
+[![StyleCI](https://styleci.io/repos/75806015/shield?branch=master)](https://styleci.io/repos/75806015)
+
 ## Description
 
 ### Todo
