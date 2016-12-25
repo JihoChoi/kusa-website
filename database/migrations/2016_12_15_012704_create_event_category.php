@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateEventCategory extends Migration
 {
@@ -15,10 +15,10 @@ class CreateEventCategory extends Migration
     {
         //
         Schema::create('event_categories', function (Blueprint $table) {
-          $table->increments('id');
-          $table->string('event_type')->unique();
-          $table->rememberToken();
-          $table->timestamps();
+            $table->increments('id');
+            $table->string('event_type')->unique();
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

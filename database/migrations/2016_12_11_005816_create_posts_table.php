@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePostsTable extends Migration
 {
@@ -15,12 +15,12 @@ class CreatePostsTable extends Migration
     {
         //
         Schema::create('posts_table', function (Blueprint $table) {
-          $table->increments('id');
-          $table->string('content_title');
-          $table->text('content');
-          $table->string('event_category');
-          $table->rememberToken();
-          $table->timestamps();
+            $table->increments('id');
+            $table->string('content_title');
+            $table->text('content');
+            $table->string('event_category');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
