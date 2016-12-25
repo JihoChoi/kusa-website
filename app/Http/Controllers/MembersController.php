@@ -156,7 +156,7 @@ class MembersController extends Controller
 
     public function directProfile()
     {
-        return view('CRUD.USERS.profile', ['user' => AUth::user()]);
+        return view('CRUD.USERS.profile', ['user' => Auth::user()]);
     }
 
     public function updateProfileImage(Request $request)
@@ -215,12 +215,11 @@ class MembersController extends Controller
     {
         $user_status = $request->input('user_status');
     //  $search_field = $request->input('search_field');
-      $users = Users::where('user_status', $user_status)->get();
+        $users = Users::where('user_status', $user_status)->paginate(10);
         $teams = KUSA_TEAM::all();
         $roles = KUSA_ROLE::all();
         if ($user_status == 'all') {
-            $users = DB::table('users')->get();
-
+            $users = Users::paginate(10);
             return view('CRUD.USERS.user-manage', compact('users', 'teams', 'roles'));
         } else {
             return view('CRUD.USERS.user-manage', compact('users', 'teams', 'roles'));

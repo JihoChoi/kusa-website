@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\EVENT_CATEGORY;
 use App\KUSA_ROLE;
 use App\KUSA_TEAM;
+use App\Posts;
 use App\Users;
 use Auth;
 use DB;
@@ -39,26 +40,22 @@ class AdminController extends Controller
     }
 
 /*
+
 --------------------------------------------------------------
 | Direct Collections
 --------------------------------------------------------------
 |
 | Directing to various routes.
 |
-*/
 
-    public function directIndex()
-    {
-        $users = DB::table('users')->get();
-        $contents = DB::table('posts_table')->get();
-      //$contents = $contents->toArray();
-      return view('dashboard', compact('contents', 'users'));
-    }
+*/
 
     public function directDashboard()
     {
         if ($this->isAdmin()) {
-            return $this->directIndex();
+          $users = Users::all();
+          $contents = Posts::all();
+          return view('dashboard', compact('contents', 'users'));
         }
 
         return $this->authFail();
