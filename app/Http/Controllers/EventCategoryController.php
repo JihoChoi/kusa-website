@@ -31,7 +31,7 @@ class EventCategoryController extends Controller
         if ($eventcategory::where('id', $event_id)->update([
         'event_type' => $event_type,
       ])) {
-            return redirect()->action('AdminController@directEventCategoryManage')->with('msg-general', 'Category has been modifed.');
+            return redirect()->back()->with('msg-general', 'Category has been modifed.');
         }
     }
 

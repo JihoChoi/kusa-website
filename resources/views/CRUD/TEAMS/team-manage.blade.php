@@ -48,7 +48,7 @@
               @endforeach
             </tbody>
           </table>
-          {!! $teams->render(); !!}
+          <center> {{ $teams->links() }} </center>
         </div>
       </div>
     </div>

@@ -31,7 +31,7 @@ class RoleController extends Controller
         if ($role::where('id', $role_id)->update([
         'role' => $role_title,
       ])) {
-            return redirect()->action('AdminController@directRoleManage')->with('msg-general', 'Role has been modifed.');
+            return redirect()->back()->with('msg-general', 'Role has been modifed.');
         }
     }
 
@@ -43,7 +43,7 @@ class RoleController extends Controller
             if ($role::where('id', $role_id)->delete()) {
                 return redirect()->action('AdminController@directRoleManage')->with('msg-general', 'Role has been deleted.');
             } else {
-                return redirect()->action('MembersController@directRoleManage')->with('msg', 'Error occured.');
+                return redirect()->action('AdminController@directRoleManage')->with('msg', 'Error occured.');
             }
         }
 

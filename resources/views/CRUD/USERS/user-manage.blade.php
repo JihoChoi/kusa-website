@@ -6,17 +6,17 @@
       <div class = "panel-title">Filter Users</div>
     </div>
     <div class = "panel-body">
-      <form method = "POST" action = "">
+      <form method = "POST" action = "user-manage">
         {{ csrf_field() }}
         <div class = "form-group">
           <div class = "col-sm-3">
             <select class = "form-control" name = "user_status">
-              <option <?php if ($user_status == "all") echo ("selected")?>>all</option>
-              <option <?php if ($user_status == "member") echo ("selected")?>>member</option>
-              <option <?php if ($user_status == "nolonger") echo ("selected")?>>nolonger</option>
-              <option <?php if ($user_status == "general") echo ("selected")?>>general</option>
-              <option <?php if ($user_status == "invalid") echo ("selected")?>>invalid</option>
-              <option <?php if ($user_status == "blocked") echo ("selected")?>>blocked</option>
+              <option <?php if ($user_status == "all") echo ("selected") ?>>all</option>
+              <option <?php if ($user_status == "member") echo ("selected") ?>>member</option>
+              <option <?php if ($user_status == "nolonger") echo ("selected") ?>>nolonger</option>
+              <option <?php if ($user_status == "general") echo ("selected") ?>>general</option>
+              <option <?php if ($user_status == "invalid") echo ("selected") ?>>invalid</option>
+              <option <?php if ($user_status == "blocked") echo ("selected") ?>>blocked</option>
             </select>
           </div>
           <div class = "col-sm-3">
@@ -135,7 +135,7 @@
           @endforeach
         </tbody>
       </table>
-      <center> {!! $users->render(); !!} </center>
+      <center> {{ $users->links() }} </center>
     </div>
 </div>
 </div>

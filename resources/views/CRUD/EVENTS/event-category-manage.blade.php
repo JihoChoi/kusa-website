@@ -48,7 +48,7 @@
               @endforeach
             </tbody>
           </table>
-          {!! $categories->render(); !!}
+          <center> {{ $categories->links() }} </center>
         </div>
       </div>
     </div>

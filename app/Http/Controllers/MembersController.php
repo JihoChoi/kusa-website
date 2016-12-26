@@ -212,9 +212,15 @@ class MembersController extends Controller
 
     public function filterUsers(Request $request)
     {
+
         $user_status = $request->input('user_status');
-    //  $search_field = $request->input('search_field');
-        $users = Users::where('user_status', $user_status)->paginate(1)->appends($user_status);
+
+        if ($user_status == "all") {
+          $users = Users::paginate(1);
+        } else {
+          $users = Users::where('user_status', $user_status)->paginate(1);
+        }
+
         $teams = KUSA_TEAM::all();
         $roles = KUSA_ROLE::all();
 
@@ -227,6 +233,7 @@ class MembersController extends Controller
         if ($user->user_status != 'admin') {
             return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed.');
         }
+
         $id = $request->input('id');
         $firstname = $request->input('firstname');
         $lastname = $request->input('lastname');
@@ -240,6 +247,7 @@ class MembersController extends Controller
         if ($kusa_team == null) {
             $kusa_team = 'none';
         }
+
         if ($kusa_role == null) {
             $kusa_role = 'none';
         }
@@ -259,7 +267,7 @@ class MembersController extends Controller
         'kusa_team' => $kusa_team,
         'kusa_role' => $kusa_role,
       ])) {
-            return redirect()->action('AdminController@directUserManage')->with('msg-general', 'User information is modified.');
+            return redirect()->back()->with('msg-general', 'User information is modified.');
         }
     }
 

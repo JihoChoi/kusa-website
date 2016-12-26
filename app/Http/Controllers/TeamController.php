@@ -19,7 +19,7 @@ class TeamController extends Controller
                 return redirect()->action('AdminController@directTeamManage')->with('msg-general', 'Team has been added.');
             }
         } else {
-            return redirect()->action('AdminController@directTeamManage')->with('msg', 'Duplicate category is not allowed.');
+            return redirect()->action('AdminController@directTeamManage')->with('msg', 'Duplicate team is not allowed.');
         }
     }
 
@@ -31,7 +31,7 @@ class TeamController extends Controller
         if ($team::where('id', $team_id)->update([
         'team_name' => $team_title,
       ])) {
-            return redirect()->action('AdminController@directTeamManage')->with('msg-general', 'Team has been modifed.');
+            return redirect()->back()->with('msg-general', 'Team has been modifed.');
         }
     }
 
