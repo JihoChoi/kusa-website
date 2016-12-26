@@ -212,13 +212,12 @@ class MembersController extends Controller
 
     public function filterUsers(Request $request)
     {
-
         $user_status = $request->input('user_status');
 
-        if ($user_status == "all") {
-          $users = Users::paginate(1);
+        if ($user_status == 'all') {
+            $users = Users::paginate(1);
         } else {
-          $users = Users::where('user_status', $user_status)->paginate(1);
+            $users = Users::where('user_status', $user_status)->paginate(1);
         }
 
         $teams = KUSA_TEAM::all();
