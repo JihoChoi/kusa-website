@@ -212,18 +212,31 @@ class MembersController extends Controller
 
     public function filterUsers(Request $request)
     {
+        $user = Auth::user();
+        if ($user->user_status != 'admin') {
+            return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed.');
+        }
+
+        $MAX_DISPLAY = 1;
         $user_status = $request->input('user_status');
 
-        if ($user_status == 'all') {
-            $users = Users::paginate(1);
+        if ($user_status == 'all' || $user_status == null) {
+            $users = Users::paginate($MAX_DISPLAY)->appends(['user_status' => $user_status]);
         } else {
-            $users = Users::where('user_status', $user_status)->paginate(1);
+            $users = Users::where('user_status', $user_status)->paginate($MAX_DISPLAY)->appends(['user_status' => $user_status]);
         }
 
         $teams = KUSA_TEAM::all();
         $roles = KUSA_ROLE::all();
 
-        return view('CRUD.USERS.user-manage', compact('users', 'teams', 'roles', 'user_status'));
+        return view('CRUD.USERS.user-manage', [
+
+          'users' => $users,
+          'user_status' => $user_status,
+          'teams' => $teams,
+          'roles' => $roles,
+
+        ]);
     }
 
     public function modifyUser(Request $request)

@@ -94,7 +94,7 @@ class AdminController extends Controller
     public function directEventCategoryManage()
     {
         if ($this->isAdmin()) {
-            $categories = EVENT_CATEGORY::paginate(3);
+            $categories = EVENT_CATEGORY::paginate(10);
 
             return view('CRUD.EVENTS.event-category-manage', compact('categories'));
         }
@@ -105,7 +105,7 @@ class AdminController extends Controller
     public function directTeamManage()
     {
         if ($this->isAdmin()) {
-            $teams = KUSA_TEAM::paginate(3);
+            $teams = KUSA_TEAM::paginate(10);
 
             return view('CRUD.TEAMS.team-manage', compact('teams'));
         }
@@ -116,23 +116,9 @@ class AdminController extends Controller
     public function directRoleManage()
     {
         if ($this->isAdmin()) {
-            $roles = KUSA_ROLE::paginate(3);
+            $roles = KUSA_ROLE::paginate(10);
 
             return view('CRUD.ROLES.role-manage', compact('roles'));
-        }
-
-        return $this->authFail();
-    }
-
-    public function directUserManage(Request $request)
-    {
-        if ($this->isAdmin()) {
-            $user_status = $request->input('user_status');
-            $users = Users::paginate(1);
-            $teams = KUSA_TEAM::all();
-            $roles = KUSA_ROLE::all();
-
-            return view('CRUD.USERS.user-manage', compact('users', 'teams', 'roles', 'user_status'));
         }
 
         return $this->authFail();

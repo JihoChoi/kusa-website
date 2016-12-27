@@ -135,7 +135,7 @@
           @endforeach
         </tbody>
       </table>
-      <center> {{ $users->links() }} </center>
+      <center> {{ $users->appends(['user_status' => $user_status])->render() }} </center>
     </div>
 </div>
 </div>
