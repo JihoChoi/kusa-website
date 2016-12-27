@@ -231,10 +231,10 @@ class MembersController extends Controller
 
         return view('CRUD.USERS.user-manage', [
 
-          'users' => $users,
+          'users'       => $users,
           'user_status' => $user_status,
-          'teams' => $teams,
-          'roles' => $roles,
+          'teams'       => $teams,
+          'roles'       => $roles,
 
         ]);
     }

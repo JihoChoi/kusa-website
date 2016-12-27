@@ -8,7 +8,6 @@ use App\KUSA_TEAM;
 use App\Posts;
 use App\Users;
 use Auth;
-use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
