@@ -9,7 +9,7 @@
       <form method = "POST" action = "user-manage">
         {{ csrf_field() }}
         <div class = "form-group">
-          <div class = "col-sm-3">
+          <div class = "col-sm-2">
             <select class = "form-control" name = "user_status">
               <option <?php if ($user_status == "all") echo ("selected") ?>>all</option>
               <option <?php if ($user_status == "member") echo ("selected") ?>>member</option>
@@ -18,6 +18,9 @@
               <option <?php if ($user_status == "invalid") echo ("selected") ?>>invalid</option>
               <option <?php if ($user_status == "blocked") echo ("selected") ?>>blocked</option>
             </select>
+          </div>
+          <div class = "col-sm-3">
+            <input class = "form-control" name = "search_field">
           </div>
           <div class = "col-sm-3">
             <button type = "submit" class = "btn btn-primary"><i class = "fa fa-search"></i> Filter</button>
