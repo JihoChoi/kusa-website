@@ -19,6 +19,11 @@ class MembersController extends Controller
         return view('index');
     }
 
+    public function directBoard()
+    {
+        return view('CRUD.USERS.board');
+    }
+
     public function directLogin()
     {
         if (Auth::user() != null) {
