@@ -282,19 +282,17 @@ class MembersController extends Controller
         }
 
         $users = new Users();
-        $users->roles()->save($kusa_role);
-        $users->teams()->save($kusa_team);
 
-        if ($users::where('id', $id)->update([
-        'firstname'     => $firstname,
-        'lastname'      => $lastname,
-        'email'         => $email,
-        'register_type' => $register_type,
-        'user_status'   => $user_status,
-        'phone_number'  => $phone_number,
-        'kusa_team'     => $kusa_team,
-        'kusa_role'     => $kusa_role,
-      ])) {
+        $update_result = $users::where('id', $id)->update([
+          'firstname'     => $firstname,
+          'lastname'      => $lastname,
+          'email'         => $email,
+          'register_type' => $register_type,
+          'user_status'   => $user_status,
+          'phone_number'  => $phone_number,
+        ]);
+
+        if ($update_result) {
             return redirect()->back()->with('msg-general', 'User information is modified.');
         }
     }

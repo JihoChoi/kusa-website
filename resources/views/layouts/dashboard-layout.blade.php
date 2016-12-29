@@ -51,7 +51,7 @@
            <ul class="sidebar-nav">
                <li class="sidebar-brand">
                    <a href="#">
-                       KUSA Admin Dashboard
+                       Admin Dashboard
                    </a>
                </li>
                <li>
@@ -77,7 +77,7 @@
                </li>
                <hr>
                <li>
-                  <a href = "event-category-manage"><i class = "fa fa-gear"></i> Manage Event Categories</a>
+                  <a href = "event-category-manage"><i class = "fa fa-gear"></i> Manage Categories</a>
                </li>
                <li>
                  <a href = "team-manage"><i class = "fa fa-gear"></i> Manage KUSA Teams</a>

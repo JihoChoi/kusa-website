@@ -104,30 +104,8 @@
               <td>
                 {{ $user->phone_number }}
               </td>
-              <td>
-                @if ($user->user_status == "member")
-                  <select class = "form-control" name = "kusa_team" multiple>
-                    <option selected>none</option>
-                    @foreach ($teams as $team)
-                      <option <?php if ($user->kusa_team == $team->team_name) echo ("selected") ?>>{{ $team->team_name }}</option>
-                      @endforeach
-                    </select>
-                @else
-                  none
-                @endif
-              </td>
-              <td>
-                @if ($user->user_status == "member")
-                <select class = "form-control" name = "kusa_role" multiple>
-                  <option selected>none</option>
-                  @foreach ($roles as $role)
-                      <option <?php if ($user->kusa_role == $role->role) echo ("selected") ?>>{{ $role->role }}</option>
-                  @endforeach
-                </select>
-                @else
-                none
-                @endif
-              </td>
+              <td></td>
+              <td></td>
               <td>
                 @if ($user->user_status != "admin")
                   <button type = "submit" class = "btn btn-success">Save</button> <a class = "btn btn-danger" href = "user-manage-delete/{{ $user->id }}">Delete</a>

@@ -11,6 +11,9 @@ body {
 .container {
   margin-top: 150px;
 }
+.thumbnail {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+}
 </style>
 <div class = "container">
   @foreach ($teams as $team)

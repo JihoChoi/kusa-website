@@ -12,11 +12,11 @@ class Users extends Authenticatable
 
     public function roles()
     {
-      return $this->belongsToMany('App\KUSA_ROLE', 'user_team_role');
+      return $this->belongsToMany('App\KUSA_ROLE', 'user_role', 'user_id', 'role_id');
     }
 
     public function teams()
     {
-      return $this->belongsToMany('App\KUSA_TEAM', 'user_team_role');
+      return $this->belongsToMany('App\KUSA_TEAM', 'user_team', 'user_id', 'team_id');
     }
 }
