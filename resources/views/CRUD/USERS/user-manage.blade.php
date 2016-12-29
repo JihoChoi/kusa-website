@@ -109,7 +109,7 @@
                   <select class = "form-control" name = "kusa_team">
                     <option selected>none</option>
                     @foreach ($teams as $team)
-                      <option <?php if ($user->kusa_team == $team->team_name) echo ("selected") ?>>{{$team->team_name}}</option>
+                      <option <?php if ($user->kusa_team == $team->team_name) echo ("selected") ?>>{{ $team->team_name }}</option>
                       @endforeach
                     </select>
                 @else
@@ -140,7 +140,7 @@
       </table>
       <center> {{ $users->appends(['user_status' => $user_status])->render() }} </center>
     </div>
-</div>
+  </div>
 </div>
 
 @stop

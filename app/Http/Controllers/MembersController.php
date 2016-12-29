@@ -194,10 +194,10 @@ class MembersController extends Controller
         $phone_number = $request->input('phone');
         $users = new Users();
         if ($users::where('id', $id)->update([
-        'firstname' => $firstname,
-        'lastname' => $lastname,
+        'firstname'     => $firstname,
+        'lastname'      => $lastname,
         'register_type' => $register_type,
-        'phone_number' => $phone_number,
+        'phone_number'  => $phone_number,
       ])) {
             return redirect()->action('MembersController@directProfile')->with('msg-general', 'Basic profile is modified.');
         }
@@ -230,7 +230,7 @@ class MembersController extends Controller
             return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed.');
         }
 
-        $MAX_DISPLAY = 1;
+        $MAX_DISPLAY = 10;
         $user_status = $request->input('user_status');
 
         if ($user_status == 'all' || $user_status == null) {
@@ -283,14 +283,14 @@ class MembersController extends Controller
 
         $users = new Users();
         if ($users::where('id', $id)->update([
-        'firstname' => $firstname,
-        'lastname' => $lastname,
-        'email' => $email,
+        'firstname'     => $firstname,
+        'lastname'      => $lastname,
+        'email'         => $email,
         'register_type' => $register_type,
-        'user_status' => $user_status,
-        'phone_number' => $phone_number,
-        'kusa_team' => $kusa_team,
-        'kusa_role' => $kusa_role,
+        'user_status'   => $user_status,
+        'phone_number'  => $phone_number,
+        'kusa_team'     => $kusa_team,
+        'kusa_role'     => $kusa_role,
       ])) {
             return redirect()->back()->with('msg-general', 'User information is modified.');
         }
