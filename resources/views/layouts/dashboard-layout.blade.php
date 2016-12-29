@@ -13,6 +13,7 @@
   <!-- STYLE -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/dashboard-style.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css">
 
   <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
@@ -22,6 +23,7 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/tinymce/tinymce.min.js"></script>
   <script src="js/tinymce/jquery.tinymce.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
   @include('tinymce.tinymceinit')
 
 </head>
@@ -51,7 +53,7 @@
            <ul class="sidebar-nav">
                <li class="sidebar-brand">
                    <a href="#">
-                       Admin Dashboard
+                       Dashboard
                    </a>
                </li>
                <li>

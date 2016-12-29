@@ -1,5 +1,6 @@
 @extends('layouts.dashboard-layout')
 @section('content')
+
 <div class = "container">
   <div class = "panel panel-primary" style = "margin-left: 150px;">
     <div class = "panel-heading">
@@ -108,7 +109,7 @@
                   @if ($user->user_status == "admin")
                   none
                   @else
-                  <select class = "form-control" id = "kusa_team" name = "kusa_team">
+                  <select class = "form-control" id = "kusa_team" name = "kusa_team" multiple>
                     @foreach ($teams as $team)
                       <option> {{ $team->team_name }} </option>
                     @endforeach
@@ -119,7 +120,7 @@
                 @if ($user->user_status == "admin")
                 none
                 @else
-                <select class = "form-control" id = "kusa_role" name = "kusa_role">
+                <select class = "form-control" id = "kusa_role" name = "kusa_role" multiple>
                   @foreach ($roles as $role)
                     <option> {{ $role->role }} </option>
                   @endforeach
@@ -140,5 +141,9 @@
     </div>
   </div>
 </div>
-
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#kusa_team').multiselect();
+  });
+</script>
 @stop
