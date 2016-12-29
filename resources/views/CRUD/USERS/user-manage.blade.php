@@ -35,109 +35,34 @@
       <table class = "table" >
         <thead>
           <tr>
-            <th>Profile</th>
+            <th>Profile image</th>
             <th>First name</th>
             <th>Last name</th>
             <th>Email</th>
-            <th>Registration type</th>
-            <th>User Status</th>
-            <th>Phone number</th>
-            <th>KUSA Team</th>
-            <th>KUSA Role</th>
-            <th>Actions</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           @foreach ($users as $user)
-          <tr>
-            <form method = "POST" action = "user-manage-edit">
-              {{ csrf_field() }}
-              <input type = "hidden" value = "{{ $user->id }}" name = "id">
-              <td><img src = "/images/profiles/{{ $user->profile_img }}"></td>
-              <td>
-                @if ($user->user_status == "admin")
-                  {{$user->firstname}}
-                @else
-                <input class = "form-control" value = "{{ $user->firstname }}" style = "width: 80px;" name = "firstname">
-                @endif
-              </td>
-              <td>
-                @if ($user->user_status == "admin")
-                  {{$user->lastname}}
-                @else
-                <input class = "form-control" value = "{{ $user->lastname }}" style = "width: 80px;" name = "lastname">
-                @endif
-              </td>
-              <td>
-                @if ($user->user_status == "admin")
-                  {{$user->email}}
-                @else
-                <input class = "form-control" value = "{{ $user->email }}" style = "width: 200px;" name = "email">
-                @endif
-              </td>
-              <td>
-                @if ($user->user_status == "admin")
-                  {{ $user->register_type }}
-                @else
-                <select class = "form-control" id = "register_type" name = "register_type">
-                  <option <?php if ($user->register_type == "Undergraduate") echo ("selected")?>>Undergraduate</option>
-                  <option <?php if ($user->register_type == "Graduate") echo ("selected")?>>Graduate</option>
-                  <option <?php if ($user->register_type == "Faculty") echo ("selected")?>>Faculty</option>
-                  <option <?php if ($user->register_type == "Family") echo ("selected")?>>Family</option>
-                  <option <?php if ($user->register_type == "Alumni") echo ("selected")?>>Alumni</option>
-                  <option <?php if ($user->register_type == "General") echo ("selected")?>>General</option>
-                </select>
-                @endif
-              </td>
-              <td>
-                @if ($user->user_status == "admin")
-                  {{ $user->user_status }}
-                @else
-                <select class = "form-control" id = "user_status" name = "user_status">
-                  <option <?php if ($user->user_status == "active") echo ("selected") ?>>member</option>
-                  <option <?php if ($user->user_status == "nolonger") echo ("selected") ?>>nolonger</option>
-                  <option <?php if ($user->user_status == "general") echo ("selected") ?>>general</option>
-                  <option <?php if ($user->user_status == "invalid") echo ("selected") ?>>invalid</option>
-                  <option <?php if ($user->user_status == "blocked") echo ("selected") ?>>blocked</option>
-                </select>
-                @endif
-              </td>
-              <td>
-                {{ $user->phone_number }}
-              </td>
-              <td>
-                  @if ($user->user_status == "admin")
-                  none
-                  @else
-                  <select class = "form-control" id = "kusa_team" name = "kusa_team" multiple>
-                    @foreach ($teams as $team)
-                      <option> {{ $team->team_name }} </option>
-                    @endforeach
-                  </select>
-                  @endif
-              </td>
-              <td>
-                @if ($user->user_status == "admin")
-                none
-                @else
-                <select class = "form-control" id = "kusa_role" name = "kusa_role" multiple>
-                  @foreach ($roles as $role)
-                    <option> {{ $role->role }} </option>
-                  @endforeach
-                </select>
-                @endif
-              </td>
-              <td>
-                @if ($user->user_status != "admin")
-                  <button type = "submit" class = "btn btn-success">Save</button> <a class = "btn btn-danger" href = "user-manage-delete/{{ $user->id }}">Delete</a>
-                @endif
-              </td>
-            </form>
-          </tr>
+            <tr>
+              <td> <img src = "images/profiles/{{ $user->profile_img }}" width = "150px" height = "150px"> </td>
+              <td> {{ $user->firstname }} </td>
+              <td> {{ $user->lastname }} </td>
+              <td> {{ $user->email }}</td>
+              <td> @if ($user->user_status != "admin") <button class = "btn btn-primary" data-toggle = "modal" data-target = ".view-info"><i class = "fa fa-search"></i> View</button> @endif</td>
+            </tr>
           @endforeach
         </tbody>
       </table>
       <center> {{ $users->appends(['user_status' => $user_status])->render() }} </center>
+    </div>
+  </div>
+</div>
+
+<div class = "modal fade view-info" role = "dialog" tabindex = "-1" aria-labelledby="View Info" aria-hidden = "true">
+  <div class = "modal-dialog modal-lg">
+    <div class = "modal-content">
+      <div class = "container"> <h1>hi</h1> </div>
     </div>
   </div>
 </div>
