@@ -8,4 +8,5 @@ class KUSA_ROLE extends Model
 {
     //
     protected $table = 'roles';
+
 }

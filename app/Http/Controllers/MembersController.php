@@ -282,6 +282,9 @@ class MembersController extends Controller
         }
 
         $users = new Users();
+        $users->roles()->save($kusa_role);
+        $users->teams()->save($kusa_team);
+
         if ($users::where('id', $id)->update([
         'firstname'     => $firstname,
         'lastname'      => $lastname,

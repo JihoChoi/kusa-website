@@ -106,7 +106,7 @@
               </td>
               <td>
                 @if ($user->user_status == "member")
-                  <select class = "form-control" name = "kusa_team">
+                  <select class = "form-control" name = "kusa_team" multiple>
                     <option selected>none</option>
                     @foreach ($teams as $team)
                       <option <?php if ($user->kusa_team == $team->team_name) echo ("selected") ?>>{{ $team->team_name }}</option>
@@ -118,7 +118,7 @@
               </td>
               <td>
                 @if ($user->user_status == "member")
-                <select class = "form-control" name = "kusa_role">
+                <select class = "form-control" name = "kusa_role" multiple>
                   <option selected>none</option>
                   @foreach ($roles as $role)
                       <option <?php if ($user->kusa_role == $role->role) echo ("selected") ?>>{{ $role->role }}</option>

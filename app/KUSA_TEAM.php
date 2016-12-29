@@ -8,4 +8,5 @@ class KUSA_TEAM extends Model
 {
     //
     protected $table = 'kusa-team';
+
 }

@@ -23,7 +23,7 @@ body {
             <img src = "/images/profiles/{{ $member->profile_img }}" class = "img-responsive" width = "350px" height = "350px">
             <div class = "caption" style = "text-align: center;">
               <h3>{{ $member->lastname }} {{ $member->firstname }}</h3>
-              <p> {{ $member->kusa_role }}</p>
+              <p> {{ $member->kusa_role }} </p>
             </div>
           </div>
         </div>
