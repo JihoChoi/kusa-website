@@ -295,6 +295,7 @@ class MembersController extends Controller
         $user = Users::where('id', $id)->first();
         $role = KUSA_ROLE::where('role', $kusa_role)->first();
         $team = KUSA_TEAM::where('team_name', $kusa_team)->first();
+        
         $user->roles()->save($role);
         $user->teams()->save($team);
 
