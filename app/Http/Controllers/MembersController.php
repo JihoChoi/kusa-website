@@ -21,7 +21,14 @@ class MembersController extends Controller
 
     public function directBoard()
     {
-        return view('CRUD.USERS.board');
+        $active_members = Users::where('user_status', 'member')->get();
+        $teams = KUSA_TEAM::all();
+        $roles = KUSA_ROLE::all();
+        return view('CRUD.USERS.board', [
+          'active_members' => $active_members,
+          'teams'          => $teams,
+          'roles'          => $roles,
+        ]);
     }
 
     public function directLogin()
