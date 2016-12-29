@@ -14,7 +14,7 @@ class CreateKusateamTable extends Migration
     public function up()
     {
         //
-        Schema::create('kusa-team', function (Blueprint $table) {
+        Schema::create('kusa_team', function (Blueprint $table) {
             $table->increments('id');
             $table->string('team_name')->unique();
             $table->rememberToken();
@@ -30,6 +30,6 @@ class CreateKusateamTable extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('kusa-team');
+        Schema::dropIfExists('kusa_team');
     }
 }

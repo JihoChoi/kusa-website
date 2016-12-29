@@ -104,8 +104,28 @@
               <td>
                 {{ $user->phone_number }}
               </td>
-              <td></td>
-              <td></td>
+              <td>
+                  @if ($user->user_status == "admin")
+                  none
+                  @else
+                  <select class = "form-control" id = "kusa_team" name = "kusa_team">
+                    @foreach ($teams as $team)
+                      <option> {{ $team->team_name }} </option>
+                    @endforeach
+                  </select>
+                  @endif
+              </td>
+              <td>
+                @if ($user->user_status == "admin")
+                none
+                @else
+                <select class = "form-control" id = "kusa_role" name = "kusa_role">
+                  @foreach ($roles as $role)
+                    <option> {{ $role->role }} </option>
+                  @endforeach
+                </select>
+                @endif
+              </td>
               <td>
                 @if ($user->user_status != "admin")
                   <button type = "submit" class = "btn btn-success">Save</button> <a class = "btn btn-danger" href = "user-manage-delete/{{ $user->id }}">Delete</a>
