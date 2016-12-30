@@ -35,6 +35,7 @@
       <table class = "table" >
         <thead>
           <tr>
+            <th></th>
             <th>Profile image</th>
             <th>First name</th>
             <th>Last name</th>
@@ -45,11 +46,14 @@
         <tbody>
           @foreach ($users as $user)
             <tr>
+              <td> <input type = "hidden" value = "{{ $user->id }}"> </td>
               <td> <img src = "images/profiles/{{ $user->profile_img }}" width = "150px" height = "150px"> </td>
               <td> {{ $user->firstname }} </td>
               <td> {{ $user->lastname }} </td>
-              <td> {{ $user->email }}</td>
-              <td> @if ($user->user_status != "admin") <button class = "btn btn-primary" data-toggle = "modal" data-target = ".view-info"><i class = "fa fa-search"></i> View</button> @endif</td>
+              <td> {{ $user->email }} </td>
+              <td> @if ($user->user_status != "admin") <a class = "btn btn-success" href = "#"><i class = "fa fa-pencil-square-o"></i> Edit</a>
+                <button class = "btn btn-danger" data-toggle = "modal" data-target = ".open_confirm_delete"><i class = "fa fa-trash"></i> Delete</button>
+                @endif</td>
             </tr>
           @endforeach
         </tbody>
@@ -59,10 +63,19 @@
   </div>
 </div>
 
-<div class = "modal fade view-info" role = "dialog" tabindex = "-1" aria-labelledby="View Info" aria-hidden = "true">
+<div class = "modal fade open_confirm_delete" tabindex = "-1" id = "open_confirm_delete" role = "dialog">
   <div class = "modal-dialog modal-lg">
     <div class = "modal-content">
-      <div class = "container"> <h1>hi</h1> </div>
+      <div class = "modal-header">
+        <button type = "button" class = "close" data-dismiss = "modal">&times;</button>
+        <h4 class = "modal-title">Confirm Delete</h4>
+      </div>
+      <div class = "modal-body">
+        <p> Are you sure you want to delete? </p>
+      </div>
+      <div class = "modal-footer">
+        <a class = "btn btn-danger" href = "#">Delete</a><button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>
