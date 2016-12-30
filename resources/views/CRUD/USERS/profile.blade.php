@@ -27,6 +27,7 @@
           <label class = "label-control">Update Profile Image</label>
           <form enctype = "multipart/form-data" action = "profile" method = "POST">
             {{ csrf_field() }}
+						<input type = "hidden" name = "id" value = "{{ $user->id }}">
             <input type = "file" name = "profile" class = "pull-left" style = "margin-top: 5px;">
             <button type = "submit" class = "pull-right btn btn-primary"><i class = "fa fa-cloud-upload"></i> Upload</button>
           </form>

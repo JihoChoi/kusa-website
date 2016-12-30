@@ -46,7 +46,7 @@
         <tbody>
           @foreach ($users as $user)
             <tr>
-              <td> <input type = "hidden" value = "{{ $user->id }}"> </td>
+              <td> <input name = "id" type = "hidden" value = "{{ $user->id }}"> </td>
               <td> <img src = "images/profiles/{{ $user->profile_img }}" width = "150px" height = "150px"> </td>
               <td> {{ $user->firstname }} </td>
               <td> {{ $user->lastname }} </td>

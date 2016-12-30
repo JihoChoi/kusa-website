@@ -173,16 +173,23 @@ class MembersController extends Controller
 
     public function updateProfileImage(Request $request)
     {
+        $id = $request->input('id');
         if ($request->hasFile('profile')) {
             $profile = $request->file('profile');
             $filename = time().str_random(10).'.'.$profile->getClientOriginalExtension();
             Image::make($profile)->resize(300, 300)->save(public_path('/images/profiles/'.$filename));
-            $user = Auth::user();
+            $user = Users::findOrFail($id);
             $user->profile_img = $filename;
             $user->save();
         }
 
-        return view('CRUD.USERS.profile', ['user' => Auth::user()]);
+        $isadmin = $request->input('isadmin');
+        if ($isadmin == "isadmin") {
+          // from admin
+          return redirect()->back();
+        }
+        return view('CRUD.USERS.profile', ['user' => $user]);
+
     }
 
     public function updateProfile(Request $request)
