@@ -51,7 +51,7 @@
               <td> {{ $user->firstname }} </td>
               <td> {{ $user->lastname }} </td>
               <td> {{ $user->email }} </td>
-              <td> @if ($user->user_status != "admin") <a class = "btn btn-success" href = "#"><i class = "fa fa-pencil-square-o"></i> Edit</a>
+              <td> @if ($user->user_status != "admin") <a class = "btn btn-success" href = "user-manage-edit/{{ $user->id }}"><i class = "fa fa-pencil-square-o"></i> Edit</a>
                 <button class = "btn btn-danger" data-toggle = "modal" data-target = ".open_confirm_delete"><i class = "fa fa-trash"></i> Delete</button>
                 @endif</td>
             </tr>

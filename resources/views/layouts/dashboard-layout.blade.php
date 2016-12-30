@@ -11,19 +11,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.8/validator.min.js"></script>
 
   <!-- STYLE -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/dashboard-style.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css">
+  <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/dashboard-style.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/bootstrap-multiselect.css')}}" type="text/css">
 
   <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- JAVASCRIPT -->
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/tinymce/tinymce.min.js"></script>
-  <script src="js/tinymce/jquery.tinymce.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+  <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+  <script src="{{ asset('js/tinymce/tinymce.min.js')}}"></script>
+  <script src="{{ asset('js/tinymce/jquery.tinymce.min.js')}}"></script>
+  <script type="text/javascript" src="{{ asset('js/bootstrap-multiselect.js')}}"></script>
   @include('tinymce.tinymceinit')
 
 </head>
@@ -57,14 +57,14 @@
                    </a>
                </li>
                <li>
-                   <a href="dashboard"><i class = "fa fa-tachometer"></i> Dashboard</a>
+                   <a href="{{ action('AdminController@directDashboard') }}"><i class = "fa fa-tachometer"></i> Dashboard</a>
                </li>
                <li>
-                   <a href = "/"><i class = "fa fa-home"></i> Back to Homepage</a>
+                   <a href = "{{ action('MembersController@directIndex') }}"><i class = "fa fa-home"></i> Back to Homepage</a>
                </li>
                <hr>
                <li>
-                   <a href="post"><i class = "fa fa-pencil-square-o"></i> Create Post</a>
+                   <a href="{{ action('AdminController@directPost') }}"><i class = "fa fa-pencil-square-o"></i> Create Post</a>
                    <a href=""><i class = "fa fa-pencil"></i> Manage Posts </a>
                </li>
                <hr>
@@ -75,7 +75,7 @@
                    <a href="#"><i class = "fa fa-bell"></i> Push Notification</a>
                </li>
                <li>
-                   <a href="user-manage"><i class = "fa fa-users"></i> Users</a>
+                   <a href="{{ action('MembersController@filterUsers') }}"><i class = "fa fa-users"></i> Users</a>
                </li>
                <hr>
                <li>

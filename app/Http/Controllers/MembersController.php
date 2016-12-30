@@ -252,6 +252,20 @@ class MembersController extends Controller
         ]);
     }
 
+    public function directModify($user_id) {
+      $userinfo = Users::findOrFail($user_id);
+      $current_user = Auth::user();
+      if ($current_user->user_status != "admin") {
+        return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed.');
+      }
+
+      return view('CRUD.USERS.user-modify', [
+        'user'  => $userinfo,
+        'teams' => KUSA_TEAM::all(),
+        'roles' => KUSA_ROLE::all(),
+      ]);
+    }
+
     public function modifyUser(Request $request)
     {
         $user = Auth::user();
