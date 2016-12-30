@@ -75,21 +75,21 @@
                    <a href="#"><i class = "fa fa-bell"></i> Push Notification</a>
                </li>
                <li>
-                   <a href="{{ action('MembersController@filterUsers') }}"><i class = "fa fa-users"></i> Users</a>
+                   <a href = "{{ action('MembersController@filterUsers') }}"><i class = "fa fa-users"></i> Users</a>
                </li>
                <hr>
                <li>
-                  <a href = "event-category-manage"><i class = "fa fa-gear"></i> Manage Categories</a>
+                  <a href = "{{ action('AdminController@directEventCategoryManage') }}"><i class = "fa fa-gear"></i> Manage Categories</a>
                </li>
                <li>
-                 <a href = "team-manage"><i class = "fa fa-gear"></i> Manage KUSA Teams</a>
+                 <a href = "{{ action('AdminController@directTeamManage') }}"><i class = "fa fa-gear"></i> Manage KUSA Teams</a>
                </li>
                <li>
-                 <a href = "role-manage"><i class = "fa fa-gear"></i> Manage KUSA Roles</a>
+                 <a href = "{{ action('AdminController@directRoleManage') }}"><i class = "fa fa-gear"></i> Manage KUSA Roles</a>
                </li>
                <hr>
                <li>
-                   <a href="logout"><i class = "fa fa-sign-out"></i>Logout</a>
+                   <a href="{{ action('MembersController@doLogout') }}"><i class = "fa fa-sign-out"></i>Logout</a>
                </li>
            </ul>
        </div>
