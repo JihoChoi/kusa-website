@@ -79,9 +79,4 @@
     </div>
   </div>
 </div>
-<script type="text/javascript">
-  $(document).ready(function() {
-      $('#kusa_team').multiselect();
-  });
-</script>
 @stop
