@@ -19,7 +19,7 @@ Route::get('logout', 'MembersController@doLogout');
 Route::get('register/verify/{confirmation_code}', 'MembersController@confirm');
 Route::get('board', 'MembersController@directBoard');
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'adminauth'], function () {
     Route::get('dashboard', 'AdminController@directDashboard');
 
   /* Post Manage Routes*/
