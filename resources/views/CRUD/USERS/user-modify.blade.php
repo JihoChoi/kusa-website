@@ -14,8 +14,8 @@ Modify user
       <div class = "row">
         <div class = "col-md-10 col-md-offset-1">
           <img src = "/images/profiles/{{ $user->profile_img }}" style = "width: 150px; height: 150px; float: left; margin-right: 25px;">
-          <h2>{{ $user->firstname }}'s profile</h2>
-          <label class = "label-control">Update Profile Image</label>
+
+          <label class = "label-control"><h2>Update Profile Image</h2></label>
           <form enctype = "multipart/form-data" action = "{{ action('MembersController@updateProfileImage') }}" method = "POST">
             {{ csrf_field() }}
             <input type = "hidden" name = "id" value = "{{ $user->id }}">
