@@ -11,32 +11,6 @@ use Auth;
 
 class AdminController extends Controller
 {
-    //
-
-    public function isAdmin()
-    {
-        $username = Auth::user();
-        $isadmin = $this->checkIfAdmin($username->email);
-
-        return $isadmin;
-    }
-
-    public function checkIfAdmin($username)
-    {
-        $userinfo = Users::where('email', $username)->first();
-        if ($userinfo) {
-            if ($userinfo->user_status == 'admin') {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    public function authFail()
-    {
-        return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed.');
-    }
 
 /*
 
@@ -51,75 +25,43 @@ class AdminController extends Controller
 
     public function directDashboard()
     {
-        if ($this->isAdmin()) {
-            $users = Users::all();
-            $contents = Posts::all();
-
-            return view('dashboard', compact('contents', 'users'));
-        }
-
-        return $this->authFail();
+      $users = Users::all();
+      $contents = Posts::all();
+      return view('dashboard', compact('contents', 'users'));
     }
 
     public function directPost()
     {
-        if ($this->isAdmin()) {
-            $event_types = EVENT_CATEGORY::all();
-
-            return view('CRUD.post', compact('event_types'));
-        }
-
-        return $this->authFail();
+      $event_types = EVENT_CATEGORY::all();
+      return view('CRUD.post', compact('event_types'));
     }
 
     public function directEdit()
     {
-        if ($this->isAdmin()) {
-            return view('CRUD.edit');
-        }
 
-        return $this->authFail();
+        return view('CRUD.edit');
     }
 
     public function directDelete()
     {
-        if ($this->isAdmin()) {
-            return view('CRUD.delete');
-        }
-
-        return $this->authFail();
+        return view('CRUD.delete');
     }
 
     public function directEventCategoryManage()
     {
-        if ($this->isAdmin()) {
-            $categories = EVENT_CATEGORY::paginate(10);
-
-            return view('CRUD.EVENTS.event-category-manage', compact('categories'));
-        }
-
-        return $this->authFail();
+      $categories = EVENT_CATEGORY::paginate(10);
+      return view('CRUD.EVENTS.event-category-manage', compact('categories'));
     }
 
     public function directTeamManage()
     {
-        if ($this->isAdmin()) {
-            $teams = KUSA_TEAM::paginate(10);
-
-            return view('CRUD.TEAMS.team-manage', compact('teams'));
-        }
-
-        return $this->authFail();
+      $teams = KUSA_TEAM::paginate(10);
+      return view('CRUD.TEAMS.team-manage', compact('teams'));
     }
 
     public function directRoleManage()
     {
-        if ($this->isAdmin()) {
-            $roles = KUSA_ROLE::paginate(10);
-
-            return view('CRUD.ROLES.role-manage', compact('roles'));
-        }
-
-        return $this->authFail();
+      $roles = KUSA_ROLE::paginate(10);
+      return view('CRUD.ROLES.role-manage', compact('roles'));
     }
 }

@@ -232,11 +232,6 @@ class MembersController extends Controller
 
     public function filterUsers(Request $request)
     {
-        $user = Auth::user();
-        if ($user->user_status != 'admin') {
-            return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed.');
-        }
-
         $MAX_DISPLAY = 10;
         $user_status = $request->input('user_status');
 
@@ -261,11 +256,6 @@ class MembersController extends Controller
 
     public function directModify($user_id) {
       $userinfo = Users::findOrFail($user_id);
-      $current_user = Auth::user();
-      if ($current_user->user_status != "admin") {
-        return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed.');
-      }
-
       return view('CRUD.USERS.user-modify', [
         'user'  => $userinfo,
         'teams' => KUSA_TEAM::all(),
@@ -275,11 +265,6 @@ class MembersController extends Controller
 
     public function modifyUser(Request $request)
     {
-        $user = Auth::user();
-        if ($user->user_status != 'admin') {
-            return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed.');
-        }
-
         $id = $request->input('id');
         $firstname = $request->input('firstname');
         $lastname = $request->input('lastname');
@@ -327,14 +312,9 @@ class MembersController extends Controller
 
     public function deleteUser($user_id)
     {
-        $user = Auth::user();
-        if ($user->user_status == 'admin') {
-            $users = new Users();
-            if ($users::where('id', $user_id)->delete()) {
-                return redirect()->action('AdminController@directUserManage')->with('msg-general', 'User has been deleted.');
-            }
+        $users = new Users();
+        if ($users::where('id', $user_id)->delete()) {
+            return redirect()->action('AdminController@directUserManage')->with('msg-general', 'User has been deleted.');
         }
-
-        return redirect()->action('MembersController@directIndex')->with('msg', 'Admin authentication failed.');
     }
 }
