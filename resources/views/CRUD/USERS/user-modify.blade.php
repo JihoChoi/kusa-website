@@ -77,7 +77,7 @@ Modify user
           <div class = "col-sm-8">
             <select id = "kusa_role" class = "selectpicker" multiple>
               @foreach ($roles as $role)
-                <option>{{ $role->role }}</option>
+                <option @foreach ($user->roles as $userrole) @if ($userrole->role == $role->role) {{ "selected" }} @endif @endforeach>{{ $role->role }}</option>
               @endforeach
             </select>
           </div>
