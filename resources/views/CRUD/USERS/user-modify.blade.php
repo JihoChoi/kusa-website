@@ -67,7 +67,7 @@ Modify user
           <div class = "col-sm-8">
             <select id = "kusa_team" class = "selectpicker" multiple>
               @foreach ($teams as $team)
-                <option>{{ $team->team_name }}</option>
+                <option @foreach ($user->teams as $userteam) @if ($userteam->team_name == $team->team_name) {{ "selected" }} @endif @endforeach> {{ $team->team_name }} </option>
               @endforeach
             </select>
           </div>
