@@ -106,7 +106,6 @@ Modify user
             <input id="phone" type = "text" class = "form-control" name = "phone_number" placeholder = "US Phone Number (not required)" value = "{{ $user->phone_number }}">
           </div>
         </div>
-
         <div class = "form-group" style = "margin-top: 10px">
           <div class = "col-sm-12 controls">
             <center>

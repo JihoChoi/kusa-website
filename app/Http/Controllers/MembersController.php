@@ -281,6 +281,14 @@ class MembersController extends Controller
             $phone_number = 'none';
         }
 
+        if ($kusa_team == null) {
+          $kusa_team = 'none';
+        }
+
+        if ($kusa_role == null) {
+          $kusa_role = 'none';
+        }
+
         $users = new Users();
 
         $update_result = $users::where('id', $id)->update([
@@ -297,25 +305,42 @@ class MembersController extends Controller
         $roles = array();
         $teams = array();
 
-        foreach ($kusa_role as $role) {
-          $roles[] = KUSA_ROLE::where('role', '=', $role)->first();
+        /*
+          Iterate through role
+        */
+
+        if ($kusa_role != 'none') {
+
+          foreach ($kusa_role as $role) {
+            $roles[] = KUSA_ROLE::where('role', '=', $role)->first();
+          }
+
+          foreach ($roles as $role) {
+            $user->roles()->sync([$role->id], false);
+          }
+
         }
 
-        foreach ($roles as $role) {
-          $user->roles()->sync([$role->id], false);
-        }
+        /*
+          Iterate through team
+        */
 
-        foreach ($kusa_team as $team) {
-          $teams[] = KUSA_TEAM::where('team_name', '=', $team)->first();
-        }
+        if ($kusa_team != 'none') {
 
-        foreach ($teams as $team) {
-          $user->teams()->sync([$team->id], false);
+          foreach ($kusa_team as $team) {
+            $teams[] = KUSA_TEAM::where('team_name', '=', $team)->first();
+          }
+
+          foreach ($teams as $team) {
+            $user->teams()->sync([$team->id], false);
+          }
+
         }
 
         if ($update_result) {
             return redirect()->back()->with('msg-general', 'User information is modified.');
         }
+
     }
 
     public function deleteUser($user_id)
