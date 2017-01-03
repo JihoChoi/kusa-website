@@ -30,7 +30,7 @@ Route::group(['middleware' => 'adminauth'], function () {
   Route::get('event-category-manage', 'AdminController@directEventCategoryManage');
     Route::post('event-category-manage', 'EventCategoryController@postEventCategory');
     Route::post('event-category-manage-edit', 'EventCategoryController@modifyEventCategory');
-    Route::get('event-category-manage-delete/{category_id}', 'EventCategoryCOntroller@deleteEventCategory');
+    Route::get('event-category-manage-delete/{category_id}', 'EventCategoryController@deleteEventCategory');
 
   /* Team Manage Routes */
   Route::get('team-manage', 'AdminController@directTeamManage');

@@ -28,6 +28,7 @@ Modify user
       <hr>
       <form id = "modifyform" class = "form-horizontal" role = "form" method = "POST" action = "{{ action('MembersController@modifyUser') }}" data-toggle = "validator">
         {{ csrf_field() }}
+        <input type = "hidden" name = "id" value = "{{ $user->id }}">
         <div class = "form-group">
           <label for="firstname" class = "col-sm-3 control-label">First Name</label>
           <div class = "col-sm-9">
@@ -52,7 +53,7 @@ Modify user
         <div class = "form-group">
           <label for="type" class = "col-sm-3 control-label">Registration Type</label>
             <div class = "col-sm-9">
-              <select class="form-control" id="type" name = "type">
+              <select class="form-control" id="register_type" name = "register_type">
                 <option>Undergraduate</option>
                 <option>Graduate</option>
                 <option>Faculty</option>
@@ -63,29 +64,46 @@ Modify user
             </div>
         </div>
         <div class = "form-group">
-          <label for = "team" class = "col-sm-3 control-label">Team</label>
-          <div class = "col-sm-8">
-            <select id = "kusa_team" class = "selectpicker" multiple>
-              @foreach ($teams as $team)
-                <option @foreach ($user->teams as $userteam) @if ($userteam->team_name == $team->team_name) {{ "selected" }} @endif @endforeach> {{ $team->team_name }} </option>
-              @endforeach
-            </select>
-          </div>
+          @if ($user->user_status == "member")
+            <label for = "team" class = "col-sm-3 control-label">Team</label>
+            <div class = "col-sm-8">
+              <select id = "kusa_team" name = "kusa_team[]" class = "selectpicker" multiple>
+                @foreach ($teams as $team)
+                  <option @foreach ($user->teams as $userteam) @if ($userteam->team_name == $team->team_name) {{ "selected" }} @endif @endforeach> {{ $team->team_name }} </option>
+                @endforeach
+              </select>
+            </div>
+          @endif
         </div>
         <div class = "form-group">
-          <label for = "team" class = "col-sm-3 control-label">Role</label>
-          <div class = "col-sm-8">
-            <select id = "kusa_role" class = "selectpicker" multiple>
-              @foreach ($roles as $role)
-                <option @foreach ($user->roles as $userrole) @if ($userrole->role == $role->role) {{ "selected" }} @endif @endforeach>{{ $role->role }}</option>
-              @endforeach
+          @if ($user->user_status == "member")
+            <label for = "team" class = "col-sm-3 control-label">Role</label>
+            <div class = "col-sm-8">
+              <select id = "kusa_role" name = "kusa_role[]" class = "selectpicker" multiple>
+                @foreach ($roles as $role)
+                  <option @foreach ($user->roles as $userrole) @if ($userrole->role == $role->role) {{ "selected" }} @endif @endforeach>{{ $role->role }}</option>
+                @endforeach
+              </select>
+            </div>
+          @endif
+        </div>
+        <div class = "form-group">
+          <label for = "user_status" class = "col-sm-3 control-label">User Status</label>
+          <div class = "col-sm-9">
+            <select class = "form-control" name = "user_status">
+              <option <?php if ($user_status == "all") echo ("selected") ?>>all</option>
+              <option <?php if ($user_status == "member") echo ("selected") ?>>member</option>
+              <option <?php if ($user_status == "nolonger") echo ("selected") ?>>nolonger</option>
+              <option <?php if ($user_status == "general") echo ("selected") ?>>general</option>
+              <option <?php if ($user_status == "invalid") echo ("selected") ?>>invalid</option>
+              <option <?php if ($user_status == "blocked") echo ("selected") ?>>blocked</option>
             </select>
           </div>
         </div>
         <div class = "form-group">
           <label for="phone" class = "col-sm-3 control-label">Phone Number</label>
           <div class = "col-sm-9">
-            <input id="phone" type = "text" class = "form-control" name = "phone" placeholder = "US Phone Number (not required)" value = "{{ $user->phone_number }}">
+            <input id="phone" type = "text" class = "form-control" name = "phone_number" placeholder = "US Phone Number (not required)" value = "{{ $user->phone_number }}">
           </div>
         </div>
 

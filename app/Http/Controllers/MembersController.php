@@ -257,9 +257,10 @@ class MembersController extends Controller
     public function directModify($user_id) {
       $userinfo = Users::findOrFail($user_id);
       return view('CRUD.USERS.user-modify', [
-        'user'  => $userinfo,
-        'teams' => KUSA_TEAM::all(),
-        'roles' => KUSA_ROLE::all(),
+        'user'        => $userinfo,
+        'user_status' => $userinfo->user_status,
+        'teams'       => KUSA_TEAM::all(),
+        'roles'       => KUSA_ROLE::all(),
       ]);
     }
 
@@ -272,16 +273,9 @@ class MembersController extends Controller
         $register_type = $request->input('register_type');
         $user_status = $request->input('user_status');
         $phone_number = $request->input('phone_number');
+
         $kusa_team = $request->input('kusa_team');
         $kusa_role = $request->input('kusa_role');
-
-        if ($kusa_team == null) {
-            $kusa_team = 'none';
-        }
-
-        if ($kusa_role == null) {
-            $kusa_role = 'none';
-        }
 
         if ($phone_number == null) {
             $phone_number = 'none';
@@ -298,12 +292,26 @@ class MembersController extends Controller
           'phone_number'  => $phone_number,
         ]);
 
-        $user = Users::where('id', $id)->first();
-        $role = KUSA_ROLE::where('role', $kusa_role)->first();
-        $team = KUSA_TEAM::where('team_name', $kusa_team)->first();
+        $user = Users::find($id);
 
-        $user->roles()->sync([$role->id], false);
-        $user->teams()->sync([$team->id], false);
+        $roles = array();
+        $teams = array();
+
+        foreach ($kusa_role as $role) {
+          $roles[] = KUSA_ROLE::where('role', '=', $role)->first();
+        }
+
+        foreach ($roles as $role) {
+          $user->roles()->sync([$role->id], false);
+        }
+
+        foreach ($kusa_team as $team) {
+          $teams[] = KUSA_TEAM::where('team_name', '=', $team)->first();
+        }
+
+        foreach ($teams as $team) {
+          $user->teams()->sync([$team->id], false);
+        }
 
         if ($update_result) {
             return redirect()->back()->with('msg-general', 'User information is modified.');
