@@ -19,6 +19,11 @@ Route::get('logout', 'MembersController@doLogout');
 Route::get('register/verify/{confirmation_code}', 'MembersController@confirm');
 Route::get('board', 'MembersController@directBoard');
 
+/* User Profile Routes */
+Route::get('profile', 'MembersController@directProfile');
+Route::post('profile', 'MembersController@updateProfileImage');
+Route::post('profile_update', 'MembersController@updateProfile');
+
 Route::group(['middleware' => 'adminauth'], function () {
     Route::get('dashboard', 'AdminController@directDashboard');
 
@@ -51,8 +56,5 @@ Route::group(['middleware' => 'adminauth'], function () {
     Route::post('user-manage-edit', 'MembersController@modifyUser');
     Route::get('user-manage-delete/{user_id}', 'MembersController@deleteUser');
 
-  /* User Profile Routes */
-  Route::get('profile', 'MembersController@directProfile');
-    Route::post('profile', 'MembersController@updateProfileImage');
-    Route::post('profile_update', 'MembersController@updateProfile');
+
 });

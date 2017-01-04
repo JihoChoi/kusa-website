@@ -97,8 +97,6 @@ class MembersController extends Controller
         $rememberToken = '';
         $userstatus = 'invalid';
         $phonenumber = $request->input('phone');
-        $kusa_team = 'none';
-        $kusa_role = 'none';
         $reset_token = '';
         $confirmation_code = str_random(45);
 
@@ -111,8 +109,6 @@ class MembersController extends Controller
         $member->register_type = $registertype;
         $member->user_status = $userstatus;
         $member->phone_number = $phonenumber;
-        $member->kusa_team = $kusa_team;
-        $member->kusa_role = $kusa_role;
         $member->reset_token = $reset_token;
         $member->remember_token = $rememberToken;
         $member->confirmation_code = $confirmation_code;
@@ -315,10 +311,15 @@ class MembersController extends Controller
             $roles[] = KUSA_ROLE::where('role', '=', $role)->first();
           }
 
+          $roleids = array();
           foreach ($roles as $role) {
-            $user->roles()->sync([$role->id], false);
+            $roleids[] = $role->id;
           }
 
+          $user->roles()->sync($roleids);
+
+        } else {
+          $user->roles()->detach();
         }
 
         /*
@@ -331,10 +332,16 @@ class MembersController extends Controller
             $teams[] = KUSA_TEAM::where('team_name', '=', $team)->first();
           }
 
+          $teamids = array();
           foreach ($teams as $team) {
-            $user->teams()->sync([$team->id], false);
+            $teamids[] = $team->id;
           }
 
+          $user->teams()->sync($teamids);
+
+        } else {
+          // if $kusa_team is none
+          $user->teams()->detach();
         }
 
         if ($update_result) {
