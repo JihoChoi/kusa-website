@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nixie+One" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
 
   <body>
@@ -40,7 +41,7 @@
           <?php session()->forget('msg-general'); ?>
         </div>
       @endif
-      <nav class = "navbar navbar-default navbar-fixed-top">
+      <nav class = "navbar navbar-default navbar-static-top">
         <div class = "container-fluid">
           <div class = "navbar-header">
             <button type = "button" class = "navbar-toggle" data-toggle = "collapse" data-target = "#kusanavbar">
@@ -59,13 +60,13 @@
                 <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">About<span class = "caret"></span></a>
                 <ul class = "dropdown-menu">
                   <li><a href = "kusa">KUSA</a></li>
-                  <li><a href = "board">BOARD</a></li>
+                  <li><a href = "board">Board</a></li>
                 </ul>
               </li>
               <li class = "dropdown">
                 <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">Updates<span class = "caret"></span></a>
                 <ul class = "dropdown-menu">
-                  <li><a href = "news">Announcements</a></li>
+                  <li><a href = "news">News</a></li>
                   <li><a href = "d-korea">Events</a></li>
                   <li><a href = "calendar">Calendar</a></li>
                 </ul>

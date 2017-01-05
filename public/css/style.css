@@ -9,11 +9,13 @@ hr.style5 {
 	font-size: 15px;
 }
 .alert-container {
-	position: relative;
-	top: 150px;
+	position: fixed;
 	max-width: 55em;
 	width: 90%;
-	margin: 0 auto;
+	margin: 5% auto;
+	top: 50px;
+	left: 0;
+	right: 0;
 }
 /*
 |----------------------------------------------------
@@ -30,6 +32,7 @@ hr.style5 {
 .navbar {
   background-color: #FFFEFE;
   height: 80px;
+	box-shadow: 0 1px 5px #dcdcdc;
 }
 #kusanavbar {
   background-color: white;
@@ -41,7 +44,7 @@ hr.style5 {
 }
 .nav.navbar-nav {
   font-size: 17px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin: 15px;
   margin-left: 30px;
 }
@@ -73,8 +76,8 @@ img.default-profile {
 */
 
 .background-A3CFEA {
-  margin-top: 50px;
-  background-color: #A3CFEA;
+  margin-top: -20px;
+  /*background-color: #A3CFEA;*/
   height: 700px;
 }
 
@@ -90,8 +93,9 @@ img.default-profile {
 .main-title {
   margin-top: 85px;
   text-align: center;
-  font-family: 'Ubuntu', sans-serif;
-
+  font-family: 'Open Sans', sans-serif;
+	font-size: 30px;
+	color: black;
 }
 
 .sub-video {
@@ -117,7 +121,59 @@ div video {
   width: 100%;
   height: 100%;
 }
+
 .panel-body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
+}
+
+.thumbnail {
+  box-shadow: 0 1px 5px #dcdcdc;
+}
+
+.thumbnail img {
+	max-width: 100%;
+	height: 280px;
+}
+
+/*
+|----------------------------------------------------
+| hr style
+|----------------------------------------------------
+|
+|
+|
+*/
+
+.strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+		font-family: 'Ubuntu', sans-serif;
+}
+
+.strike > span {
+    position: relative;
+    display: inline-block;
+}
+
+.strike > span:before,
+.strike > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 1px;
+    background: #8c8b8b;
+}
+
+.strike > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.strike > span:after {
+    left: 100%;
+    margin-left: 15px;
 }

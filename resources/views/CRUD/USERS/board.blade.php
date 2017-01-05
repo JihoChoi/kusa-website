@@ -8,16 +8,25 @@
 body {
   background-color: #fcfcfc;
 }
-.container {
-  margin-top: 150px;
+.container-intro {
+  margin-top: -25px;
+  background-color: white;
+  text-align: center;
+  height: 635px;
+  background-image: url('/images/events/kusa_all.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .thumbnail {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+  box-shadow: 0 1px 5px #dcdcdc;
 }
 </style>
+<div class = "container-intro">
+</div>
 <div class = "container">
   @foreach ($teams as $team)
-    <div class = "page-header"><h2>{{ $team->team_name }}</h2></div>
+    <div class = "page-header"><h4>{{ $team->team_name }}</h4></div>
     <div class = "row">
     @foreach ($active_members as $member)
       @foreach ($member->teams as $team_member)
@@ -26,7 +35,7 @@ body {
             <div class = "thumbnail">
               <img src = "/images/profiles/{{ $member->profile_img }}" class = "img-responsive" width = "350px" height = "350px">
               <div class = "caption" style = "text-align: center;">
-                <h3>{{ $member->lastname }} {{ $member->firstname }}</h3>
+                <h3>{{ $member->firstname }} {{ $member->lastname }}</h3>
               </div>
             </div>
           </div>

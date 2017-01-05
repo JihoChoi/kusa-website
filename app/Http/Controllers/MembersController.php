@@ -60,7 +60,7 @@ class MembersController extends Controller
 
                 return view('errors.blocked');
             }
-            $request->session()->flash('msg-general', 'Welcome '.$userinfo->firstname.'!');
+            /*$request->session()->flash('msg-general', 'Welcome '.$userinfo->firstname.'!');*/
 
             return redirect('/');
         } else {
