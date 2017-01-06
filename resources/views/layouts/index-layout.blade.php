@@ -80,8 +80,8 @@
               </li>
             </ul>
             <ul class = "nav navbar-nav navbar-right">
-              <li><a href = "https://www.facebook.com/purduekusa" target = "_blank"><i class = "fa fa-facebook"></i></a></li>
-              <li><a href = "#"><i class = "fa fa-envelope-o"></i></a></li>
+            <!--  <li><a href = "https://www.facebook.com/purduekusa" target = "_blank"><i class = "fa fa-facebook"></i></a></li>
+              <li><a href = "#"><i class = "fa fa-envelope-o"></i></a></li> -->
               @if (Auth::check())
               <?php $userinfo = Auth::user();?>
               <li class = "dropdown">

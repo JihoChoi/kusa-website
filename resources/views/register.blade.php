@@ -7,7 +7,7 @@
 .register-container {
   position: relative;
   max-width: 650px;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 </style>
 

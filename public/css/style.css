@@ -82,9 +82,11 @@ img.default-profile {
 }
 
 .background-footer {
-
 	background-color: #525252;
-	height: 500px;
+	letter-spacing: .2em;
+	height: 400px;
+	text-transform: uppercase;
+	padding: 60px 0;
 }
 
 /*
@@ -100,7 +102,8 @@ img.default-profile {
   margin-top: 85px;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-	font-size: 30px;
+	font-size: 20px;
+	letter-spacing: .2em;
 	color: white;
 }
 
@@ -192,9 +195,10 @@ div video {
 |
 |
 */
+
 .social a i {
-	margin-top: 25px;
-	font-size: 30px;
+	font-size: 35px;
+	margin-bottom: 25px;
 }
 .footer-content {
 	font-family: 'Open Sans', sans-serif;
@@ -207,16 +211,15 @@ div video {
 	text-decoration: none;
 }
 
-.footer-nav {
-	margin-top: 25px;
+.sponsor a{
+	font-size: 15px;
 }
 
-.footer-nav > a {
-
+.sub-banner {
+	margin-top: 55px;
 }
-
-.sponsor img{
-	width: 650px;
+.sub-banner img {
+	width: 350px;
 }
 
 .copyright {

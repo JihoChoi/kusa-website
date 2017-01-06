@@ -25,7 +25,7 @@
     -->
       <div class = "container">
         <div class = "page-header">
-          <h3 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif;">Latest News / Announcements</h3>
+          <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;">Latest News / Announcements</h4>
         </div>
 
         <div class = "row" style = "margin-top: 30px;">
