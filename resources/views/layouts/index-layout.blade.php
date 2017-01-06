@@ -105,7 +105,6 @@
         </div>
       </nav>
     @yield('main-content')
-    @include('footer')
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/aos-init.js"></script>

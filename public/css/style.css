@@ -183,3 +183,42 @@ div video {
     left: 100%;
     margin-left: 15px;
 }
+
+/*
+|----------------------------------------------------
+| Footer
+|----------------------------------------------------
+|
+|
+|
+*/
+.social a i {
+	margin-top: 25px;
+	font-size: 30px;
+}
+.footer-content {
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+}
+
+.footer-content a {
+	color: white;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+.footer-nav {
+	margin-top: 25px;
+}
+
+.footer-nav > a {
+
+}
+
+.sponsor img{
+	width: 650px;
+}
+
+.copyright {
+	margin-top: 100px;
+}
