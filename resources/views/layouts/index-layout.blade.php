@@ -55,7 +55,7 @@
           </div>
           <div class = "collapse navbar-collapse" id = "kusanavbar">
             <ul class = "nav navbar-nav">
-              <li class = "active"><a href = "/">Home</a></li>
+              <li><a href = "/">Home</a></li>
               <li class = "dropdown">
                 <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">About<span class = "caret"></span></a>
                 <ul class = "dropdown-menu">
@@ -105,6 +105,7 @@
         </div>
       </nav>
     @yield('main-content')
+    @include('footer')
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/aos-init.js"></script>
