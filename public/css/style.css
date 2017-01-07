@@ -88,9 +88,9 @@ img.default-profile {
 .background-footer {
 	background-color: #525252;
 	letter-spacing: .2em;
-	height: 400px;
+	/*height: 400px;*/
 	text-transform: uppercase;
-	padding: 60px 0;
+	padding: /*60px 0;*/ 1em;
 }
 
 /*
@@ -162,6 +162,10 @@ div video {
 |
 |
 */
+
+.container.event-container {
+	padding: 1em;
+}
 
 .event-box > .thumbnail {
 	margin-top: 5px;

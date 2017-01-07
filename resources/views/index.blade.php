@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div class = "container" style = "background-color: white; width: 100vw; position: relative; margin-left: -50vw; left: 50%; height: 1750px;">
+    <div class = "container" style = "background-color: white; width: 100vw; margin-left: -50vw; left: 50%;">
       <div class = "container" style = "position: relative;">
         <div class = "page-header">
           <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;">Latest News / Announcements</h4>
@@ -67,7 +67,8 @@
 
       <!-- END OF NEWS/ANNOUNCEMENTS -->
 
-      <div class = "container" style = "position: relative;">
+
+      <div class = "container event-container" style = "position: relative;">
         <div class = "page-header">
           <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;">Events</h4>
         </div>
@@ -106,7 +107,7 @@
             <div class = "thumbnail">
               <div class = "caption">
                 <p class = "category">D-Korea</p>
-                <h3>D-Korea</h3>
+                <h3>D-Korea: Playground-the season 3</h3>
               </div>
             </div>
           </div>
@@ -116,6 +117,10 @@
               <div class = "caption">
                 <p class = "category">D-Korea</p>
                 <h3>D-Korea</h3>
+                <h3>D-Korea</h3>
+                <h3>D-Korea</h3>
+                <h3>D-Korea</h3>
+                <h3>D-Korea</h3>
               </div>
             </div>
           </div>
@@ -124,6 +129,5 @@
       </div>
     </div>
   </div>
-
-    @include('footer')
+  @include('footer')
 @stop
