@@ -10,9 +10,9 @@
 
     <div class = "container sub-video">
       <div class = "outer">
-        <video id = "intro" controls width="560" height="315" frameborder="0" allowfullscreen>
-        <source src = "/videos/kusa-video.mp4" type = "video/mp4"/>
-          <source src = "/videos/kusa-video.webm" type = "video/webm"/>
+        <video id = "intro" controls width="560" height="315" allowfullscreen>
+          <source src="/videos/kusa_video.mp4" type = "video/mp4"/>
+          <source src="/videos/kusa-video.webm" type = "video/webm"/>
           Your browser does not support this video.
         </video>
       </div>
@@ -53,6 +53,15 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class = "container">
+        <div class = "page-header">
+          <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;">Events</h4>
+        </div>
+
+        <div class = "row">
+          
         </div>
       </div>
     </div>

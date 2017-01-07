@@ -10,3 +10,5 @@ Homestead.yaml
 /public/videos
 /public/js/tinymce
 main-content.html
+*.mp4
+*.webm
