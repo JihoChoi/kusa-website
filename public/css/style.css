@@ -17,6 +17,10 @@ hr.style5 {
 	left: 0;
 	right: 0;
 }
+
+.container {
+	position: relative;
+}
 /*
 |----------------------------------------------------
 | navbar style
@@ -138,12 +142,48 @@ div video {
 
 .thumbnail {
   /*box-shadow: 0 1px 5px #dcdcdc;*/
+	border-width: 3px;
 }
 
 .thumbnail img {
 	max-width: 100%;
-	height: 250px;
+	height: 300px;
 }
+
+.thumbnail-shadow {
+	box-shadow: 0 1px 5px #dcdcdc;
+}
+
+/*
+|----------------------------------------------------
+| event-box
+|----------------------------------------------------
+|
+|
+|
+*/
+
+.event-box > .thumbnail {
+	margin-top: 5px;
+	background-color: #47494c;
+	border-width: 1px;
+}
+
+.thumbnail p.category {
+	padding-left: 40px;
+	font-family: 'Open Sans', sans-serif;
+	color: #ef7070;
+}
+.thumbnail h3{
+	padding-left: 40px;
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+}
+
+.event-box img {
+	max-height: 600px;
+}
+
 
 /*
 |----------------------------------------------------
