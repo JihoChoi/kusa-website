@@ -82,6 +82,10 @@ img.default-profile {
 	position: relative;
   margin-top: -20px;
   /*background-color: #A3CFEA;*/
+	/*background-image: url(/images/purdue2.jpg);
+	background-repeat: no-repeat;*/
+
+	background-size: contain;;
 	background-color: #f79591;
 }
 
@@ -112,11 +116,11 @@ img.default-profile {
 }
 
 .sub-video {
+	background-color:
   text-align: center;
 }
 
 div.outer {
-  margin-top: -45px;
   position: relative;
   padding-top: 25px;
   padding-bottom: 67.5%;
@@ -140,9 +144,12 @@ div video {
   font-size: 18px;
 }
 
+.caption {
+	font-family: 'Open Sans', sans-serif;
+}
+
 .thumbnail {
-  /*box-shadow: 0 1px 5px #dcdcdc;*/
-	border-width: 3px;
+  box-shadow: 0 1px 5px #dcdcdc;
 }
 
 .thumbnail img {
@@ -178,6 +185,7 @@ div video {
 	font-family: 'Open Sans', sans-serif;
 	color: #ef7070;
 }
+
 .thumbnail h3{
 	padding-left: 40px;
 	font-family: 'Open Sans', sans-serif;
@@ -187,7 +195,6 @@ div video {
 .event-box img {
 	max-height: 600px;
 }
-
 
 /*
 |----------------------------------------------------

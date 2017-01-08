@@ -18,9 +18,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.thumbnail {
-  box-shadow: 0 1px 5px #dcdcdc;
-}
 </style>
 <div class = "container-intro">
 </div>

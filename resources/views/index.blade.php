@@ -5,21 +5,21 @@
 @section('main-content')
 <div class = "container-fluid background-A3CFEA">
     <div class = "container main-title">
-        PURDUE KOREAN UNDERGRADUATE STUDENT ASSOCIATION
-    </div>
-    <div class = "container sub-video">
-      <div class = "outer">
-        <video id = "intro" controls = "controls" width="560" height="315" allowfullscreen>
-          <source src = "{{ asset('videos/kusa_video.mp4') }}"/>
-          <source src = "{{ asset('videos/kusa_video.webm') }}" type = "video/webm"/>
-          <source src = "{{ asset('videos/kusa_video.ogv') }}" type = "video/ogv"/>
-          <source src = "{{ asset('videos/kusa_video.m4v') }}" type = "video/mp4"/>
-          Your browser does not support this video.
-        </video>
+      PURDUE KOREAN UNDERGRADUATE STUDENT ASSOCIATION
+      <div class = "container sub-video">
+        <div class = "outer">
+          <video id = "intro" controls = "controls" width="560" height="315" allowfullscreen>
+            <source src = "{{ asset('videos/kusa_video.mp4') }}"/>
+            <source src = "{{ asset('videos/kusa_video.webm') }}" type = "video/webm"/>
+            <source src = "{{ asset('videos/kusa_video.ogv') }}" type = "video/ogv"/>
+            <source src = "{{ asset('videos/kusa_video.m4v') }}" type = "video/mp4"/>
+            Your browser does not support this video.
+          </video>
+        </div>
       </div>
     </div>
 
-    <div class = "container" style = "background-color: white; width: 100vw; margin-left: -50vw; left: 50%;">
+    <div class = "container" style = "background-color: #fafafa; width: 100vw; margin-left: -50vw; left: 50%;">
       <div class = "container" style = "position: relative;">
         <div class = "page-header">
           <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;">Latest News / Announcements</h4>
@@ -30,7 +30,8 @@
             <div class = "thumbnail">
               <!--<img src = "/images/events/post.jpg" class = "img-responsive" width = "550px">-->
               <div class = "caption" >
-                <h4>PEPERO DAY</h4>
+                <center><h4>PEPERO DAY</h4></center>
+                <hr class = "style5">
                 <p>
                   아직도 꿈 속의 낭군님을 쳐다보고만 계신가요? 뭐라구요? 공대 여신님께 사귀자는 말을 못하겠다구요?걱정마세요!
                   그래서 퍼듀 쿠사가 준비했습니다! ...
@@ -42,7 +43,8 @@
             <div class = "thumbnail">
               <!--<img src = "/images/events/kusa_all.jpg" class = "img-responsive" width = "550px">-->
               <div class = "caption">
-                <h4>D-Korea</h4>
+                <center><h4>D-Korea</h4></center>
+                <hr class = "style5">
                 <p>
                   아직도 꿈 속의 낭군님을 쳐다보고만 계신가요? 뭐라구요? 공대 여신님께 사귀자는 말을 못하겠다구요?걱정마세요!
                   그래서 퍼듀 쿠사가 준비했습니다! ...
@@ -54,7 +56,8 @@
             <div class = "thumbnail">
               <!--<img src = "/images/events/kusa_all.jpg" class = "img-responsive" width = "550px">-->
               <div class = "caption">
-                <h4>Volunteer</h4>
+                <center><h4>Volunteer</h4></center>
+                <hr class = "style5">
                 <p>
                   아직도 꿈 속의 낭군님을 쳐다보고만 계신가요? 뭐라구요? 공대 여신님께 사귀자는 말을 못하겠다구요?걱정마세요!
                   그래서 퍼듀 쿠사가 준비했습니다! ...
@@ -66,7 +69,6 @@
       </div>
 
       <!-- END OF NEWS/ANNOUNCEMENTS -->
-
 
       <div class = "container event-container" style = "position: relative;">
         <div class = "page-header">
@@ -116,10 +118,6 @@
             <div class = "thumbnail">
               <div class = "caption">
                 <p class = "category">D-Korea</p>
-                <h3>D-Korea</h3>
-                <h3>D-Korea</h3>
-                <h3>D-Korea</h3>
-                <h3>D-Korea</h3>
                 <h3>D-Korea</h3>
               </div>
             </div>
