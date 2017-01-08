@@ -22,6 +22,12 @@
       </center>
     </div>
 
+    <div class = "member-content" style = "margin-top: 100px;">
+      <center>
+        <a href = "#" class = "btn btn-success">Questions? Message Us</a>
+      </center>
+    </div>
+
     <div class = "copyright">
       <center> <p style = "font-size: .9875rem;"> © {{ date("Y") }} Purdue Korean Undergraduate Student Association</p> </center>
       <hr width = "5%">

@@ -83,6 +83,9 @@
             <!--  <li><a href = "https://www.facebook.com/purduekusa" target = "_blank"><i class = "fa fa-facebook"></i></a></li>
               <li><a href = "#"><i class = "fa fa-envelope-o"></i></a></li> -->
               @if (Auth::check())
+              <li>
+                <a href = "#"><i class = "fa fa-bell"></i></a>
+              </li>
               <?php $userinfo = Auth::user();?>
               <li class = "dropdown">
                 <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#"><?php echo $userinfo->firstname?><span class = "caret"></span></a>
@@ -97,8 +100,8 @@
                 </ul>
               </li>
               @else
-              <li><a href = "register"><span class = "glyphicon glyphicon-user"></span> Sign-up </a></li>
-              <li><a href = "login"><span class = "glyphicon glyphicon-log-in"></span> Sign-in </a></li>
+              <li><a href = "register"><span class = "glyphicon glyphicon-user"></span> Sign-Up </a></li>
+              <li><a href = "login"><span class = "glyphicon glyphicon-log-in"></span> Login </a></li>
               @endif
             </ul>
           </div>

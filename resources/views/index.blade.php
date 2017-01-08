@@ -6,10 +6,14 @@
 <div class = "container-fluid background-A3CFEA">
     <div class = "container main-title">
       PURDUE KOREAN UNDERGRADUATE STUDENT ASSOCIATION
+      <br>
+      <br>
+      <a class = "btn btn-danger btn-lg" style = "letter-spacing: 0; margin-top: 25px;" href = "#">Subscribe to Email</a>
+      <a class = "btn btn-primary btn-lg" style = "letter-spacing: 0; margin-top: 25px;" href = "#">Contact Us</a>
     </div>
     <div class = "container sub-video">
       <div class = "outer">
-        <video id = "intro" preload controls allowfullscreen>
+        <video preload = "preload" controls = "controls" allowfullscreen>
           <source src = "videos/kusa_video.mp4" type = 'video/mp4;'/>
           <source src = "videos/kusa_video.webm" type = 'video/webm;'/>
           <source src = "videos/kusa_video.ogv" type = 'video/ogv;'/>
@@ -75,7 +79,7 @@
         </div>
         <div class = "row">
           <div class = "col-md-6 event-box">
-            <center><img src = "/images/kusa_radio.jpg" class = "img-responsive"></center>
+            <center><img src = "/images/road.jpg" class = "img-responsive"></center>
             <div class = "thumbnail">
               <div class = "caption">
                 <p class = "category">News</p>
@@ -84,7 +88,7 @@
             </div>
           </div>
           <div class = "col-md-6 event-box">
-            <img src = "/images/purdue2.jpg" class = "img-responsive">
+            <img src = "/images/kusa_radio.jpg" class = "img-responsive">
             <div class = "thumbnail">
               <div class = "caption">
                 <p class = "category">Announcement</p>

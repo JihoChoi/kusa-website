@@ -32,7 +32,7 @@ body {
             <div class = "thumbnail">
               <img src = "/images/profiles/{{ $member->profile_img }}" class = "img-responsive" width = "350px" height = "350px">
               <div class = "caption" style = "text-align: center;">
-                <h4 style = "font-family: 'Open Sans', sans-serif;">{{ $member->firstname }} {{ $member->lastname }}</h4>
+                <h4 style = "font-family: 'Open Sans', sans-serif; letter-spacing: 0;">{{ $member->firstname }} {{ $member->lastname }}</h4>
               </div>
             </div>
           </div>
