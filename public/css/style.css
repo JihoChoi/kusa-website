@@ -155,11 +155,7 @@ div video {
 
 .thumbnail img {
 	max-width: 100%;
-	height: 300px;
-}
-
-.thumbnail-shadow {
-	box-shadow: 0 1px 5px #dcdcdc;
+	height: auto;
 }
 
 /*
@@ -194,7 +190,8 @@ div video {
 }
 
 .event-box img {
-	max-height: 600px;
+	box-shadow: 0 1px 5px #dcdcdc;
+  height: auto;
 }
 
 /*
