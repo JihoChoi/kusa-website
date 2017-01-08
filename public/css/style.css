@@ -144,7 +144,8 @@ div video {
   font-size: 18px;
 }
 
-.caption {
+.caption h4{
+	letter-spacing: .2em;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -260,6 +261,11 @@ div video {
 	color: white;
 	font-size: 20px;
 	text-decoration: none;
+}
+
+.footer-nav {
+	font-size: 15px;
+	margin-top: 50px;
 }
 
 .sponsor a{

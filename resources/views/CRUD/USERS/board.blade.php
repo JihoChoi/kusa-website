@@ -42,4 +42,5 @@ body {
   </div>
   @endforeach
 </div>
+@include('footer')
 @stop

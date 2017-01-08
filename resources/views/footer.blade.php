@@ -15,18 +15,13 @@
       <span style = "font-size: 16px;">Sponsors</span>
     </div>
     <div class = "sponsor" style = "margin-top: 20px;">
-      <!--<center><img style = "margin-top: 20px;" src = "/images/sponsor.jpg" class = "img-responsive"></center>-->
       <center>
         <a href = "#">Soga |</a><a href = "#"> Tsunami |</a>
         <a href = "#"> Sushi Don |</a><a href = "#"> Maru |</a>
         <a href = "#"> Yori</a>
       </center>
     </div>
-    <!--<div class = "sub-banner">
-      <center>
-        <img src = "images/sub-banner.jpg" class = "img-responsive">
-      </center>
-    </div>-->
+
     <div class = "copyright">
       <center> <p style = "font-size: .9875rem;"> © {{ date("Y") }} Purdue Korean Undergraduate Student Association</p> </center>
       <hr width = "5%">
