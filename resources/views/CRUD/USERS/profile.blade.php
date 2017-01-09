@@ -3,16 +3,7 @@
 <title> {{ $user->firstname }}'s profile</title>
 @stop
 @section('main-content')
-<style>
-.alert-container {
-	position: relative;
-	top: 100px;
-	max-width: 55em;
-	width: 90%;
-	margin: 0 auto;
-}
-</style>
-<div class = "container" style = "margin-top: 130px; font-family: 'Ubuntu', sans-serif;">
+<div class = "container" style = "margin-top: 150px; font-family: 'Ubuntu', sans-serif;">
   <div class = "panel panel-primary">
     <div class = "panel-heading">
       <div class = "panel-title">
