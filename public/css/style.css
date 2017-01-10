@@ -82,10 +82,6 @@ img.default-profile {
 	position: relative;
   margin-top: -20px;
   /*background-color: #A3CFEA;*/
-	/*background-image: url(/images/purdue2.jpg);
-	background-repeat: no-repeat;*/
-
-	background-size: contain;;
 	background-color: #f79591;
 }
 
@@ -245,6 +241,9 @@ div video {
 |
 */
 
+footer {
+	margin-top: 25px;
+}
 .social a i {
 	font-size: 35px;
 	margin-bottom: 25px;

@@ -6,7 +6,7 @@
 <div class = "container-fluid background-A3CFEA">
     <div class = "container main-title">
       PURDUE KOREAN UNDERGRADUATE STUDENT ASSOCIATION
-    </div>
+    </div><br><br>
     <div class = "container sub-video">
       <div class = "outer">
         <video preload = "preload" controls = "controls" allowfullscreen>
@@ -22,13 +22,13 @@
 
       <div class = "container" style = "position: relative;">
         <div class = "page-header">
-          <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;">Latest News / Announcements</h4>
+          <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i class="fa fa-bell" aria-hidden="true"></i> Latest News / Announcements</h4>
         </div>
 
         <div class = "row" style = "margin-top: 30px;">
           <div class = "col-sm-2 col-md-4 col-lg-4">
             <div class = "thumbnail">
-            <img src = "/images/events/post.jpg" class = "img-responsive" width = "550px">
+            <!--<img src = "/images/events/post.jpg" class = "img-responsive" width = "550px">-->
               <div class = "caption" >
                 <center><h4>PEPERO DAY</h4></center>
                 <hr class = "style5">
@@ -41,7 +41,7 @@
           </div>
           <div class = "col-sm-2 col-md-4 col-lg-4">
             <div class = "thumbnail">
-              <img src = "/images/nightsky.jpg" class = "img-responsive" width = "550px">
+              <!--<img src = "/images/nightsky.jpg" class = "img-responsive" width = "550px">-->
               <div class = "caption">
                 <center><h4>D-Korea</h4></center>
                 <hr class = "style5">
@@ -54,7 +54,7 @@
           </div>
           <div class = "col-sm-2 col-md-4 col-lg-4">
             <div class = "thumbnail">
-              <img src = "/images/kusa_radio.jpg" class = "img-responsive" width = "550px">
+              <!--<img src = "/images/kusa_radio.jpg" class = "img-responsive" width = "550px">-->
               <div class = "caption">
                 <center><h4>Volunteer</h4></center>
                 <hr class = "style5">
@@ -91,7 +91,7 @@
 
       <div class = "container event-container" style = "position: relative;">
         <div class = "page-header">
-          <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;">Events</h4>
+          <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i class="fa fa-calendar" aria-hidden="true"></i> Events</h4>
         </div>
         <div class = "row">
           <div class = "col-md-6 event-box">
@@ -141,7 +141,26 @@
               </div>
             </div>
           </div>
-
+        </div>
+      </div>
+      <div class = "container" style = "background-color: white; width: 100vw; margin-left: -50vw; left: 50%;">
+        <div class = "container" style = "margin-top: 20px;">
+          <div class = "row">
+            <div class = "col-md-4">
+            </div>
+            <div class = "col-md-4">
+              <img src = "images/kusa_radio.jpg" class = "img-responsive">
+              <div class = "thumbnail">
+                <div class = "caption">
+                  <center><h4><i class = "fa fa-headphones"></i> KUSA Radio</h4></center>
+                  <hr class = "style5">
+                  <p style = "letter-spacing: .2em;">Purdue KUSA가 운영하고 있는 라디오, "퍼듀의 아는 사람 이야기" 에 오신 것을 환영합니다! 두 DJ의 각기 다른 코너와 색 있는 라디오를 진행합니다~ 사연을 나누고 공감할 수 있는 자리! 많은 관심 부탁드립니다.</p>
+                </div>
+              </div>
+            </div>
+            <div class = "col-md-4">
+            </div>
+          </div>
         </div>
       </div>
     </div>
