@@ -34,7 +34,7 @@ class MembersController extends Controller
 
     public function directLogin()
     {
-        if (Auth::user() != null) {
+        if (Auth::check()) {
             return redirect('/');
         }
 
@@ -72,7 +72,7 @@ class MembersController extends Controller
 
     public function directRegister()
     {
-        if (Auth::user() != null) {
+        if (Auth::check()) {
             return redirect('/');
         }
 
