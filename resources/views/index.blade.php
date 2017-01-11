@@ -143,7 +143,7 @@
           </div>
         </div>
       </div>
-      <div class = "container" style = "background-color: white; width: 100vw; margin-left: -50vw; left: 50%;">
+      <!--<div class = "container" style = "background-color: white; width: 100vw; margin-left: -50vw; left: 50%;">
         <div class = "container" style = "margin-top: 20px;">
           <div class = "row">
             <div class = "col-md-4">
@@ -162,7 +162,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
   @include('footer')

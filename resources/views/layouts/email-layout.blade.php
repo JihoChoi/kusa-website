@@ -4,55 +4,41 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
+  <!--#70bbd9-->
 
-<style>
-body {
-  background-color: white;
-}
+  <style>
+  .email-header {
+    background-color: #70bbd9;
+    padding: 30px 0 30px 0;
+  }
+  .email-header img {
+    display: block;
+    margin: 0 auto;
+  }
+  .email-content {
+    font-family: 'Open Sans', sans-serif;
+    padding: 30px 0 30px 0;
+  }
+  .email-footer {
+    background-color: #525252;
+    display: block;
+  }
+  </style>
 
-#header {
-  width: 100%;
-  padding-top: 10px;
-  text-align: center;
-}
-#headerImage {
-  width: 350px;
-  height: 100px;
-}
-
-.message {
-  margin-top: 15px;
-  background-color: white;
-  padding: 20px;
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-a {
-  color: #0043bb;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #4485ff;
-}
-
-#footer {
-  padding: 5px;
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-</style>
-<div id = "header">
-  <img src = "{{ Request::root() }}/images/KUSA_Logo.png" id = "headerImage">
-</div>
-<div class = "message">
-  @yield('content')
-</div>
+  <div class = "container" width = "600">
+    <div class = "email-header">
+      <img src = "{{asset('images/KUSA_Logo.png')}}" class = "img-responsive" width = "600">
+    </div>
+    <div class = "email-content">
+      @yield('content')
+    </div>
+    <div class = "email-footer">
+    </div>
+  </div>
 </body>
 </html>

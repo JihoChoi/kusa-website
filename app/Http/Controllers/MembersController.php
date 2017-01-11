@@ -124,8 +124,17 @@ class MembersController extends Controller
             $request->session()->flash('msg-general', 'A confirmation email has been sent to '.$member->email.'. Please click the link in the email to confirm your account.');
             $this->emailConfirmation($member);
 
-            return $this->directIndex();
+            return $this->directLogin();
         }
+    }
+
+    /*Test function*/
+    public function directEmail() {
+      $member = Users::find(1);
+      return view('email.email-verification', [
+        'member' => $member,
+        'body' => '<a href = "#" class = "btn btn-primary">Click</a>',
+      ]);
     }
 
     public function emailConfirmation($member)

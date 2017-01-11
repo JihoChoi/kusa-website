@@ -19,6 +19,10 @@ Route::get('logout', 'MembersController@doLogout');
 Route::get('register/verify/{confirmation_code}', 'MembersController@confirm');
 Route::get('board', 'MembersController@directBoard');
 
+/*Test route for email*/
+
+Route::get('email', 'MembersController@directEmail');
+
 /* User Profile Routes */
 Route::get('profile', 'MembersController@directProfile');
 Route::post('profile', 'MembersController@updateProfileImage');
