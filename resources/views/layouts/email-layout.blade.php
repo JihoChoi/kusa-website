@@ -7,6 +7,7 @@
   <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <!--#70bbd9-->
@@ -32,12 +33,13 @@
 
   <div class = "container" width = "600">
     <div class = "email-header">
-      <img src = "{{asset('images/KUSA_Logo.png')}}" class = "img-responsive" width = "600">
+      <img src = "{{asset('images/KUSA_Logo.png')}}" class = "img-responsive" width = "400">
     </div>
     <div class = "email-content">
       @yield('content')
     </div>
     <div class = "email-footer">
+      @include('email.email-footer')
     </div>
   </div>
 </body>

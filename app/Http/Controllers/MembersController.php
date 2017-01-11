@@ -132,9 +132,7 @@ class MembersController extends Controller
     public function directEmail() {
       $member = Users::find(1);
       return view('email.email-verification', [
-        'member' => $member,
-        'body' => '<a href = "#" class = "btn btn-primary">Click</a>',
-      ]);
+        'member' => $member]);
     }
 
     public function emailConfirmation($member)
