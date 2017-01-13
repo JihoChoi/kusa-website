@@ -34,6 +34,7 @@ Route::group(['middleware' => 'adminauth'], function () {
   /* Post Manage Routes*/
   Route::get('post', 'AdminController@directPost');
     Route::post('post', 'PostsController@postContent');
+    Route::post('disp-img', 'PostsController@dispImg');
 
   /* Event Category Manage Routes */
   Route::get('event-category-manage', 'AdminController@directEventCategoryManage');

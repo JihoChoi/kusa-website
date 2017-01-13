@@ -42,4 +42,9 @@ class PostsController extends Controller
             return redirect()->action('AdminController@directDashboard')->with('msg-general', 'Content has been modified.');
         }
     }
+
+    public function dispImg(Request $request)
+    {
+      
+    }
 }

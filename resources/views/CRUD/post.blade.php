@@ -1,7 +1,15 @@
 @extends('layouts.dashboard-layout')
 @section('content')
 <div class = "container">
-  <form role = "form" action = "" method = "POST" data-toggle = "validator">
+  <div class = "container">
+    <label class = "label-control">Upload Display Image</label>
+    <form enctype = "multipart/form-data" action = "{{ action('PostsController@dispImg') }}" method = "POST">
+      {{ csrf_field() }}
+      <input type = "file" name = "dispimg" class = "pull-left" style = "margin-top: 5px;">
+      <button type = "submit" class = "pull-right btn btn-primary"><i class = "fa fa-cloud-upload"></i> Upload</button>
+    </form>
+  </div>
+  <form role = "form" action = "{{ action('PostsController@postContent') }}" method = "POST" data-toggle = "validator">
     {{ csrf_field() }}
     <div class = "container">
       <div class = "form-group">
