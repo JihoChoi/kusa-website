@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('content_title');
             $table->text('content');
             $table->string('event_category');
+            $table->string('dispimg');
             $table->rememberToken();
             $table->timestamps();
         });

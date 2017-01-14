@@ -1,15 +1,7 @@
 @extends('layouts.dashboard-layout')
 @section('content')
 <div class = "container">
-  <div class = "container">
-    <label class = "label-control">Upload Display Image</label>
-    <form enctype = "multipart/form-data" action = "{{ action('PostsController@dispImg') }}" method = "POST">
-      {{ csrf_field() }}
-      <input type = "file" name = "dispimg" class = "pull-left" style = "margin-top: 5px;">
-      <button type = "submit" class = "pull-right btn btn-primary"><i class = "fa fa-cloud-upload"></i> Upload</button>
-    </form>
-  </div>
-  <form role = "form" action = "{{ action('PostsController@postContent') }}" method = "POST" data-toggle = "validator">
+  <form enctype = "multipart/form-data" role = "form" action = "{{ action('PostsController@postContent') }}" method = "POST" data-toggle = "validator">
     {{ csrf_field() }}
     <div class = "container">
       <div class = "form-group">
@@ -19,6 +11,7 @@
         </div>
       </div>
     </div>
+
     <div class = "container">
       <div class = "form-group">
         <label for = "content_category" class = "col-sm-3 control-label">Category:</label>
@@ -29,23 +22,22 @@
             @endforeach
           </select>
         </div>
-        <div class = "col-sm-3">
-          <a class = "btn btn-primary" href = "event-category-manage"><i class = "fa fa-plus"></i> Manage Categories</a>
-        </div>
       </div>
     </div>
-  <!--  <div class = "container">
-      <form enctype = "multipart/form-data" action = "profile" method = "POST" style = "margin-left: 150px;">
-        {{ csrf_field() }}
-        <input type = "file" name = "profile" class = "pull-left" style = "margin-top: 5px;" multiple>
-        <button type = "submit" class = "pull-right btn btn-primary"><i class = "fa fa-cloud-upload"></i> Upload</button>
-      </form>
-    </div> -->
+
+    <div class = "container">
+      <label class = "col-sm-3 label-control">Display Image</label>
+      <div class = "col-sm-6">
+        <input type = "file" name = "dispimg" class = "pull-left" style = "margin-top: 5px;">
+      </div>
+    </div>
+
     <div class = "container">
       <div class = "form-group">
         <textarea class = "form-control" name = "content_area"></textarea>
       </div>
     </div>
+
     <div class = "container">
       <div class = "form-group">
         <button type = "submit" class = "btn btn-primary pull-right"><i class = "fa fa-plus"></i> Post</button>

@@ -33,7 +33,7 @@
 
   <div class = "container" width = "600">
     <div class = "email-header">
-      <img src = "{{asset('images/KUSA_Logo.png')}}" class = "img-responsive" width = "400">
+      <img src = "{{ asset('images/KUSA_Logo.png') }}" href = "{{ action('MembersController@directIndex') }}" class = "img-responsive" width = "400">
     </div>
     <div class = "email-content">
       @yield('content')

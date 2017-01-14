@@ -5,17 +5,27 @@ namespace App\Http\Controllers;
 use App\EVENT_CATEGORY;
 use App\Posts;
 use Illuminate\Http\Request;
+use Image;
 
 class PostsController extends Controller
 {
     // CRUD Controller
     public function postContent(Request $request)
     {
+
+        $post = new Posts();
         $title = $request->input('content_title');
         $category = $request->input('content_category');
         $content = $request->input('content_area');
+        $filename = 'null';
 
-        $post = new Posts();
+        if ($request->hasFile('dispimg')) {
+          $dispimg = $request->file('dispimg');
+          $filename = time().str_random(10).'.'.$dispimg->getClientOriginalExtension();
+          Image::make($dispimg)->save(public_path('/images/dispimg/'.$filename));
+          $post->dispimg = $filename;
+        }
+
         $post->content_title = $title;
         $post->content = $content;
         $post->event_category = $category;
@@ -24,6 +34,7 @@ class PostsController extends Controller
         if ($issaved) {
             return redirect()->action('AdminController@directDashboard')->with('msg-general', 'Content has been posted.');
         }
+
     }
 
     public function editContent(Request $request)
@@ -41,10 +52,5 @@ class PostsController extends Controller
         ])) {
             return redirect()->action('AdminController@directDashboard')->with('msg-general', 'Content has been modified.');
         }
-    }
-
-    public function dispImg(Request $request)
-    {
-      
     }
 }
