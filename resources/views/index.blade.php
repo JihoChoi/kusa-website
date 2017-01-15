@@ -19,52 +19,30 @@
       </div>
     </div>
     <div class = "container" style = "background-color: #fafafa; width: 100vw; margin-left: -50vw; left: 50%;">
-
       <div class = "container" style = "position: relative;">
         <div class = "page-header">
           <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i class="fa fa-bell" aria-hidden="true"></i> Latest News / Announcements</h4>
         </div>
 
+        <?php $i = 0; ?>
         <div class = "row" style = "margin-top: 30px;">
-          <div class = "col-sm-2 col-md-4 col-lg-4">
-            <div class = "thumbnail">
-            <!--<img src = "/images/events/post.jpg" class = "img-responsive" width = "550px">-->
-              <div class = "caption" >
-                <center><h4>PEPERO DAY</h4></center>
-                <hr class = "style5">
-                <p>
-                  아직도 꿈 속의 낭군님을 쳐다보고만 계신가요? 뭐라구요? 공대 여신님께 사귀자는 말을 못하겠다구요?걱정마세요!
-                  그래서 퍼듀 쿠사가 준비했습니다! ...
-              </p>
+          @foreach ($posts as $post)
+            @if ($post->event_category == "Announcement")
+              <div class = "col-sm-2 col-md-4 col-lg-4">
+                <div class = "thumbnail">
+                  <div class = "caption" >
+                    <center><h4>{{ $post->content_title }}</h4></center>
+                    <hr class = "style5">
+                    <?php echo substr($post->content, 0, strlen($post->content) / 2); ?> ...
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class = "col-sm-2 col-md-4 col-lg-4">
-            <div class = "thumbnail">
-              <!--<img src = "/images/nightsky.jpg" class = "img-responsive" width = "550px">-->
-              <div class = "caption">
-                <center><h4>D-Korea</h4></center>
-                <hr class = "style5">
-                <p>
-                  아직도 꿈 속의 낭군님을 쳐다보고만 계신가요? 뭐라구요? 공대 여신님께 사귀자는 말을 못하겠다구요?걱정마세요!
-                  그래서 퍼듀 쿠사가 준비했습니다! ...
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class = "col-sm-2 col-md-4 col-lg-4">
-            <div class = "thumbnail">
-              <!--<img src = "/images/kusa_radio.jpg" class = "img-responsive" width = "550px">-->
-              <div class = "caption">
-                <center><h4>Volunteer</h4></center>
-                <hr class = "style5">
-                <p>
-                  아직도 꿈 속의 낭군님을 쳐다보고만 계신가요? 뭐라구요? 공대 여신님께 사귀자는 말을 못하겠다구요?걱정마세요!
-                  그래서 퍼듀 쿠사가 준비했습니다! ...
-                </p>
-              </div>
-            </div>
-          </div>
+              <?php
+                $i++;
+                if ($i >= 3) break;
+              ?>
+            @endif
+          @endforeach
         </div>
       </div>
 
@@ -88,18 +66,6 @@
         </div>
       </div>-->
       <!-- END OF EXP -->
-      <?php $i = 0; ?>
-      <div class = "container">
-        @foreach ($posts as $post)
-          @if ($post->event_category == "Announcement")
-            <h3>{{ $post->content_title }}</h3>
-            <?php
-              $i++;
-              if ($i >= 3) break;
-            ?>
-          @endif
-        @endforeach
-      </div>
       <div class = "container event-container" style = "position: relative;">
         <div class = "page-header">
           <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i class="fa fa-calendar" aria-hidden="true"></i> Events</h4>
