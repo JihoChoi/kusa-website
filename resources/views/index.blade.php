@@ -88,7 +88,18 @@
         </div>
       </div>-->
       <!-- END OF EXP -->
-
+      <?php $i = 0; ?>
+      <div class = "container">
+        @foreach ($posts as $post)
+          @if ($post->event_category == "Announcement")
+            <h3>{{ $post->content_title }}</h3>
+            <?php
+              $i++;
+              if ($i >= 3) break;
+            ?>
+          @endif
+        @endforeach
+      </div>
       <div class = "container event-container" style = "position: relative;">
         <div class = "page-header">
           <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i class="fa fa-calendar" aria-hidden="true"></i> Events</h4>

@@ -10,13 +10,15 @@ use Hash;
 use Illuminate\Http\Request;
 use Image;
 use Mail;
+use App\Posts;
 
 class MembersController extends Controller
 {
     //
     public function directIndex()
     {
-        return view('index');
+        $posts = Posts::all()->sortByDesc('id');
+        return view('index', ['posts' => $posts]);
     }
 
     public function directBoard()
@@ -235,7 +237,7 @@ class MembersController extends Controller
 
     public function filterUsers(Request $request)
     {
-        $MAX_DISPLAY = 10;
+        $MAX_DISPLAY = 5;
         $user_status = $request->input('user_status');
 
         if ($user_status == 'all' || $user_status == null) {
