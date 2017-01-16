@@ -41,7 +41,7 @@
 
     <div class = "container">
       <div class = "form-group">
-        <button type = "submit" class = "btn btn-primary pull-right"><i class = "fa fa-plus"></i> Post</button>
+        <button type = "submit" class = "btn btn-primary btn-block" style = "height: 50px;">Post</button>
       </div>
     </div>
   </form>
