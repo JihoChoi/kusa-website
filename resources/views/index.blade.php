@@ -32,7 +32,7 @@
                 <div class = "thumbnail">
                   <div class = "caption" >
                     <center><h4>{{ $posts[$i]->content_title }}</h4></center>
-                    <hr class = "style5">
+                    <hr width = "60%" class = "style5">
                     <?php echo mb_substr($posts[$i]->content, 0, 300, "utf-8"); ?> (...)
                   </div>
                 </div>
