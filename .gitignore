@@ -12,3 +12,4 @@ Homestead.yaml
 main-content.html
 *.mp4
 *.webm
+*.DS_Store

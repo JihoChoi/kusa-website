@@ -64,8 +64,8 @@
                </li>
                <hr>
                <li>
-                   <a href="{{ action('AdminController@directPost') }}"><i class = "fa fa-pencil-square-o"></i> Create Post</a>
-                   <a href=""><i class = "fa fa-pencil"></i> Manage Posts </a>
+                   <a href="{{ action('AdminController@directPost') }}"><i class = "fa fa-pencil-square-o"></i> Create Content</a>
+                   <a href=""><i class = "fa fa-pencil"></i> Manage Contents </a>
                </li>
                <hr>
                <li>
