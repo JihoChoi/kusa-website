@@ -70,38 +70,58 @@
         <div class = "page-header">
           <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i class="fa fa-calendar" aria-hidden="true"></i> Events</h4>
         </div>
-        <?php $i = 0; ?>
-        <div class = "row">
-          @foreach ($posts as $post)
-            @if ($post->event_category != "Announcement")
-              <div class = "col-md-6 event-box">
-                <center><img src = "/images/dispimg/{{ $post->dispimg }}" class = "img-responsive"></center>
-                <div class = "thumbnail">
-                  <div class = "caption">
-                    <p class = "category">{{ $post->event_category }}</p>
-                    <h3>{{ $post->content_title }}</h3>
+
+        <?php
+          $i = 0;
+          $j = 0;
+        ?>
+
+        @for ($i = 0; $i < 2; $i++)
+          <div class = "row">
+            @foreach ($posts as $post)
+              @if ($i == 0)
+                @if ($post->event_category != "Announcement")
+                  <div class = "col-md-6 event-box">
+                    <center><img src = "/images/dispimg/{{ $post->dispimg }}" class = "img-responsive"></center>
+                    <div class = "thumbnail">
+                      <div class = "caption">
+                        <p class = "category"> {{ $post->event_category }}</p>
+                        <h3>{{ $post->content_title }}</h3>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <?php
-                $i++;
-                if ($i >= 2) break;
-              ?>
-            @endif
-          @endforeach
-        </div>
-        <div class = "row">
-          
-            <div class = "col-md-4 event-box">
-              <img src = "/images/kusa_radio.jpg" class = "img-responsive">
-              <div class = "thumbnail">
-                <div class = "caption">
-                  <p class = "category">D-Korea</p>
-                  <h3>D-Korea</h3>
-                </div>
-              </div>
-            </div>
-        </div>
+                  <?php
+                    $j++;
+                    if ($j >= 2) {
+                      $j = 0;
+                      break;
+                    }
+                  ?>
+                  @endif
+              @else
+                @if ($post->event_category != "Announcement")
+                  <div class = "col-md-4 event-box">
+                    <center><img src = "/images/dispimg/{{ $post->dispimg }}" class = "img-responsive"></center>
+                    <div class = "thumbnail">
+                      <div class = "caption">
+                        <p class = "category"> {{ $post->event_category }}</p>
+                        <h3>{{ $post->content_title }}</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <?php
+                    $j++;
+                    if ($j >= 3) {
+                      $j = 0;
+                      break;
+                    }
+                  ?>
+                @endif
+              @endif
+            @endforeach
+          </div>
+        @endfor
+
       </div>
       <!--<div class = "container" style = "background-color: white; width: 100vw; margin-left: -50vw; left: 50%;">
         <div class = "container" style = "margin-top: 20px;">
