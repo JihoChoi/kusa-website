@@ -17,7 +17,7 @@ class MembersController extends Controller
     //
     public function directIndex()
     {
-        $posts = Posts::all()->sortByDesc('id');
+        $posts = Posts::all();
         return view('index', ['posts' => $posts]);
     }
 
