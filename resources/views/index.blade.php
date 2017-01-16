@@ -21,7 +21,7 @@
     <div class = "container" style = "background-color: #fafafa; width: 100vw; margin-left: -50vw; left: 50%;">
       <div class = "container" style = "position: relative;">
         <div class = "page-header">
-          <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i class="fa fa-bell" aria-hidden="true"></i> Latest News / Announcements</h4>
+          <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i class="fa fa-bell-o" aria-hidden="true"></i> Latest News / Announcements</h4>
         </div>
 
         <?php $i = 0; $cnt = 0;?>
@@ -29,11 +29,10 @@
           @for ($i = count($posts) - 1; $i >= 0; $i--)
             @if ($posts[$i]->event_category == "Announcement")
               <div class = "col-sm-2 col-md-4 col-lg-4">
-                <div class = "thumbnail">
-                  <div class = "caption" >
-                    <center><h4>{{ $posts[$i]->content_title }}</h4></center>
-                    <hr width = "60%" class = "style5">
-                    <?php echo mb_substr($posts[$i]->content, 0, 300, "utf-8"); ?> (...)
+                <div class = "thumbnail" style = "padding: 25px 10px 20px 10px;">
+                  <div class = "caption">
+                    <center><p style = "color: #f4645f;">{{ date('F d, Y', strtotime($posts[$i]->created_at)) }}</p></center>
+                    <center><h4><i class = "fa fa-newspaper-o"></i> {{ $posts[$i]->content_title }}</h4></center>
                   </div>
                 </div>
               </div>
@@ -61,12 +60,13 @@
                 <center><img src = "/images/dispimg/{{ $posts[$i]->dispimg }}" class = "img-responsive"></center>
                 <div class = "thumbnail">
                   <div class = "caption">
+                    <h4 class = "category">{{ date('F d, Y', strtotime($posts[$i]->created_at)) }}</h4>
                     <p class = "category">{{ $posts[$i]->event_category }}</p>
-                    <h3>{{ $posts[$i]->content_title }}</h3>
+                    <h4 style = "padding-left: 40px; font-family: 'Open Sans', sans-serif; color: white;">{{ $posts[$i]->content_title }}</h4>
                   </div>
                 </div>
               </div>
-              <?php $cnt++; if ($cnt == 2) break; ?>
+              <?php $cnt++; if ($cnt >= 2) { $cnt = 0; break; } ?>
             @endif
           @endfor
         </div>
@@ -77,11 +77,13 @@
                 <center><img src = "/images/dispimg/{{ $posts[$j]->dispimg }}" class = "img-responsive"></center>
                 <div class = "thumbnail">
                   <div class = "caption">
+                    <h4 class = "category">{{ date('F d, Y', strtotime($posts[$i]->created_at)) }}</h4>
                     <p class = "category">{{ $posts[$j]->event_category }}</p>
-                    <h3>{{ $posts[$j]->content_title }}</h3>
+                    <h4 style = "padding-left: 40px; font-family: 'Open Sans', sans-serif; color: white;">{{ $posts[$j]->content_title }}</h4>
                   </div>
                 </div>
               </div>
+              <?php $cnt++; if ($cnt >= 3) { $cnt = 0; break; } ?>
             @endif
           @endfor
         </div>

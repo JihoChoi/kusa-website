@@ -141,7 +141,7 @@ div video {
 }
 
 .caption h4{
-	letter-spacing: .2em;
+	/*letter-spacing: .2em;*/
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -173,13 +173,13 @@ div video {
 	border-width: 1px;
 }
 
-.thumbnail p.category {
+.thumbnail .category {
 	padding-left: 40px;
 	font-family: 'Open Sans', sans-serif;
 	color: #ef7070;
 }
 
-.thumbnail h3{
+.thumbnail h4.category {
 	padding-left: 40px;
 	font-family: 'Open Sans', sans-serif;
 	color: white;
