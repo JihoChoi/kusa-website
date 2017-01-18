@@ -66,8 +66,8 @@
               <li class = "dropdown">
                 <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">Updates<span class = "caret"></span></a>
                 <ul class = "dropdown-menu">
-                  <li><a href = "news">News</a></li>
-                  <li><a href = "d-korea">Events</a></li>
+                  <li><a href = "{{ action('PostsController@directAnnouncements') }}">News</a></li>
+                  <li><a href = "{{ action('PostsController@directEvents') }}">Events</a></li>
                   <li><a href = "calendar">Calendar</a></li>
                 </ul>
               </li>

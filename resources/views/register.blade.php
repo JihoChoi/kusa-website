@@ -14,7 +14,7 @@
 <div class = "register-container container">
   <div class = "panel panel-primary">
     <div class = "panel-heading">
-      <div class = "panel-title">Join Purdue KUSA</div>
+      <div class = "panel-title">Register Purdue KUSA</div>
     </div>
 
     <div class = "panel-body" style = "padding-top:30px;">

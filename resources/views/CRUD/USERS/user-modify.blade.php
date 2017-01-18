@@ -91,7 +91,6 @@ Modify user
           <label for = "user_status" class = "col-sm-3 control-label">User Status</label>
           <div class = "col-sm-9">
             <select class = "form-control" name = "user_status">
-              <option <?php if ($user_status == "all") echo ("selected") ?>>all</option>
               <option <?php if ($user_status == "member") echo ("selected") ?>>member</option>
               <option <?php if ($user_status == "nolonger") echo ("selected") ?>>nolonger</option>
               <option <?php if ($user_status == "general") echo ("selected") ?>>general</option>

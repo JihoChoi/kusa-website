@@ -9,6 +9,16 @@ use Image;
 
 class PostsController extends Controller
 {
+
+    public function directAnnouncements() {
+      return view('posts.announcements');
+    }
+
+    public function directEvents() {
+      $events = Posts::where('event_category', '!=', 'Announcement')->paginate(3);
+      return view('posts.events', ['events' => $events]);
+    }
+
     // CRUD Controller
     public function postContent(Request $request)
     {

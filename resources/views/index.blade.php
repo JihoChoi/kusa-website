@@ -32,6 +32,7 @@
                 <div class = "thumbnail" style = "padding: 25px 10px 20px 10px;">
                   <div class = "caption">
                     <center><p style = "color: #f4645f;">{{ date('F d, Y', strtotime($posts[$i]->created_at)) }}</p></center>
+                    <hr width = "20%" style = "border-color: black; color: black; background-color: black;">
                     <center><h4><i class = "fa fa-newspaper-o"></i> {{ $posts[$i]->content_title }}</h4></center>
                   </div>
                 </div>
