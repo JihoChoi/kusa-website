@@ -63,4 +63,49 @@ class PostsController extends Controller
             return redirect()->action('AdminController@directDashboard')->with('msg-general', 'Content has been modified.');
         }
     }
+
+    /*
+
+    ------------------------------------------
+    | REST API methods
+    ------------------------------------------
+    |
+    |
+    |
+
+    */
+
+    public function toJsonPosts() {
+      $posts = Posts::select('id', 'dispimg', 'content_title', 'content', 'event_category', 'created_at')->get();
+      return response([
+        'error' => 'false',
+        'posts' => $posts,
+      ], 200);
+    }
+
+    public function toJsonPost($id) {
+      $post = Posts::where('id', '=', $id)->select('id', 'dispimg', 'content_title', 'content', 'event_category', 'created_at')->first();
+      return response([
+        'error' => 'false',
+        'post'  => $post,
+      ], 200);
+    }
+
+    public function toJsonEventCategories() {
+      $event_categories = EVENT_CATEGORY::select('id', 'event_type')->get();
+      return response([
+        'error'            => 'false',
+        'event_categories' => $event_categories,
+      ], 200);
+    }
+
+    public function toJsonEventCategory($id) {
+      $event_category = EVENT_CATEGORY::where('id', $id)->select('id', 'event_type')->first();
+      return response([
+        'error'           => 'false',
+        'event_category'  => $event_category,
+      ], 200);
+    }
+
+
 }

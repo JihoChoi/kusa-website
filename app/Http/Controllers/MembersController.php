@@ -366,4 +366,39 @@ class MembersController extends Controller
             return redirect()->action('AdminController@directUserManage')->with('msg-general', 'User has been deleted.');
         }
     }
+
+    /*
+
+    ------------------------------------------
+    | REST API methods
+    ------------------------------------------
+    |
+    |
+    |
+
+    */
+
+    public function toJsonTeams() {
+      $teams = KUSA_TEAM::select('id', 'team_name')->get();
+      return response([
+        'error' => 'false',
+        'teams' => $teams,
+      ], 200);
+    }
+
+    public function toJsonTeam($id) {
+      $team = KUSA_TEAM::where('id', $id)->select('id', 'team_name')->first();
+      return response([
+        'error' => 'false',
+        'team'  => $team,
+      ], 200);
+    }
+
+    public function toJsonMembers() {
+      $members = Users::where('user_status', 'member')->select('id', 'profile_img', 'firstname', 'lastname')->get();
+      return response([
+        'error'   => 'false',
+        'members' => $members,
+      ], 200);
+    }
 }

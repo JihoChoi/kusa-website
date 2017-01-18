@@ -55,6 +55,16 @@ This is a web application to manage Korean Undergraduate Student Association's u
 - [ ] PUSH NOTIFICATION
 - [ ] Private Message
 
+### REST API endpoints
+
+- '/api/v1/posts'
+- '/api/v1/post/{id}'
+- '/api/v1/event_categories'
+- '/api/v1/event_category/{id}'
+- '/api/v1/teams'
+- '/api/v1/team/{id}'
+- '/api/v1/members'
+
 ### Database 'user_status' variable description
 
 - member: current active KUSA member
