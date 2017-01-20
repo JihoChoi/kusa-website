@@ -51,7 +51,7 @@
 
       <div class = "container event-container" style = "position: relative;">
         <div class = "page-header">
-          <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i class="fa fa-calendar" aria-hidden="true"></i> Events</h4>
+          <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i class="fa fa-calendar" aria-hidden="true"></i>Recent Events</h4>
         </div>
 
         <?php $cnt = 0; ?>
