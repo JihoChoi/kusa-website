@@ -84,7 +84,7 @@
               <li><a href = "#"><i class = "fa fa-envelope-o"></i></a></li> -->
               @if (Auth::check())
               <li>
-                <a href = "#"><i class = "fa fa-bell"></i></a>
+                <a href = "#"><i class = "fa fa-bell-o"></i></a>
               </li>
               <?php $userinfo = Auth::user();?>
               <li class = "dropdown">

@@ -1,13 +1,14 @@
 @extends('layouts.index-layout')
 @section('main-content')
-<div class = "container" style = "margin-top: 150px;">
-  @for ($i = count($events) - 1; $i >= 0; $i--)
-      <div class = "row">
-        <div class = "col-md-6">
-          <center><img src = "/images/dispimg/{{ $events[$i]->dispimg }}" class = "img-responsive">
-        </div>
+<div class = "container" style = "margin-top: 100px;">
+  @foreach ($events as $event)
+    <div class = "content-container">
+      {{ $event->content_title }}
+      <div class = "content-img">
+        <img class = "img-responsive" src = "/images/dispimg/{{ $event->dispimg }}">
       </div>
-  @endfor
+    </div>
+  @endforeach
   <center> {{ $events->render() }} </center>
 </div>
 @stop
