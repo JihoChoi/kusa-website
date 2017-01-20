@@ -32,7 +32,7 @@ class PostsController extends Controller
         if ($request->hasFile('dispimg')) {
           $dispimg = $request->file('dispimg');
           $filename = time().str_random(10).'.'.$dispimg->getClientOriginalExtension();
-          Image::make($dispimg)->save(public_path('/images/dispimg/'.$filename));
+          Image::make($dispimg)->resize(2048, 1400)->save(public_path('/images/dispimg/'.$filename));
           $post->dispimg = $filename;
         }
 

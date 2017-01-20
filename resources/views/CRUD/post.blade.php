@@ -27,7 +27,7 @@
     </div>
 
     <div class = "container">
-      <label class = "col-sm-3 label-control">Display Image</label>
+      <label class = "col-sm-3 label-control">Display Image (<u>2048</u> × <u>1400</u> is preferable)</label>
       <div class = "col-sm-6">
         <input type = "file" name = "dispimg" class = "pull-left" style = "margin-top: 5px;">
       </div>
