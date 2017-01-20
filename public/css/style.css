@@ -300,12 +300,13 @@ footer {
 |
 */
 .container .event-image {
-	background-image: url(/images/road.jpg);
+	background-image: url(/images/events/about.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	margin-top: -20px;
 	margin-bottom: 20px;
-	height: 450px;
+	height: 500px;
 }
 
 .content-container {

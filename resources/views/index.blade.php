@@ -29,6 +29,7 @@
           @for ($i = count($posts) - 1; $i >= 0; $i--)
             @if ($posts[$i]->event_category == "Announcement")
               <div class = "col-sm-2 col-md-4 col-lg-4">
+                <img src = "/images/dispimg/{{ $posts[$i]->dispimg }}" class = "img-responsive">
                 <div class = "thumbnail" style = "padding: 25px 10px 20px 10px;">
                   <div class = "caption">
                     <center><p style = "color: #f4645f;">{{ date('F d, Y', strtotime($posts[$i]->created_at)) }}</p></center>

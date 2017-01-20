@@ -16,7 +16,7 @@
             <div class = "summary">
               <?php
                 $content = strip_tags($event->content);
-                $content = mb_substr($content, 0, 200, "utf-8");
+                $content = mb_substr($content, 0, 100, "utf-8");
                 echo ($content);
               ?>
               ... (Read more)
@@ -25,7 +25,6 @@
         </div>
       </div>
     @endforeach
-  <center> {{ $events->render() }} </center>
   </div>
   <div class = "col-md-4">
     <div class = "sidebox">
@@ -40,5 +39,6 @@
     </div>
   </div>
 </div>
+<center> {{ $events->render() }} </center>
 @include('footer')
 @stop
