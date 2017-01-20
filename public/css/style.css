@@ -196,6 +196,12 @@ div video {
   height: auto;
 }
 
+.event-box .summary {
+	color: #fff;
+	padding: 0px 40px 15px 40px;
+	font-family: 'Open Sans', sans-serif;
+}
+
 /*
 |----------------------------------------------------
 | hr style
@@ -293,13 +299,34 @@ footer {
 |
 |
 */
+.container .event-image {
+	background-image: url(/images/road.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin-bottom: 20px;
+	height: 450px;
+}
 
 .content-container {
 	position: relative;
 	background-color: #fff;
-	max-width: 900px;
+	max-width: 750px;
 }
 
+.sidebox {
+	margin-left: 10px;
+	max-width: 550px;
+	box-shadow: 0 1px 5px #dcdcdc;
+	background-color: #fafafa;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.sidebox .sidebox-title {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	text-align: center;
+}
 
 .content-img {
 	margin-top: 10px;
