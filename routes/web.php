@@ -22,6 +22,7 @@ Route::group(['middleware' => 'web'], function() {
   Route::get('board', 'MembersController@directBoard');
   Route::get('announcements', 'PostsController@directAnnouncements');
   Route::get('events', 'PostsController@directEvents');
+  Route::get('view/{id}', 'PostsController@viewPost');
 
   /* User Profile Routes */
   Route::get('profile', 'MembersController@directProfile');

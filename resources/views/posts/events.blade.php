@@ -1,5 +1,7 @@
 @extends('layouts.index-layout')
 @section('main-content')
+<div class = "container">
+</div>
 <div class = "container" style = "">
   <div class = "col-md-8">
     @foreach ($events as $event)

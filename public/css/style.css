@@ -299,6 +299,7 @@ footer {
 |
 |
 */
+
 .container .event-image {
 	background-image: url(/images/events/about.jpg);
 	background-repeat: no-repeat;
@@ -326,9 +327,14 @@ footer {
 .sidebox .sidebox-title {
 	padding-top: 25px;
 	padding-bottom: 25px;
-	text-align: center;
+	margin-left: 25px;
 }
 
 .content-img {
 	margin-top: 10px;
+}
+
+.view-container {
+	max-width: 750px;
+	background-color: #fafafa;
 }

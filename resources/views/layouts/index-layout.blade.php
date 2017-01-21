@@ -10,8 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.8/validator.min.js"></script>
 
     <!-- STYLE -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
     <link href = "css/animate.css" rel = "stylesheet">
 
@@ -49,18 +49,18 @@
               <span class = "icon-bar"></span>
               <span class = "icon-bar"></span>
             </button>
-            <a class = "navbar-brand" href = "/">
-              <img alt = "Brand" src = "images/KUSA_Logo.png">
+            <a class = "navbar-brand" href = "{{action('MembersController@directIndex')}}">
+              <img alt = "Brand" src = "{{asset('images/KUSA_Logo.png')}}">
             </a>
           </div>
           <div class = "collapse navbar-collapse" id = "kusanavbar">
             <ul class = "nav navbar-nav">
-              <li><a href = "/">Home</a></li>
+              <li><a href = "{{action('MembersController@directIndex')}}">Home</a></li>
               <li class = "dropdown">
                 <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#">About<span class = "caret"></span></a>
                 <ul class = "dropdown-menu">
-                  <li><a href = "kusa">KUSA</a></li>
-                  <li><a href = "board">Members</a></li>
+                  <li><a href = "{{action('MembersController@directIndex')}}">KUSA</a></li>
+                  <li><a href = "{{action('MembersController@directBoard')}}">Members</a></li>
                 </ul>
               </li>
               <li class = "dropdown">
@@ -68,7 +68,7 @@
                 <ul class = "dropdown-menu">
                   <li><a href = "{{ action('PostsController@directAnnouncements') }}">News</a></li>
                   <li><a href = "{{ action('PostsController@directEvents') }}">Events</a></li>
-                  <li><a href = "calendar">Calendar</a></li>
+                  <li><a href = "#">Calendar</a></li>
                 </ul>
               </li>
               <li class = "dropdown">
@@ -92,11 +92,11 @@
                 <ul class = "dropdown-menu">
                   <li><center><img src = "/images/profiles/<?php echo $userinfo->profile_img?>"  style = "margin-top: 15px;" class = "default-profile"></center></li>
                   <hr>
-                  <li><a href = "profile">My profile</a></li>
+                  <li><a href = "{{action('MembersController@directProfile')}}">My profile</a></li>
                   @if ($userinfo->user_status == "admin")
-                  <li><a href = "dashboard">Dashboard</a></li>
+                  <li><a href = "{{action('AdminController@directDashboard')}}">Dashboard</a></li>
                   @endif
-                  <li><a href = "logout">Sign-out</a></li>
+                  <li><a href = "{{action('MembersController@doLogout')}}">Sign-out</a></li>
                 </ul>
               </li>
               @else
@@ -109,7 +109,7 @@
       </nav>
     @yield('main-content')
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/aos-init.js"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/aos-init.js')}}"></script>
   </body>
 </html>

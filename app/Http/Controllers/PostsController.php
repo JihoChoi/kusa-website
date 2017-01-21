@@ -65,6 +65,10 @@ class PostsController extends Controller
         }
     }
 
+    public function viewPost($id) {
+      return view('posts.viewpost');
+    }
+
     /*
 
     ------------------------------------------
