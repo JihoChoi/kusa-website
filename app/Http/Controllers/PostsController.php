@@ -11,7 +11,8 @@ class PostsController extends Controller
 {
 
     public function directAnnouncements() {
-      return view('posts.announcements');
+      $announcements = Posts::where('event_category', 'Announcement')->orderBy('id', 'desc')->paginate(3);
+      return view('posts.announcements', ['announcements' => $announcements]);
     }
 
     public function directEvents() {

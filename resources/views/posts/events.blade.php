@@ -1,9 +1,6 @@
 @extends('layouts.index-layout')
 @section('main-content')
 <div class = "container" style = "">
-  <div class = "container event-image" style = "width: 100vw; margin-left: -50vw; left: 50%; background-color: #fafafa;">
-
-  </div>
   <div class = "col-md-8">
     @foreach ($events as $event)
       <div class = "content-container">
@@ -20,7 +17,7 @@
                 $content = mb_substr($content, 0, 100, "utf-8");
                 echo ($content);
               ?>
-              
+
               ... (Read more)
             </div>
           </div>
