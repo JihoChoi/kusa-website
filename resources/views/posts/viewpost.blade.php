@@ -15,12 +15,12 @@
 <div class = "prev-next">
   @if ($prev != null)
     <div class = "prev pull-left">
-      <a href = ""><i class = "fa fa-chevron-left"></i> {{$prev->content_title}}</a> <br>
+      <a href = "/view/{{ $prev->id }}"><i class = "fa fa-chevron-left"></i> {{$prev->content_title}}</a>
     </div>
   @endif
   @if ($next != null)
     <div class = "next pull-right">
-     <a href = "">{{$next->content_title}} <i class = "fa fa-chevron-right"></i></a> <br>
+     <a href = "/view/{{ $next->id }}">{{$next->content_title}} <i class = "fa fa-chevron-right"></i></a>
     </div>
   @endif
 </div>
