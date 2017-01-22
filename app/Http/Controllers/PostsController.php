@@ -67,7 +67,7 @@ class PostsController extends Controller
 
     public function viewPost($id) {
       $post = Posts::find($id);
-      $prev = Posts::where('id', '<', $id)->first();
+      $prev = Posts::where('id', '<', $id)->orderBy('id', 'desc')->first();
       $next = Posts::where('id', '>', $id)->first();
       return view('posts.viewpost', [
         'post' => $post,
