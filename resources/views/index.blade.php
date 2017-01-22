@@ -29,12 +29,12 @@
           @for ($i = count($posts) - 1; $i >= 0; $i--)
             @if ($posts[$i]->event_category == "Announcement")
               <div class = "col-sm-2 col-md-4 col-lg-4">
-                <img src = "/images/dispimg/{{ $posts[$i]->dispimg }}" class = "img-responsive">
+                <a href = "view/{{ $posts[$i]->id }}"><img src = "/images/dispimg/{{ $posts[$i]->dispimg }}" class = "img-responsive"></a>
                 <div class = "thumbnail" style = "padding: 25px 10px 20px 10px;">
                   <div class = "caption">
                     <center><p style = "color: #f4645f;">{{ date('F d, Y', strtotime($posts[$i]->created_at)) }}</p></center>
                     <hr width = "20%" class = "style5">
-                    <center><h4><i class = "fa fa-newspaper-o"></i> {{ $posts[$i]->content_title }}</h4></center>
+                    <center><a href = "view/{{ $posts[$i]->id }}"><h4><i class = "fa fa-newspaper-o"></i> {{ $posts[$i]->content_title }}</h4></a></center>
                   </div>
                 </div>
               </div>
