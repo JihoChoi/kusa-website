@@ -66,7 +66,14 @@ class PostsController extends Controller
     }
 
     public function viewPost($id) {
-      return view('posts.viewpost');
+      $post = Posts::find($id);
+      $prev = Posts::where('id', '<', $id)->first();
+      $next = Posts::where('id', '>', $id)->first();
+      return view('posts.viewpost', [
+        'post' => $post,
+        'prev' => $prev,
+        'next' => $next,
+      ]);
     }
 
     /*

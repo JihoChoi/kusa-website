@@ -335,6 +335,35 @@ footer {
 }
 
 .view-container {
-	max-width: 750px;
+	position: relative;
+	max-width: 65%;
 	background-color: #fafafa;
+	margin: 0 auto;
+}
+
+.view-content {
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 0 1px 5px #dcdcdc;
+	padding: 40px 40px 40px 40px;
+}
+
+.story {
+	width: 650px;
+	margin: 0 auto;
+	padding-top: 25px;
+	font-size: 20px;
+}
+
+.prev-next {
+	margin: 0 auto;
+	max-width: 95%;
+	height: 70px;
+	padding-top: 30px;
+	font-size: 18px;
+}
+
+.prev-next a {
+	color: #000;
+	text-decoration: none;
 }
