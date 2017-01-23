@@ -50,7 +50,8 @@ tinymce.init({
      "CCFFCC", "Pale green",
      "CCFFFF", "Pale cyan",
      "99CCFF", "Light sky blue",
-     "CC99FF", "Plum"
+     "CC99FF", "Plum",
+     "F4645F", "Special Red"
    ],
    /*setup: function(editor) {
            var inp = $('<input id="tinymce-uploader" type="file" name="pic" accept="image/*" style="display:none">');
