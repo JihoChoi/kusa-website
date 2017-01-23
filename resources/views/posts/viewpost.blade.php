@@ -1,4 +1,8 @@
 @extends('layouts.index-layout')
+@section('title')
+<title>{{ $post->content_title }}</title>
+@endsection
+
 @section('main-content')
 <div class = "view-container">
   <img src = "/images/dispimg/{{ $post->dispimg }}" class = "img-responsive">
@@ -15,16 +19,17 @@
 
 <div class = "prev-next">
   @if ($prev != null)
-    <div class = "prev pull-left">
-      <a href = "/view/{{ $prev->id }}"><i class = "fa fa-chevron-left"></i> {{$prev->content_title}}</a>
+    <div class = "prev pull-right">
+      <a class = "btn btn-default" href = "/view/{{ $prev->id }}"> {{$prev->content_title}} <i class = "fa fa-chevron-right"></i></a>
     </div>
   @endif
   @if ($next != null)
-    <div class = "next pull-right">
-     <a href = "/view/{{ $next->id }}">{{$next->content_title}} <i class = "fa fa-chevron-right"></i></a>
+    <div class = "next pull-left">
+     <a  class = "btn btn-default" href = "/view/{{ $next->id }}"><i class = "fa fa-chevron-left"></i> {{$next->content_title}}</a>
     </div>
   @endif
 </div>
 
+
 @include('footer')
-@stop
+@endsection

@@ -1,3 +1,7 @@
+body {
+	background-color: #fafafa;
+}
+
 hr.style5 {
 	background-color: #fff;
 	border-top: 2px dashed #8c8b8b;
@@ -329,7 +333,7 @@ footer {
 	margin-left: 10px;
 	max-width: 550px;
 	box-shadow: 0 1px 5px #dcdcdc;
-	background-color: #fafafa;
+	background-color: #fff;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -358,7 +362,7 @@ footer {
 }
 
 .story {
-	width: 650px;
+	max-width: 65%;
 	margin: 0 auto;
 	padding-top: 25px;
 	font-size: 18px;

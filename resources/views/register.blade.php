@@ -88,7 +88,7 @@
         <div class = "form-group">
           <label for="phone" class = "col-sm-3 control-label">Phone Number</label>
           <div class = "col-sm-9">
-            <input id="phone" type = "text" class = "form-control" name = "phone" placeholder = "US Phone Number (not required)">
+            <input id="phone" type = "text" class = "form-control" name = "phone" placeholder = "US Phone Number (optional)">
           </div>
         </div>
         <div class = "form-group" style = "margin-top: 10px">

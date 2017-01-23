@@ -100,8 +100,8 @@
                 </ul>
               </li>
               @else
-              <li><a href = "register"><span class = "glyphicon glyphicon-user"></span> Sign-Up </a></li>
-              <li><a href = "login"><span class = "glyphicon glyphicon-log-in"></span> Login </a></li>
+              <li><a href = "{{ action('MembersController@directRegister') }}"><span class = "glyphicon glyphicon-user"></span> Sign-Up </a></li>
+              <li><a href = "{{ action('MembersController@directLogin') }}"><span class = "glyphicon glyphicon-log-in"></span> Login </a></li>
               @endif
             </ul>
           </div>
