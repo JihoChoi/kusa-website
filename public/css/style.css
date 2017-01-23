@@ -206,6 +206,11 @@ div video {
 	text-decoration: none;
 }
 
+.caption a:hover {
+	color: #f4645f;
+	text-decoration: none;
+}
+
 /*
 |----------------------------------------------------
 | hr style
@@ -369,5 +374,10 @@ footer {
 
 .prev-next a {
 	color: #000;
+	text-decoration: none;
+}
+
+.prev-next a:hover {
+	color: #f4645f;
 	text-decoration: none;
 }

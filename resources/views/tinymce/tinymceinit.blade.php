@@ -8,7 +8,9 @@ tinymce.init({
     'spellchecker searchreplace tabfocus table template'
   ],
   file_picker_types: 'file image media',
-  toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor',
+  toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor | fontsizeselect | fontselect ',
+  font_formats: 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;AkrutiKndPadmini=Akpdmi-n',
+  fontsize_formats: "8px 10px 12px 14px 18px 24px 36px",
   textcolor_map: [
      "000000", "Black",
      "993300", "Burnt orange",
@@ -61,7 +63,7 @@ tinymce.init({
                fr.onload = function() {
                    var img = new Image();
                    img.src = fr.result;
-                   editor.insertContent('<img src="'+img.src+'"/>');
+                   editor.insertContent('<img src="/images/events/'+img.src+'"/>');
                    inp.val('');
                }
                fr.readAsDataURL(file);

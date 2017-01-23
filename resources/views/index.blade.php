@@ -22,6 +22,7 @@
       <div class = "container" style = "position: relative;">
         <div class = "page-header">
           <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i class="fa fa-bell-o" aria-hidden="true"></i> Latest News / Announcements</h4>
+          <p class = "pull-right" style = "margin-top: -15px;">View more news</p>
         </div>
 
         <?php $i = 0; $cnt = 0;?>
