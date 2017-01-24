@@ -84,6 +84,7 @@ img.default-profile {
 | various background color collections
 |
 */
+
 .background-A3CFEA {
 	position: relative;
   margin-top: -20px;
@@ -349,7 +350,7 @@ footer {
 
 .view-container {
 	position: relative;
-	max-width: 60%;
+	max-width: 70%;
 	background-color: #fafafa;
 	margin: 0 auto;
 }
