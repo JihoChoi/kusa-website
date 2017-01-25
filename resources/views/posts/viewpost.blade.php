@@ -20,12 +20,12 @@
 <div class = "prev-next">
   @if ($prev != null)
     <div class = "prev pull-right">
-      <a class = "btn btn-default" href = "/view/{{ $prev->id }}"> {{$prev->content_title}} <i class = "fa fa-chevron-right"></i></a>
+      <a class = "btn btn-default" style = "border-radius: 24px; box-shadow: 0 1px 5px #dcdcdc;" href = "/view/{{ $prev->id }}"> {{$prev->content_title}} <i class = "fa fa-chevron-right"></i></a>
     </div>
   @endif
   @if ($next != null)
     <div class = "next pull-left">
-     <a  class = "btn btn-default" href = "/view/{{ $next->id }}"><i class = "fa fa-chevron-left"></i> {{$next->content_title}}</a>
+     <a  class = "btn btn-default" style = "border-radius: 24px; box-shadow: 0 1px 5px #dcdcdc;" href = "/view/{{ $next->id }}"><i class = "fa fa-chevron-left"></i> {{$next->content_title}}</a>
     </div>
   @endif
 </div>
