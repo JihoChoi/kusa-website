@@ -6,16 +6,16 @@
   <div class = "col-md-8">
     @foreach ($events as $event)
       <div class = "content-container">
-        <img class = "img-responsive" src = "/images/dispimg/{{ $event->dispimg }}">
+        <a href = "view/{{ $event->id }}"><img class = "img-responsive" src = "/images/dispimg/{{ $event->dispimg }}"></a>
         <div class = "event-box">
           <div class = "thumbnail">
             <h4 class = "category">{{ date('F d, Y', strtotime($event->created_at)) }}</h4>
             <p class = "category">{{ $event->event_category }}</p>
-            <h3 class = "caption" style = "padding-left: 40px; font-family: 'Open Sans', sans-serif; color: white;">{{ $event->content_title }}</h3>
+            <a href = "view/{{ $event->id }}"><h3 class = "caption" style = "padding-left: 40px; font-family: 'Open Sans', sans-serif; color: white;">{{ $event->content_title }}</h3></a>
             <div class = "summary">
               <?php
                 $content = strip_tags($event->content);
-                $content = mb_substr($content, 0, 100, "utf-8");
+                $content = mb_substr($content, 0, 250, "utf-8");
                 echo ($content);
               ?>
               ... (Read more)

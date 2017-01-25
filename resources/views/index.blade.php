@@ -34,7 +34,7 @@
                 <div class = "thumbnail" style = "padding: 25px 10px 20px 10px;">
                   <div class = "caption">
                     <center><p style = "color: #f4645f;">{{ date('F d, Y', strtotime($posts[$i]->created_at)) }}</p></center>
-                    <hr width = "20%" class = "style5">
+                    <hr width = "20%">
                     <center><a href = "view/{{ $posts[$i]->id }}"><h4><i class = "fa fa-newspaper-o"></i> {{ $posts[$i]->content_title }}</h4></a></center>
                   </div>
                 </div>
@@ -78,12 +78,12 @@
           @for ($j = $i - 1; $j >= 0; $j--)
             @if ($posts[$j]->event_category != "Announcement")
               <div class = "col-md-4 event-box">
-                <center><a href = "view/{{ $posts[$i]->id }}"><img src = "/images/dispimg/{{ $posts[$j]->dispimg }}" class = "img-responsive"></a></center>
+                <center><a href = "view/{{ $posts[$j]->id }}"><img src = "/images/dispimg/{{ $posts[$j]->dispimg }}" class = "img-responsive"></a></center>
                 <div class = "thumbnail">
                   <div class = "caption">
                     <h4 class = "category">{{ date('F d, Y', strtotime($posts[$i]->created_at)) }}</h4>
                     <p class = "category">{{ $posts[$j]->event_category }}</p>
-                    <a href = "view/{{ $posts[$i]->id }}"><h4 style = "padding-left: 40px; font-family: 'Open Sans', sans-serif; color: white;">{{ $posts[$j]->content_title }}</h4></a>
+                    <a href = "view/{{ $posts[$j]->id }}"><h4 style = "padding-left: 40px; font-family: 'Open Sans', sans-serif; color: white;">{{ $posts[$j]->content_title }}</h4></a>
                   </div>
                 </div>
               </div>
