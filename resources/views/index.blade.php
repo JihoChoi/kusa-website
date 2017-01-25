@@ -53,6 +53,7 @@
       <div class = "container event-container" style = "position: relative;">
         <div class = "page-header">
           <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i class="fa fa-calendar" aria-hidden="true"></i>Recent Events</h4>
+          <a href = "{{ action('PostsController@directEvents') }}" class = "pull-right" style = "text-decoration: none; margin-top: -10px; color: #f4645f;">View More</a>
         </div>
 
         <?php $cnt = 0; ?>
@@ -60,12 +61,12 @@
           @for ($i = count($posts) - 1; $i >= 0; $i--)
             @if ($posts[$i]->event_category != "Announcement")
               <div class = "col-md-6 event-box">
-                <center><img src = "/images/dispimg/{{ $posts[$i]->dispimg }}" class = "img-responsive"></center>
+                <center><a href = "view/{{ $posts[$i]->id }}"><img src = "/images/dispimg/{{ $posts[$i]->dispimg }}" class = "img-responsive"></a></center>
                 <div class = "thumbnail">
                   <div class = "caption">
                     <h4 class = "category">{{ date('F d, Y', strtotime($posts[$i]->created_at)) }}</h4>
                     <p class = "category">{{ $posts[$i]->event_category }}</p>
-                    <h4 style = "padding-left: 40px; font-family: 'Open Sans', sans-serif; color: white;">{{ $posts[$i]->content_title }}</h4>
+                    <a href = "view/{{ $posts[$i]->id }}"><h4 style = "padding-left: 40px; font-family: 'Open Sans', sans-serif; color: white;">{{ $posts[$i]->content_title }}</h4></a>
                   </div>
                 </div>
               </div>
@@ -77,12 +78,12 @@
           @for ($j = $i - 1; $j >= 0; $j--)
             @if ($posts[$j]->event_category != "Announcement")
               <div class = "col-md-4 event-box">
-                <center><img src = "/images/dispimg/{{ $posts[$j]->dispimg }}" class = "img-responsive"></center>
+                <center><a href = "view/{{ $posts[$i]->id }}"><img src = "/images/dispimg/{{ $posts[$j]->dispimg }}" class = "img-responsive"></a></center>
                 <div class = "thumbnail">
                   <div class = "caption">
                     <h4 class = "category">{{ date('F d, Y', strtotime($posts[$i]->created_at)) }}</h4>
                     <p class = "category">{{ $posts[$j]->event_category }}</p>
-                    <h4 style = "padding-left: 40px; font-family: 'Open Sans', sans-serif; color: white;">{{ $posts[$j]->content_title }}</h4>
+                    <a href = "view/{{ $posts[$i]->id }}"><h4 style = "padding-left: 40px; font-family: 'Open Sans', sans-serif; color: white;">{{ $posts[$j]->content_title }}</h4></a>
                   </div>
                 </div>
               </div>

@@ -50,18 +50,18 @@ class AdminController extends Controller
     public function directEventCategoryManage()
     {
       $categories = EVENT_CATEGORY::paginate(10);
-      return view('CRUD.EVENTS.event-category-manage', compact('categories'));
+      return view('CRUD.EVENTS.event-category-manage', ['categories' => $categories]);
     }
 
     public function directTeamManage()
     {
       $teams = KUSA_TEAM::paginate(10);
-      return view('CRUD.TEAMS.team-manage', compact('teams'));
+      return view('CRUD.TEAMS.team-manage', ['teams' => $teams]);
     }
 
     public function directRoleManage()
     {
       $roles = KUSA_ROLE::paginate(10);
-      return view('CRUD.ROLES.role-manage', compact('roles'));
+      return view('CRUD.ROLES.role-manage', ['roles' => $roles]);
     }
 }
