@@ -4,21 +4,14 @@
 @stop
 @section('main-content')
 <div class = "container-fluid background-A3CFEA">
-    <div class = "container main-title">
-      PURDUE KOREAN UNDERGRADUATE STUDENT ASSOCIATION
-    </div><br><br>
-    <div class = "container sub-video">
-      <div class = "outer">
-        <video preload = "preload" controls = "controls" allowfullscreen>
-          <source src = "videos/kusa_video.mp4" type = 'video/mp4;'/>
-          <source src = "videos/kusa_video.webm" type = 'video/webm;'/>
-          <source src = "videos/kusa_video.ogv" type = 'video/ogv;'/>
-          <source src = "videos/kusa_video.m4v" type = 'video/mp4;'/>
-          Your browser does not support this video.
-        </video>
+    <br>
+    <div class = "browser">
+      <div class = "container main-title">
+        PURDUE KOREAN UNDERGRADUATE STUDENT ASSOCIATION<br>
       </div>
     </div>
-    <div class = "container" style = "background-color: #fafafa; width: 100vw; margin-left: -50vw; left: 50%;">
+    <br><br>
+    <div class = "container" style = "background-color: #f9f9f9; width: 100vw; margin-left: -50vw; left: 50%;">
       <div class = "container" style = "position: relative;">
         <div class = "page-header">
           <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i class="fa fa-bell-o" aria-hidden="true"></i> Latest News / Announcements</h4>
@@ -49,6 +42,21 @@
       </div>
 
       <!-- END OF NEWS/ANNOUNCEMENTS -->
+
+      <div class = "container">
+        <div class = "page-header">
+          <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i aria-hidden="true"></i> Short Intro</h4>
+        </div>
+        <div class = "video-container">
+          <center>
+            <video preload = "preload" controls = "controls" allowfullscreen>
+              <source src = "videos/kusa_video.mp4" type = "video/mp4;"/>
+            </video>
+          </center>
+        </div>
+        <br>
+        <center><a class = "btn btn-primary btn-lg">Learn More <i class = "fa fa-arrow-right"></i></a></center>
+      </div>
 
       <div class = "container event-container" style = "position: relative;">
         <div class = "page-header">

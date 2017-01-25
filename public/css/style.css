@@ -1,5 +1,5 @@
 body {
-	background-color: #fafafa;
+	background-color: #f9f9f9;
 }
 
 hr.style5 {
@@ -89,7 +89,8 @@ img.default-profile {
 	position: relative;
   margin-top: -20px;
   /*background-color: #A3CFEA;*/
-	background-color: #f79591;
+	/*background-color: #f79591;*/
+	background-color: #fff;
 }
 
 .background-footer {
@@ -109,37 +110,50 @@ img.default-profile {
 |
 */
 
+.video-container {
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	box-shadow: 0 1px 5px #dcdcdc;
+}
+
 .main-title {
-  margin-top: 85px;
-  text-align: center;
+	width: 100%;
+	padding-top: 120px;
+	text-align: center;
   font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 	letter-spacing: .2em;
-	color: white;
+	color: #000;
 }
 
-.sub-video {
-	background-color:
-  text-align: center;
+.browser {
+	width: 67.77%;
+	min-height: 300px;
+	background-image: url(/images/browser2.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	margin: 0 auto;
+	box-shadow: 0 1px 5px #dcdcdc;
 }
 
-div.outer {
-  position: relative;
-  padding-top: 25px;
-  padding-bottom: 67.5%;
-  height: 0;
+.browser img {
+	width: 100%;
+	height: auto;
 }
 
-div video {
-  box-sizing: border-box;
-  background: url(/images/macbook-pro.png) center center no-repeat;
-  background-size: contain;
-  padding: 8.9% 15.5% 14.8%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.browser-content {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	letter-spacing: .2em;
+	color: #000;
+}
+
+.video-container video {
+	padding: 45px 0 45px 0;
+	width: 60%;
+	height: auto;
 }
 
 .panel-body {
@@ -349,10 +363,10 @@ footer {
 }
 
 .view-container {
-	position: relative;
-	max-width: 70%;
+	max-width: 1250px;
 	background-color: #fafafa;
 	margin: 0 auto;
+	margin-top: -45px;
 }
 
 .view-content {
