@@ -11,13 +11,18 @@ class PostsController extends Controller
 {
 
     public function directAnnouncements() {
-      $announcements = Posts::where('event_category', 'Announcement')->orderBy('id', 'desc')->paginate(3);
-      return view('posts.announcements', ['announcements' => $announcements]);
+      /*$announcements = Posts::where('event_category', 'Announcement')->orderBy('id', 'desc')->paginate(3);
+      return view('posts.announcements', ['announcements' => $announcements]);*/
+      return $this->viewPost(Posts::where('event_category', 'Announcement')->orderBy('id', 'desc')->first()->id);
     }
 
     public function directEvents() {
+      $event_categories = EVENT_CATEGORY::all();
       $events = Posts::where('event_category', '!=', 'Announcement')->orderBy('id', 'desc')->paginate(3);
-      return view('posts.events', ['events' => $events]);
+      return view('posts.events', [
+        'events'         => $events,
+        'event_categories' => $event_categories,
+      ]);
     }
 
     // CRUD Controller

@@ -117,18 +117,8 @@ img.default-profile {
 	box-shadow: 0 1px 5px #dcdcdc;
 }
 
-.main-title {
-	width: 100%;
-	padding-top: 120px;
-	text-align: center;
-  font-family: 'Open Sans', sans-serif;
-	font-size: 20px;
-	letter-spacing: .2em;
-	color: #000;
-}
-
 .browser {
-	width: 67.77%;
+	width: 77.77%;
 	min-height: 300px;
 	background-image: url(/images/browser2.png);
 	background-size: contain;
@@ -138,21 +128,40 @@ img.default-profile {
 	box-shadow: 0 1px 5px #dcdcdc;
 }
 
-.browser img {
-	width: 100%;
-	height: auto;
+.main-title {
+	padding-top: 8.77%;
+	text-align: center;
+  font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	letter-spacing: .2em;
+	color: #000;
 }
 
 .browser-content {
+	margin-top: 2%;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 	letter-spacing: .2em;
 	color: #000;
 }
 
+.browser-content a {
+}
+
+.sponsor-container {
+	width: 77.77%;
+	margin: 0 auto;
+	box-shadow: 0 1px 5px #dcdcdc;
+	margin-top: 20px;
+}
+
+.sponsor-container img {
+	width: 100%;
+}
+
 .video-container video {
 	padding: 45px 0 45px 0;
-	width: 60%;
+	width: 80%;
 	height: auto;
 }
 
@@ -352,10 +361,25 @@ footer {
 	font-family: 'Open Sans', sans-serif;
 }
 
-.sidebox .sidebox-title {
+.sidebox-title {
 	padding-top: 25px;
 	padding-bottom: 25px;
 	margin-left: 25px;
+}
+
+.sidebox-contents {
+	margin-top: -20px;
+	padding: 25px;
+}
+
+.sidebox-content {
+	margin: 0 auto;
+	border-style: solid;
+	text-align: center;
+	width: 90%;
+	padding: 10px;
+	color: #fff;
+	background-color: #f4645f;
 }
 
 .content-img {
@@ -366,7 +390,6 @@ footer {
 	max-width: 1250px;
 	background-color: #fafafa;
 	margin: 0 auto;
-	margin-top: -45px;
 }
 
 .view-content {

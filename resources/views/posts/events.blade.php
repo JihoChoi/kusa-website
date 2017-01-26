@@ -27,7 +27,13 @@
   </div>
   <div class = "col-md-4">
     <div class = "sidebox">
-      <h4 class = "sidebox-title">Trending</h4>
+      <h4 class = "sidebox-title">Categories</h4>
+      <div class = "sidebox-contents">
+        <h5 class = "sidebox-content">All</h5>
+        @foreach ($event_categories as $event_category)
+          <h5 class = "sidebox-content">{{ $event_category->event_type }}</h5>
+        @endforeach
+      </div>
     </div>
   </div>
 </div>
