@@ -19,15 +19,6 @@
 
     <div class = "panel-body" style = "padding-top:30px;">
       <div class = "well" style = "font-size: 15px">
-        We will use your personal information to:
-        <ul>
-          <li>
-            provide information, particularly those associated with Korean Undergraduate Student Association's.
-          </li>
-          <li>
-            manage our internal operations.
-          </li>
-        </ul>
         We will only disclose information for the purpose for which it was collected, and where appropriate, after obtaining the necessary consent from the individual.
       </div>
       <form id = "registerform" class = "form-horizontal" role = "form" method = "POST" action = "register" data-toggle = "validator">

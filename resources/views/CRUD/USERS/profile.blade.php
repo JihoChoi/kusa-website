@@ -58,12 +58,6 @@
                 </div>
               </div>
               <div class = "form-group">
-                <label for = "email" class = "col-sm-3 control-label">Email</label>
-                <div class = "col-sm-9" style = "font-family: 'Ubuntu', sans-serif; font-size: 20px;">
-                  {{ $user->email }}
-                </div>
-              </div>
-              <div class = "form-group">
                 <label for="type" class = "col-sm-3 control-label">Registration Type</label>
                   <div class = "col-sm-9">
                     <select class="form-control" id="type" name = "type" style = "width: 400px;">
@@ -88,7 +82,7 @@
               <div class = "form-group">
                 <label for="phone" class = "col-sm-3 control-label">Phone Number</label>
                 <div class = "col-sm-9">
-                  <input id="phone" type = "text" class = "form-control" name = "phone" style = "width: 400px;" value = "{{ $user->phone_number }}" placeholder = "US Phone Number (not required)">
+                  <input id="phone" type = "text" class = "form-control" name = "phone" style = "width: 400px;" value = "{{ $user->phone_number }}" placeholder = "US Phone Number (optional)">
                 </div>
               </div>
               <div class = "form-group" style = "margin-top: 10px">
@@ -117,7 +111,7 @@
               margin-bottom: 15px;
               color: #000;
               text-align: center;
-              background-color: #f9f9f9;
+              background-color: #dcdcdc;
             }
           </style>
           <div class = "auth-container">
@@ -155,6 +149,10 @@
                 </div>
               </div>
             </form>
+
+            <div class = "tab-title">
+              <h3>Change Email</h3>
+            </div>
           </div>
         </div>
         <!-- End of #Authentication -->
