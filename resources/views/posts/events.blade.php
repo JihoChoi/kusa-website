@@ -29,9 +29,9 @@
     <div class = "sidebox">
       <h4 class = "sidebox-title">Categories</h4>
       <div class = "sidebox-contents">
-        <h5 class = "sidebox-content">All</h5>
+        <a href = "#"><h5 class = "sidebox-content">All</h5></a>
         @foreach ($event_categories as $event_category)
-          <h5 class = "sidebox-content">{{ $event_category->event_type }}</h5>
+          <a href = "#"><h5 class = "sidebox-content">{{ $event_category->event_type }}</h5></a>
         @endforeach
       </div>
     </div>

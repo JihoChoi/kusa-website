@@ -215,6 +215,25 @@ class MembersController extends Controller
         }
     }
 
+    public function changePassword(Request $request)
+    {
+      $id = $request->input('id');
+      $user = Users::findOrFail($id);
+      $current_password = $user->password;
+      $input_current_password = $request->input('currentpassword');
+      $confirm_password = $request->input('confirmpassword');
+
+      if (!(Hash::check($input_current_password, $current_password))) {
+        return redirect()->back()->with('msg', 'Your current password is incorrect');
+      } else if (Hash::check($confirm_password, $current_password)) {
+        return redirect()->back()->with('msg', 'Old and New password should not be matched.');
+      }
+
+      $user->password = Hash::make($confirm_password);
+      $user->save();
+      return redirect()->back()->with('msg-general', 'Your password is successfully changed.');
+    }
+
     /*
 
     ---------------------------------------

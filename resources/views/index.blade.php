@@ -7,7 +7,8 @@
     <br>
     <div class = "browser">
       <div class = "main-title">
-        PURDUE KOREAN UNDERGRADUATE STUDENT ASSOCIATION<br>
+        PURDUE <span style = "color: red">K</span>OREAN <span style = "color: red">U</span>NDERGRADUATE <span style = "color: red">S</span>TUDENT <span style = "color: red">A</span>SSOCIATION
+        <hr width = "20%">
       </div>
       <div class = "browser-content">
 
@@ -33,8 +34,8 @@
 
       <div class = "container" style = "position: relative;">
         <div class = "page-header">
-          <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i class="fa fa-bell-o" aria-hidden="true"></i> Latest News / Announcements</h4>
-          <a href = "{{ action('PostsController@directAnnouncements') }}" class = "pull-right" style = "text-decoration: none; margin-top: -10px; color: #f4645f;">View More</a>
+          <h4 style = "color: #f4645f; font-family: 'Ubuntu', sans-serif; letter-spacing: .2em;"><i class="fa fa-bell-o" aria-hidden="true"></i> Latest Announcements</h4>
+          <a href = "{{ action('PostsController@directAnnouncements') }}" class = "pull-right" style = "text-decoration: none; margin-top: -10px; color: #f4645f;">Detail</a>
         </div>
 
         <?php $i = 0; $cnt = 0;?>

@@ -24,14 +24,17 @@ Route::group(['middleware' => 'web'], function() {
   Route::get('events', 'PostsController@directEvents');
   Route::get('view/{id}', 'PostsController@viewPost');
 
+  /*Test route for email*/
+  Route::get('email', 'MembersController@directEmail');
+
+});
+
+Route::group(['middleware' => 'auth'], function() {
   /* User Profile Routes */
   Route::get('profile', 'MembersController@directProfile');
   Route::post('profile', 'MembersController@updateProfileImage');
   Route::post('profile_update', 'MembersController@updateProfile');
-
-  /*Test route for email*/
-  Route::get('email', 'MembersController@directEmail');
-
+  Route::post('change_password', 'MembersController@changePassword');
 });
 
 Route::group(['middleware' => 'adminauth'], function () {

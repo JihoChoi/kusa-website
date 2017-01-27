@@ -2,6 +2,10 @@ body {
 	background-color: #f9f9f9;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 hr.style5 {
 	background-color: #fff;
 	border-top: 2px dashed #8c8b8b;
@@ -119,7 +123,7 @@ img.default-profile {
 
 .browser {
 	width: 77.77%;
-	min-height: 300px;
+	min-height: 250px;
 	background-image: url(/images/browser2.png);
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -132,7 +136,7 @@ img.default-profile {
 	padding-top: 8.77%;
 	text-align: center;
   font-family: 'Open Sans', sans-serif;
-	font-size: 20px;
+	font-size: 18px;
 	letter-spacing: .2em;
 	color: #000;
 }
