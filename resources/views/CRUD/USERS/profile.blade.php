@@ -153,6 +153,22 @@
             <div class = "tab-title">
               <h3>Change Email</h3>
             </div>
+            <form role = "form" class = "form-horizontal" method = "POST" action = "" data-toggle = "validator">
+              {{ csrf_field() }}
+              <input type = "hidden" value = "{{ $user->id }}" name = "id">
+              <div class = "form-group">
+                <label class = "col-sm-3 label-control">Email Address</label>
+                <div class = "col-sm-9">
+                  <input class = "form-control" type = "email" name = "email" value = "{{ $user->email }}" required = "true" data-error = "Email is required">
+                  <div class = "help-block with-errors"></div>
+                </div>
+              </div>
+              <div class = "form-group" style = "margin-top: 10px">
+                <div class = "col-sm-12 controls">
+                  <center><button type = "submit" class = "btn btn-success"><i class = "fa fa-save"></i> Change Email</button></center>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
         <!-- End of #Authentication -->

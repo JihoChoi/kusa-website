@@ -5,14 +5,13 @@ namespace App\Http\Controllers;
 use App\EVENT_CATEGORY;
 use App\Posts;
 use Illuminate\Http\Request;
+use Storage;
 use Image;
 
 class PostsController extends Controller
 {
 
     public function directAnnouncements() {
-      /*$announcements = Posts::where('event_category', 'Announcement')->orderBy('id', 'desc')->paginate(3);
-      return view('posts.announcements', ['announcements' => $announcements]);*/
       return $this->viewPost(Posts::where('event_category', 'Announcement')->orderBy('id', 'desc')->first()->id);
     }
 
@@ -40,6 +39,15 @@ class PostsController extends Controller
           $filename = time().str_random(10).'.'.$dispimg->getClientOriginalExtension();
           Image::make($dispimg)->resize(2048, 1400)->save(public_path('/images/dispimg/'.$filename));
           $post->dispimg = $filename;
+        }
+
+        if ($request->hasFile('images')) {
+          $filenames = array();
+          $images = $request->file('images');
+          foreach ($images as $image) {
+            $filename = time().str_random(10).'.'.$image->getClientOriginalExtension();
+            Storage::put($filename, file_get_contents($image));
+          }
         }
 
         $post->content_title = $title;

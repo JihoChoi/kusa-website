@@ -1,4 +1,7 @@
 @extends('layouts.dashboard-layout')
+@section('title')
+  Post Content
+@endsection
 @section('content')
 <div class = "container">
   <form enctype = "multipart/form-data" role = "form" action = "{{ action('PostsController@postContent') }}" method = "POST" data-toggle = "validator">
@@ -27,9 +30,16 @@
     </div>
 
     <div class = "container">
-      <label class = "col-sm-3 label-control">Display Image (<u>2048</u> × <u>1400</u> or bigger is preferable)</label>
+      <label class = "col-sm-3 label-control">Display Image (<u>2048</u> × <u>1400</u> or bigger is preferable): </label>
       <div class = "col-sm-6">
         <input type = "file" name = "dispimg" class = "pull-left" style = "margin-top: 5px;">
+      </div>
+    </div>
+
+    <div class = "container">
+      <label class = "col-sm-3 label-control">Gallery Images: </label>
+      <div class = "col-sm-6">
+        <input type = "file" name = "images[]" class = "pull-left" style = "margin-top: 5px;" multiple>
       </div>
     </div>
 

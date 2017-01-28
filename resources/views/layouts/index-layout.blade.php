@@ -8,12 +8,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.8/validator.min.js"></script>
+    <script src="https://vjs.zencdn.net/5.11/video.min.js"></script>
 
     <!-- STYLE -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
     <link href = "css/animate.css" rel = "stylesheet">
+    <link href="https://vjs.zencdn.net/5.11/video-js.min.css" rel="stylesheet">
 
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
@@ -92,11 +94,11 @@
                 <ul class = "dropdown-menu">
                   <li><center><img src = "/images/profiles/<?php echo $userinfo->profile_img?>"  style = "margin-top: 15px;" class = "default-profile"></center></li>
                   <hr>
-                  <li><a href = "{{action('MembersController@directProfile')}}">My profile</a></li>
+                  <li><a href = "{{action('MembersController@directProfile')}}">My Profile</a></li>
                   @if ($userinfo->user_status == "admin")
                   <li><a href = "{{action('AdminController@directDashboard')}}">Dashboard</a></li>
                   @endif
-                  <li><a href = "{{action('MembersController@doLogout')}}">Sign-out</a></li>
+                  <li><a href = "{{action('MembersController@doLogout')}}">Sign Out</a></li>
                 </ul>
               </li>
               @else
