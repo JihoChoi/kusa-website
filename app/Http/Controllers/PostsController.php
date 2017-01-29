@@ -7,6 +7,7 @@ use App\Posts;
 use Illuminate\Http\Request;
 use Storage;
 use Image;
+use App\Images;
 
 class PostsController extends Controller
 {
@@ -29,6 +30,8 @@ class PostsController extends Controller
     {
 
         $post = new Posts();
+        $img = new Images();
+
         $title = $request->input('content_title');
         $category = $request->input('content_category');
         $content = $request->input('content_area');
@@ -42,7 +45,7 @@ class PostsController extends Controller
         }
 
         if ($request->hasFile('images')) {
-          $filenames = array();
+          $filenames = [];
           $images = $request->file('images');
           foreach ($images as $image) {
             $filename = time().str_random(10).'.'.$image->getClientOriginalExtension();

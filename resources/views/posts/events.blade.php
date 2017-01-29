@@ -1,4 +1,7 @@
 @extends('layouts.index-layout')
+@section('title')
+  <title>Events</title>
+@endsection
 @section('main-content')
 <div class = "container">
 </div>

@@ -8,14 +8,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.8/validator.min.js"></script>
-    <script src="https://vjs.zencdn.net/5.11/video.min.js"></script>
 
     <!-- STYLE -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
     <link href = "css/animate.css" rel = "stylesheet">
-    <link href="https://vjs.zencdn.net/5.11/video-js.min.css" rel="stylesheet">
 
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
@@ -82,12 +80,7 @@
               </li>
             </ul>
             <ul class = "nav navbar-nav navbar-right">
-            <!--  <li><a href = "https://www.facebook.com/purduekusa" target = "_blank"><i class = "fa fa-facebook"></i></a></li>
-              <li><a href = "#"><i class = "fa fa-envelope-o"></i></a></li> -->
               @if (Auth::check())
-              <li>
-                <a href = "#"><i class = "fa fa-bell-o"></i></a>
-              </li>
               <?php $userinfo = Auth::user();?>
               <li class = "dropdown">
                 <a class = "dropdown-toggle" data-toggle = "dropdown" href = "#"><?php echo $userinfo->firstname?><span class = "caret"></span></a>
