@@ -14,17 +14,16 @@ This is a web application to manage Korean Undergraduate Student Association's u
 #### Front-end
 
 - [ ] Video not appear in safari problem
-- [ ] Tinymce
+- [x] Tinymce
   - [x] Tinymce default setup
-  - [ ] Multiple image uploads (may not require)
 - [ ] Complete main page (index.php)
 - [ ] Complete other pages
   - [ ] About
     - [ ] KUSA
     - [x] Board
   - [ ] Updates
-    - [ ] Announcements
-    - [ ] Events
+    - [x] Announcements
+    - [x] Events
     - [ ] Calendar
   - [ ] Resources
 - [ ] Email verification re-design
@@ -44,7 +43,7 @@ This is a web application to manage Korean Undergraduate Student Association's u
   - [x] Dashboard access filter
   - [ ] Posts controller
     - [ ] CRUD
-      - [ ] View: Link to page
+      - [x] View: Link to page
       - [x] Post
       - [ ] Edit
       - [ ] Delete

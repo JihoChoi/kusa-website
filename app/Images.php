@@ -10,6 +10,6 @@ class Images extends Model
     protected $table = 'images_table';
 
     public function post() {
-      return $this->belongsTo('App\Posts');
+      return $this->belongsTo('App\Posts', 'post_id');
     }
 }
