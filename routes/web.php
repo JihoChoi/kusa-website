@@ -1,14 +1,4 @@
 <?php
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::group(['middleware' => 'web'], function() {
 
@@ -44,6 +34,7 @@ Route::group(['middleware' => 'adminauth'], function () {
   /* Post Manage Routes*/
   Route::get('post', 'AdminController@directPost');
   Route::post('post', 'PostsController@postContent');
+  Route::get('post/{post_id}/postimages', 'AdminController@directPostImages');
 
   /* Event Category Manage Routes */
   Route::get('event-category-manage', 'AdminController@directEventCategoryManage');

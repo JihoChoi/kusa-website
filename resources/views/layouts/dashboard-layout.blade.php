@@ -20,10 +20,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- JAVASCRIPT -->
-  <script src="{{ asset('js/bootstrap.min.js')}}"></script>
-  <script src="{{ asset('js/tinymce/tinymce.min.js')}}"></script>
-  <script src="{{ asset('js/tinymce/jquery.tinymce.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('js/bootstrap-multiselect.js')}}"></script>
+  <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
+  <script src="{{ asset('js/tinymce/jquery.tinymce.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/bootstrap-multiselect.js') }}"></script>
   @include('tinymce.tinymceinit')
 
 </head>
@@ -109,5 +109,7 @@
        </div>
    </div>
    <!-- /#page-content-wrapper -->
+
+
 </body>
 </html>

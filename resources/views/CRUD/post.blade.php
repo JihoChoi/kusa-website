@@ -36,10 +36,17 @@
       </div>
     </div>
 
-    <div class = "container">
+    <!-- <div class = "container">
       <label class = "col-sm-3 label-control">Gallery Images: </label>
       <div class = "col-sm-6">
         <input type = "file" name = "images[]" class = "pull-left" style = "margin-top: 5px;" multiple>
+      </div>
+    </div> -->
+
+    <div class = "container">
+      <label class = "col-sm-3 label-control">Insert Images</label>
+      <div class = "col-sm-6">
+        <input type = "checkbox" name = "insert_images" value = ""> Check to insert images. 
       </div>
     </div>
 

@@ -20,7 +20,7 @@ class AdminController extends Controller
 |
 | Directing to various routes.
 |
-
+--------------------------------------------------------------
 */
 
     public function directDashboard()
@@ -38,7 +38,6 @@ class AdminController extends Controller
 
     public function directEdit()
     {
-
         return view('CRUD.edit');
     }
 
@@ -63,5 +62,11 @@ class AdminController extends Controller
     {
       $roles = KUSA_ROLE::paginate(10);
       return view('CRUD.ROLES.role-manage', ['roles' => $roles]);
+    }
+
+    public function directPostImages($post_id)
+    {
+      $post = Posts::findOrFail($post_id);
+      return view('posts.postimages', ['post' => $post]);
     }
 }

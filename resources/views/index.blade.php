@@ -1,7 +1,7 @@
 @extends('layouts.index-layout')
 @section('title')
 <title>Welcome to Purdue KUSA</title>
-@stop
+@endsection
 @section('main-content')
 <div class = "container-fluid background-A3CFEA">
     <br>
@@ -11,7 +11,6 @@
         <hr width = "20%">
       </div>
       <div class = "browser-content">
-
       </div>
     </div>
     <br><br>
@@ -83,7 +82,7 @@
                   <div class = "caption">
                     <h4 class = "category">{{ date('F d, Y', strtotime($posts[$i]->created_at)) }}</h4>
                     <p class = "category">{{ $posts[$i]->event_category }}</p>
-                    <a href = "view/{{ $posts[$i]->id }}"><h4 style = "padding-left: 40px; font-family: 'Open Sans', sans-serif; color: white;">{{ $posts[$i]->content_title }}</h4></a>
+                    <a href = "view/{{ $posts[$i]->id }}"><h4 style = "padding-left: 40px; font-family: 'Open Sans', sans-serif; color: white;"> {{ $posts[$i]->content_title }} </h4></a>
                   </div>
                 </div>
               </div>

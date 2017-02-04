@@ -8,6 +8,7 @@
 body {
   background-color: #fcfcfc;
 }
+
 .container-intro {
   margin-top: -25px;
   background-color: white;
@@ -18,6 +19,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 </style>
 <div class = "container-intro">
 </div>

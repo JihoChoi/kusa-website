@@ -20,7 +20,7 @@ class PostsController extends Controller
       $event_categories = EVENT_CATEGORY::all();
       $events = Posts::where('event_category', '!=', 'Announcement')->orderBy('id', 'desc')->paginate(3);
       return view('posts.events', [
-        'events'         => $events,
+        'events'           => $events,
         'event_categories' => $event_categories,
       ]);
     }
@@ -30,12 +30,11 @@ class PostsController extends Controller
     {
 
         $post = new Posts();
-        $img = new Images();
-
         $title = $request->input('content_title');
         $category = $request->input('content_category');
         $content = $request->input('content_area');
-        $filename = 'null';
+        $insertImages = $request->input('insert_images');
+	      $filename = 'null';
 
         if ($request->hasFile('dispimg')) {
           $dispimg = $request->file('dispimg');
@@ -44,14 +43,14 @@ class PostsController extends Controller
           $post->dispimg = $filename;
         }
 
-        if ($request->hasFile('images')) {
+        /* if ($request->hasFile('images')) {
           $filenames = [];
-          $images = $request->file('images');
+	        $images = $request->file('images');
           foreach ($images as $image) {
             $filename = time().str_random(10).'.'.$image->getClientOriginalExtension();
-            Storage::put($filename, file_get_contents($image));
-          }
-        }
+	          Storage::put($filename, file_get_contents($image));
+	         }
+        } */
 
         $post->content_title = $title;
         $post->content = $content;
@@ -59,9 +58,24 @@ class PostsController extends Controller
         $issaved = $post->save();
 
         if ($issaved) {
+            if ($insertImages) {
+              return redirect()->action('AdminController@directPostImages', ['post_id' => $post->id]);
+            }
             return redirect()->action('AdminController@directDashboard')->with('msg-general', 'Content has been posted.');
         }
 
+    }
+
+    public function postImages()
+    {
+      if ($request->hasFile('images')) {
+        $filenames = [];
+        $images = $request->file('images');
+        foreach ($images as $image) {
+          $filename = time().str_random(10).'.'.$image->getClientOriginalExtension();
+          Storage::put($filename, file_get_contents($image));
+         }
+      }
     }
 
     public function editContent(Request $request)
